@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1316.314 937.357">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1.166" y1="-0.305" x2="-0.138" y2="0.783" gradientUnits="objectBoundingBox">
+      <stop offset="0.277" stop-color="#ff0092" stop-opacity="0.898"/>
+      <stop offset="0.562" stop-color="#ff8139" stop-opacity="0.851"/>
+      <stop offset="0.566" stop-color="#ff7f3a" stop-opacity="0.851"/>
+      <stop offset="0.875" stop-color="#ff0092" stop-opacity="0.898"/>
+    </linearGradient>
+    <filter id="Tracé_50" x="0" y="0" width="1316.314" height="937.357" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="16.083" result="blur"/>
+      <feFlood flood-color="#f95383" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Tracé_50)">
+    <path id="Tracé_50-2" data-name="Tracé 50" d="M2957.042-134.066s-504.306-92.1-549.622,153.514c-44.074,238.884-67.529,268.478-369.43,357.026-283.921,83.275-277.138,183.518-299.633,297.706l-1.132-551.861C1889.471-47.893,2203.378,317.394,2300.251.233,2381.509-265.8,2957.042-134.066,2957.042-134.066Z" transform="translate(-1688.98 214.93)" opacity="0.96" fill="url(#linear-gradient)"/>
+  </g>
+</svg>
