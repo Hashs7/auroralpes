@@ -2,6 +2,7 @@ import pkg from './package'
 
 export default {
   mode: 'universal',
+  // mode: 'spa',
 
   /*
   ** Headers of the page
@@ -27,6 +28,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/style/global.scss',
   ],
 
   /*
@@ -42,6 +44,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    // "nuxt-netlify-cms",
+    // ['nuxt-netlify-cms', { adminPath: 'secure' }],
   ],
   /*
   ** Axios module configuration

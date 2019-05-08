@@ -1,4 +1,6 @@
 # auroralpes
+[![Netlify Status](https://api.netlify.com/api/v1/badges/102d920b-3ae5-4255-91d0-77ccc7c8a40a/deploy-status)](https://app.netlify.com/sites/auroralpes/deploys)
+
 
 > Association Auroralpes website
 
