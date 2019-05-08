@@ -65,7 +65,7 @@
     color: #FF2875;
     text-align: center;
     margin-top: 50px;
-    font-weight: 100;
+    font-weight: 200;
   }
 
   .day, .hour, .min, .sec {
@@ -87,7 +87,7 @@
 
   .message {
     font-size: 40px;
-    font-weight: 200;
+    font-weight: 100;
     margin-top: 5px;
   }
 </style>

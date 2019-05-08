@@ -44,9 +44,16 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/style-resources'
     // "nuxt-netlify-cms",
     // ['nuxt-netlify-cms', { adminPath: 'secure' }],
   ],
+  styleResources: {
+    scss: [
+      'assets/style/variables.scss',
+      'assets/style/fonts.scss'
+    ]
+  },
   /*
   ** Axios module configuration
   */
@@ -61,7 +68,15 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
-    }
+    extend: (config) => {
+      const svgRule = config.module.rules.find(rule => rule.test.test('.svg'));
+
+      svgRule.test = /\.(png|jpe?g|gif|webp)$/;
+
+      config.module.rules.push({
+        test: /\.svg$/,
+        loader: 'vue-svg-loader',
+      });
+    },
   }
 }
