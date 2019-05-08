@@ -34,8 +34,6 @@
     }),
     created: function () {
       this.wordString = JSON.parse(this.trans);
-    },
-    mounted() {
       this.start = new Date().getTime();
       this.end   = new Date(this.endtime).getTime();
       this.timerCount(this.start, this.end);
@@ -46,22 +44,10 @@
     methods: {
       timerCount: function (start, end) {
         const now      = new Date().getTime();
-        const distance = start - now;
         const passTime = end - now;
 
-        if (distance < 0 && passTime < 0) {
-          this.message    = this.wordString.expired;
-          this.statusType = "expired";
-          clearInterval(this.interval);
-        } else if (distance < 0 && passTime > 0) {
-          this.calcTime(passTime);
-          this.message    = this.wordString.running;
-          this.statusType = "running";
-        } else if (distance > 0 && passTime > 0) {
-          this.calcTime(distance);
-          this.message    = this.wordString.upcoming;
-          this.statusType = "upcoming";
-        }
+        this.calcTime(passTime);
+        this.message = this.wordString.running;
       },
       calcTime: function (dist) {
         this.days    = Math.floor(dist / (1000 * 60 * 60 * 24));
@@ -79,6 +65,7 @@
     color: #FF2875;
     text-align: center;
     margin-top: 50px;
+    font-weight: 100;
   }
 
   .day, .hour, .min, .sec {
@@ -93,15 +80,14 @@
     width: 290px;
   }
 
-
   .number {
     display: inline-block;
     margin-right: 20px;
   }
 
   .message {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 40px;
+    font-weight: 200;
     margin-top: 5px;
   }
 </style>
