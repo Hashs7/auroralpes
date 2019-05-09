@@ -28,13 +28,14 @@ export default {
   ** Global CSS
   */
   css: [
-    '@/assets/style/global.scss',
+    '@/assets/style/style.scss',
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/components'
   ],
 
   /*
@@ -44,7 +45,11 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    ['storyblok-nuxt', {
+      accessToken: 'y3cg1IQmWZ0llmVPT4XqLAtt',
+      cacheProvider: 'memory'
+    }]
     // "nuxt-netlify-cms",
     // ['nuxt-netlify-cms', { adminPath: 'secure' }],
   ],
