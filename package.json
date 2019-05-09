@@ -14,16 +14,14 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/google-analytics": "^2.2.0",
     "@nuxtjs/pwa": "^2.6.0",
+    "contentful": "^7.5.1",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.4.0",
-    "storyblok-nuxt": "^1.0.1"
+    "nuxt": "^2.4.0"
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^0.1.2",
-    "netlify-cms": "^2.9.1",
     "node-sass": "^4.12.0",
     "nodemon": "^1.18.9",
-    "nuxt-netlify-cms": "^4.0.0",
     "sass-loader": "^7.1.0",
     "vue-svg-loader": "^0.12.0",
     "vue-template-compiler": "^2.6.10"

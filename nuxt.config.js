@@ -1,4 +1,5 @@
 import pkg from './package'
+const config = require('./.contentful.json');
 
 export default {
   mode: 'universal',
@@ -19,6 +20,13 @@ export default {
     ]
   },
 
+  env: {
+    CTF_SPACE_ID: config.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
+    CTF_PERSON_ID: config.CTF_PERSON_ID,
+    CTF_BLOG_POST_TYPE_ID: config.CTF_BLOG_POST_TYPE_ID
+  },
+
   /*
   ** Customize the progress-bar color
   */
@@ -35,7 +43,6 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/components'
   ],
 
   /*
@@ -46,16 +53,10 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-    ['storyblok-nuxt', {
-      accessToken: 'y3cg1IQmWZ0llmVPT4XqLAtt',
-      cacheProvider: 'memory'
-    }],
     ['@nuxtjs/google-analytics', {
       id: 'UA-139937179-1',
       dev: false
     }]
-    // "nuxt-netlify-cms",
-    // ['nuxt-netlify-cms', { adminPath: 'secure' }],
   ],
   styleResources: {
     scss: [

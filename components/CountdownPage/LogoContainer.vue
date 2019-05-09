@@ -1,14 +1,14 @@
 <template>
   <div class="logo-container">
     <div>
-      <img :src="logoAuro" alt="" class="logo-auro">
+      <img :src="auroUrl" :alt="logoAuro.title" class="logo-auro">
       <span class="logo-auro__txt">Des étoiles dans les yeux</span>
     </div>
     <span class="cross">
       <Cross />
     </span>
     <div>
-      <img :src="logoMondes" alt="" class="logo-mondes">
+      <img :src="mondesUrl" :alt="logoMondes.title" class="logo-mondes">
     </div>
   </div>
 </template>
@@ -19,7 +19,11 @@
   export default {
         name: "LogoContainer",
         props: ['logoAuro', 'logoMondes'],
-        components: { Cross }
+        components: { Cross },
+        computed: {
+          auroUrl: function() { return 'https:' + this.logoAuro.file.url},
+          mondesUrl: function() { return 'https:' + this.logoMondes.file.url},
+        }
     }
 </script>
 
