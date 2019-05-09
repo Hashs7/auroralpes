@@ -11,8 +11,8 @@
     </div>
 
     <LogoContainer
-      :logoAuro="logoAuroralpes"
-      :logoMondes="logoMondes"/>
+      :logoAuro="logoAuroralpes.fields"
+      :logoMondes="logoMondes.fields"/>
 
     <Countdown
       :endtime="date"
@@ -24,9 +24,9 @@
     />
 
     <SocialContainer
-      :fb="facebook.url"
-      :insta="instagram.url"
-      :twitter="twitter.url"/>
+      :fb="facebook"
+      :insta="instagram"
+      :twitter="twitter"/>
   </section>
 </template>
 
@@ -38,6 +38,9 @@
   import SocialContainer from '~/components/CountdownPage/SocialContainer'
   import LogoContainer from '~/components/CountdownPage/LogoContainer'
   import Counter from '~/components/Counter'
+  import {createClient} from '~/plugins/contentful.js'
+
+  const client = createClient();
 
   export default {
     components: {
@@ -50,23 +53,18 @@
       Counter
     },
     layout: 'countdown',
-    data() {
-      return {story: {content: {}}}
-    },
-    async asyncData(context) {
-      const version = context.query._storyblok || context.isDev ? 'draft' : 'published';
+    async asyncData({env}) {
+      const resSocial = await client.getEntries({
+        content_type: 'socials'
+      });
+      const resCount = await client.getEntries({
+        content_type: 'countdown'
+      });
 
-      try {
-        const resCountdown = await context.app.$storyapi.get('cdn/stories/countdown', {version});
-        const resSocial    = await context.app.$storyapi.get('cdn/stories/socials');
+      const {date, baseline, logoAuroralpes, logoMondes} = resCount.items[0].fields;
+      const {facebook, twitter, instagram}               = resSocial.items[0].fields;
 
-        const {baseline, date, logoAuroralpes, logoMondes} = resCountdown.data.story.content;
-        const {facebook, twitter, instagram}               = resSocial.data.story.content;
-
-        return { baseline, date, logoAuroralpes, logoMondes, facebook, twitter, instagram }
-      } catch(res) {
-        context.error({statusCode: res.response.status, message: res.response.data})
-      }
+      return {date, baseline, logoAuroralpes, logoMondes, facebook, twitter, instagram};
     }
   }
 </script>

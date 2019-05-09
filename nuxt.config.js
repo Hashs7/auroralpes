@@ -1,4 +1,5 @@
 import pkg from './package'
+require('dotenv').config()
 
 export default {
   mode: 'universal',
@@ -35,7 +36,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/components'
+    '~/plugins/contentful'
   ],
 
   /*
@@ -46,16 +47,11 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-    ['storyblok-nuxt', {
-      accessToken: 'y3cg1IQmWZ0llmVPT4XqLAtt',
-      cacheProvider: 'memory'
-    }],
+    '@nuxtjs/dotenv',
     ['@nuxtjs/google-analytics', {
       id: 'UA-139937179-1',
       dev: false
     }]
-    // "nuxt-netlify-cms",
-    // ['nuxt-netlify-cms', { adminPath: 'secure' }],
   ],
   styleResources: {
     scss: [
