@@ -8,7 +8,7 @@ $breakpoint-small-max: ($breakpoint-medium - 1);
 $breakpoint-medium-max: ($breakpoint-large - 1);
 $breakpoint-large-max: ($breakpoint-xlarge - 1);
 
-@import 'elements/body.scss';
+@import 'elements/reset';
 @import 'components/utils.scss';
 
 

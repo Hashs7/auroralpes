@@ -3,23 +3,29 @@
     <nav class="top-header__col">
       <ul class="nav">
         <li>
-          <nuxt-link class="nav__item" to="/">Home</nuxt-link>
+          <nuxt-link class="nav__item" to="/home">Home</nuxt-link>
         </li>
         <li>
-          <nuxt-link class="nav__item" to="/en/blog">Blog</nuxt-link>
+          <nuxt-link class="nav__item" to="/association">L’association</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link class="nav__item" to="/festival">Le festival</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link class="nav__item" to="/nous-aider">Nous aider</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link class="nav__item" to="/contact">Contact</nuxt-link>
         </li>
       </ul>
     </nav>
-    <a href="/" class="top-header__col top-header__logo">
-      <img src="//a.storyblok.com/f/42016/1096x313/0353bf6654/logo2.png">
-    </a>
     <nav class="top-header__col top-header__second-navi">
       <ul class="nav">
         <li>
-          <nuxt-link class="nav__item" to="/en/blog">English</nuxt-link>
+          <nuxt-link class="nav__item" to="/en/home">English</nuxt-link>
         </li>
         <li>
-          <nuxt-link class="nav__item" to="/de/blog">German</nuxt-link>
+          <nuxt-link class="nav__item" to="/fr/home">Français</nuxt-link>
         </li>
       </ul>
     </nav>

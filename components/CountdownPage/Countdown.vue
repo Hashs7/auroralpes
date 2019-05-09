@@ -1,16 +1,16 @@
 <template>
   <div class="timer">
     <div class="day">
-      <span class="number">{{ days + wordString.day }}</span>
+      <span class="number">{{ daysCt }}{{ day }}</span>
     </div>
     <div class="hour">
-      <span class="number">{{ hours + wordString.hours  }}</span>
+      <span class="number">{{ hoursCt }}{{ hours }}</span>
     </div>
     <div class="min">
-      <span class="number">{{ minutes + wordString.minutes }}</span>
+      <span class="number">{{ minutesCt }}{{ minutes }}</span>
     </div>
     <div class="sec">
-      <span class="number">{{ seconds + wordString.seconds }}</span>
+      <span class="number">{{ secondsCt }}{{ seconds }}</span>
     </div>
     <div class="message">{{ message }}</div>
   </div>
@@ -19,21 +19,18 @@
 <script>
   export default {
     name: "Countdown",
-    props: ['endtime', 'trans'],
+    props: ['endtime', 'day', 'hours', 'minutes', 'seconds', 'message', 'trans'],
     data: () => ({
       timer: "",
-      wordString: {},
       start: "",
       end: "",
       interval: "",
-      days: "",
-      minutes: "",
-      hours: "",
-      seconds: "",
-      message: "",
+      daysCt: 0,
+      hoursCt: 0,
+      minutesCt: 0,
+      secondsCt: 0,
     }),
-    created: function () {
-      this.wordString = JSON.parse(this.trans);
+    created() {
       this.start = new Date().getTime();
       this.end   = new Date(this.endtime).getTime();
       this.timerCount(this.start, this.end);
@@ -42,18 +39,17 @@
       }, 1000);
     },
     methods: {
-      timerCount: function (start, end) {
+      timerCount (start, end) {
         const now      = new Date().getTime();
         const passTime = end - now;
 
         this.calcTime(passTime);
-        this.message = this.wordString.running;
       },
-      calcTime: function (dist) {
-        this.days    = Math.floor(dist / (1000 * 60 * 60 * 24));
-        this.hours   = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        this.minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
-        this.seconds = Math.floor((dist % (1000 * 60)) / 1000);
+      calcTime(dist) {
+        this.daysCt    = Math.floor(dist / (1000 * 60 * 60 * 24));
+        this.hoursCt   = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        this.minutesCt = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+        this.secondsCt = Math.floor((dist % (1000 * 60)) / 1000);
       }
     }
   }

@@ -1,16 +1,16 @@
 <template>
   <div class="social-container">
-    <a href="#" class="social-link">
+    <a :href="fb" class="social-link">
       <span class="logo">
         <Facebook/>
       </span>
     </a>
-    <a href="#" class="social-link">
+    <a :href="insta" class="social-link">
       <span class="logo">
         <Instagram/>
       </span>
     </a>
-    <a href="https://twitter.com/Auroralpes" class="social-link">
+    <a :href="twitter" class="social-link">
       <span class="logo">
         <Twitter/>
       </span>
@@ -25,7 +25,8 @@
 
   export default {
     name: "SocialContainer",
-    components: {Facebook, Twitter, Instagram}
+    components: {Facebook, Twitter, Instagram},
+    props:['fb', 'insta', 'twitter']
   }
 </script>
 

@@ -49,6 +49,10 @@ export default {
     ['storyblok-nuxt', {
       accessToken: 'y3cg1IQmWZ0llmVPT4XqLAtt',
       cacheProvider: 'memory'
+    }],
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-139937179-1',
+      dev: false
     }]
     // "nuxt-netlify-cms",
     // ['nuxt-netlify-cms', { adminPath: 'secure' }],
