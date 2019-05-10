@@ -53,11 +53,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-    '@nuxtjs/dotenv',
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-139937179-1',
-      dev: false
-    }]
+    '@nuxtjs/dotenv'
   ],
   styleResources: {
     scss: [
