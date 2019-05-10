@@ -1,16 +1,16 @@
 <template>
   <div class="social-container">
-    <a :href="fb" class="social-link">
+    <a :href="fb" aria-label="Suivez nous sur facebook" class="social-link">
       <span class="logo">
         <Facebook/>
       </span>
     </a>
-    <a :href="insta" class="social-link">
+    <a :href="insta" aria-label="Suivez nous sur instagram" class="social-link">
       <span class="logo">
         <Instagram/>
       </span>
     </a>
-    <a :href="twitter" class="social-link">
+    <a :href="twitter" aria-label="Suivez nous sur twitter" class="social-link">
       <span class="logo">
         <Twitter/>
       </span>
