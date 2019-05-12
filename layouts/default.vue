@@ -1,21 +1,12 @@
 <template>
-  <div>
-    <top-header/>
     <main id="main" role="main">
-      <nuxt/>
+        <nuxt/>
     </main>
-    <bottom-footer/>
-  </div>
 </template>
 
 <script>
-  import TopHeader from '~/components/TopHeader.vue'
-  import BottomFooter from '~/components/BottomFooter.vue'
 
-  export default {
-    components: {
-      TopHeader,
-      BottomFooter
+    export default {
+        components: {}
     }
-  }
 </script>
