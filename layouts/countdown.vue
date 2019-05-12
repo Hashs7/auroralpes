@@ -1,5 +1,5 @@
 <template>
-  <main id="main" role="main">
+  <main id="countdown" role="main">
     <nuxt/>
   </main>
 </template>

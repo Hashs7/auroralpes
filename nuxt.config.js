@@ -35,7 +35,7 @@ export default {
   ** Global CSS
   */
   css: [
-    '@/assets/style/style.scss',
+    '@/assets/style/index.scss',
   ],
 
   /*
@@ -57,8 +57,10 @@ export default {
   ],
   styleResources: {
     scss: [
-      'assets/style/variables.scss',
-      'assets/style/fonts.scss'
+      '~/assets/style/0-settings/_settings-colors.scss',
+      '~/assets/style/0-settings/_settings-media.scss',
+      '~/assets/style/0-settings/_settings-typography.scss',
+      '~/assets/style/8-utilities/_utilities-fluid-font.scss'
     ]
   },
   /*
