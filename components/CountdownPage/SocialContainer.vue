@@ -54,11 +54,11 @@
             width: 260px;
         }
         @media #{$md-down} {
-            bottom: 210px;
+            bottom: 160px;
             width: 230px;
         }
         @media #{$sm-down-height} {
-            bottom: 140px;
+            bottom: 120px;
         }
     }
 
