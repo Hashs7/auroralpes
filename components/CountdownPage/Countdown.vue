@@ -1,17 +1,16 @@
 <template>
     <div class="timer">
         <div class="day number">
-            <span class="">{{ daysCt }}{{ day }}</span>
+            <span>{{ daysCt }}{{ day }}</span>
         </div>
         <div class="hour number">
-            <span class="">{{ hoursCt }}{{ hours }}</span>
+            <span>{{ hoursCt }}{{ hours }}</span>
         </div>
         <div class="min number">
-            <p>cccccc</p>
-            <span class="">{{ minutesCt }}{{ minutes }}</span>
+            <span>{{ minutesCt }}{{ minutes }}</span>
         </div>
         <div class="sec number">
-            <span class="">{{ secondsCt }}{{ seconds }}</span>
+            <span>{{ secondsCt }}{{ seconds }}</span>
         </div>
         <div class="message">{{ message }}</div>
     </div>
