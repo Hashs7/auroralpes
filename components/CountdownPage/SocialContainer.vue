@@ -32,7 +32,7 @@
 
 <style lang="scss">
     .social-container {
-        position: absolute;
+        position: fixed;
         bottom: 130px;
         left: 0;
         right: 0;
