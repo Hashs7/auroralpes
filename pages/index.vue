@@ -1,5 +1,5 @@
 <template>
-    <section class="container">
+    <section class="container" @touchmove.stop.prevent="touchEvent">
         <div class="aurore">
             <Aurore/>
         </div>
@@ -63,6 +63,11 @@
             const {facebook, twitter, instagram}               = resSocial.items[0].fields;
 
             return {date, baseline, logoAuroralpes, logoMondes, facebook, twitter, instagram};
+        },
+        methods: {
+            touchEvent(e) {
+                console.log(e);
+            }
         }
     }
 </script>
@@ -70,11 +75,15 @@
 <style lang="scss">
     .container {
         margin: 0 auto;
-        min-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
+        @supports (-webkit-overflow-scrolling: touch) {
+            height: calc(100vh - 129px);
+        }
     }
 
     .aurore {

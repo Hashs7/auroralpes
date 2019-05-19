@@ -10,8 +10,6 @@ html {
 
 body {
   width: 100vw;
-  height: 100vh;
-  overflow: hidden;
   line-height: $line-height-base;
   font-family: $font-main;
   font-weight: $weight-base;
@@ -19,6 +17,7 @@ body {
   color: $color-text;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 button {

@@ -89,27 +89,14 @@
         width: 290px;
         @media #{$xl-down} {
             width: auto;
-        }/*
-        @media #{$md-down} {
-            width: 150px;
         }
-        @media #{$sm-down} {
-            width: 105px;
-        }*/
     }
 
     .sec {
         width: 190px;
         @media #{$xl-down} {
             width: auto;
-            /*width: 150px;*/
-        }/*
-        @media #{$md-down} {
-            width: 100px;
         }
-        @media #{$sm-down} {
-            width: 65px;
-        }*/
     }
 
     .message {
