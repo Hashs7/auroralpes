@@ -1,5 +1,5 @@
 <template>
-    <section class="container" @touchmove.stop.prevent="touchEvent">
+    <section class="container" @touchmove.stop.prevent="touchEvent" @click="clickEvent">
         <div class="aurore">
             <Aurore/>
         </div>
@@ -67,6 +67,9 @@
         methods: {
             touchEvent(e) {
                 console.log(e);
+            },
+            clickEvent(e) {
+                console.log(e, 'clicked netlify');
             }
         }
     }

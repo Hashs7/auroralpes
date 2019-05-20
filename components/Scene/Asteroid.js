@@ -45,7 +45,7 @@ function onMouseMove(event) {
     console.log(mouse.x, mouse.y );
 
     // Make the sphere follow the mouse
-    const vector = new THREE.Vector3(mouse.x, mouse.y, 50);
+    const vector = new THREE.Vector3(mouse.x, mouse.y, -5);
     vector.unproject(camera);
     const dir = vector.sub(camera.position).normalize();
     const distance = -camera.position.z / dir.z;
@@ -65,10 +65,11 @@ export default () => {
     renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize( wWidth, wHeight );
 
-    const hemilLight = new THREE.HemisphereLight( 0xE0E0FF, 0x5A5A86, 1 );
+    const hemilLight = new THREE.HemisphereLight( 0x5A5A86, 0x5A5A86, 1 );
+    // const hemilLight = new THREE.HemisphereLight( 0xE0E0FF, 0x5A5A86, 1 );
     scene.add( hemilLight );
 
-    light = new THREE.PointLight(0x8888B3, 0.8);
+    light = new THREE.PointLight(0xD9D9F9, 0.8, 0, 2);
     light.position.set(0, 0, 500);
     scene.add(light);
 

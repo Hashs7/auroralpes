@@ -57,7 +57,7 @@ export default {
                 rotationY: 0,
                 transformOrigin: '50% 50%',
                 ease: Back.easeIn
-            })
+            });
             done()
         }
     },
