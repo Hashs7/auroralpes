@@ -118,7 +118,7 @@
     .character {
         display: flex;
         align-items: flex-end;
-        position: absolute;
+        position: fixed;
         bottom: -52px;
         right: 63px;
         width: 23vw;

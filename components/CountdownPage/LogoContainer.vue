@@ -34,7 +34,7 @@
 <style scoped lang="scss">
     .logo-container {
         position: absolute;
-        top: 170px;
+        top: 130px;
         left: 0;
         right: 0;
         display: flex;
