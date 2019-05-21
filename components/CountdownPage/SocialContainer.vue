@@ -58,7 +58,7 @@
             width: 230px;
         }
         @media #{$sm-down-height} {
-            bottom: 120px;
+            bottom: 165px;
         }
     }
 
