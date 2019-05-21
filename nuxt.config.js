@@ -31,7 +31,7 @@ export default {
     /*
     ** Customize the progress-bar color
     */
-    loading: {color: '#ff0'},
+    loading: {color: '#FF9357'},
 
     transition: {
         mode: 'out-in',
