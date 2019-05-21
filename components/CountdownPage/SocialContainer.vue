@@ -60,6 +60,9 @@
         @media #{$sm-down-height} {
             bottom: 165px;
         }
+        @media #{$xs-down-height} {
+            bottom: 120px;
+        }
     }
 
     .logo {

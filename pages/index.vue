@@ -1,5 +1,5 @@
 <template>
-    <section class="container" @touchmove.stop.prevent="touchEvent" @click="clickEvent">
+    <section class="container" :style="{height: window.innerHeight}" @touchmove.stop.prevent="touchEvent" @click="clickEvent">
         <div class="aurore">
             <Aurore/>
         </div>
@@ -78,15 +78,14 @@
 <style lang="scss">
     .container {
         margin: 0 auto;
-        height: 100vh;
         overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        @supports (-webkit-overflow-scrolling: touch) {
+        /*@supports (-webkit-overflow-scrolling: touch) {
             height: calc(100vh - 129px);
-        }
+        }*/
     }
 
     .aurore {
