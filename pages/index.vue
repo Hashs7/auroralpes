@@ -20,7 +20,7 @@
                 hours="h"
                 minutes="mn"
                 seconds="s"
-                :message="wHeight.height"
+                :message="baseline"
         />
 
         <SocialContainer
