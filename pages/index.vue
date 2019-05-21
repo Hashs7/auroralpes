@@ -1,5 +1,5 @@
 <template>
-    <section class="container" :style="{height: window.innerHeight}" @touchmove.stop.prevent="touchEvent" @click="clickEvent">
+    <section class="container" :style="wHeight" @touchmove.stop.prevent="touchEvent" @click="clickEvent">
         <div class="aurore">
             <Aurore/>
         </div>
@@ -51,6 +51,11 @@
             LogoContainer,
         },
         layout: 'countdown',
+        data: () => ({
+            wHeight: {
+                height: null
+            }
+        }),
         async asyncData({env}) {
             const resSocial = await client.getEntries({
                 content_type: 'socials'
@@ -63,6 +68,10 @@
             const {facebook, twitter, instagram}               = resSocial.items[0].fields;
 
             return {date, baseline, logoAuroralpes, logoMondes, facebook, twitter, instagram};
+        },
+        mounted() {
+            this.wHeight.height = window.innerHeight + 'px';
+            console.log('mounted2', this.wHeight);
         },
         methods: {
             touchEvent(e) {
@@ -80,6 +89,7 @@
         margin: 0 auto;
         overflow: hidden;
         display: flex;
+        height: 100vh;
         justify-content: center;
         align-items: center;
         text-align: center;
