@@ -61,6 +61,9 @@
             max-width: 275px;
         }
         @media #{$sm-down-height} {
+            top: 90px;
+        }
+        @media #{$xs-down-height} {
             top: 30px;
         }
     }
