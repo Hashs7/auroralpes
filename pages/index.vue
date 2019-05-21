@@ -1,5 +1,5 @@
 <template>
-    <section class="container" :style="wHeight" @touchmove.stop.prevent="touchEvent" @click="clickEvent">
+    <section class="container" @touchmove.stop.prevent="touchEvent">
         <div class="aurore">
             <Aurore/>
         </div>
@@ -20,7 +20,7 @@
                 hours="h"
                 minutes="mn"
                 seconds="s"
-                :message="baseline"
+                :message="wHeight.height"
         />
 
         <SocialContainer
@@ -72,14 +72,12 @@
         mounted() {
             this.wHeight.height = window.innerHeight + 'px';
             console.log('mounted2', this.wHeight);
+            window.screen.lockOrientationUniversal = window.screen.lockOrientation || window.screen.mozLockOrientation || window.screen.msLockOrientation;
         },
         methods: {
             touchEvent(e) {
                 console.log(e);
             },
-            clickEvent(e) {
-                console.log(e, 'clicked netlify');
-            }
         }
     }
 </script>
@@ -93,9 +91,9 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        /*@supports (-webkit-overflow-scrolling: touch) {
+        @supports (-webkit-overflow-scrolling: touch) {
             height: calc(100vh - 129px);
-        }*/
+        }
     }
 
     .aurore {
@@ -120,7 +118,7 @@
     .character {
         display: flex;
         align-items: flex-end;
-        position: fixed;
+        position: absolute;
         bottom: -52px;
         right: 63px;
         width: 23vw;
@@ -143,7 +141,7 @@
         display: flex;
         align-items: flex-end;
         z-index: -1;
-        position: fixed;
+        position: absolute;
         bottom: 0;
         right: 0;
         width: 36vw;
@@ -158,18 +156,6 @@
         svg {
             width: 100%;
             vertical-align: bottom;
-        }
-    }
-
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-        html {
-            transform: rotate(-90deg);
-            transform-origin: left top;
-            width: 100vh;
-            overflow-x: hidden;
-            position: absolute;
-            top: 100%;
-            left: 0;
         }
     }
 </style>
