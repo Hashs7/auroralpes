@@ -48,21 +48,34 @@
 <style scoped lang="scss">
     .asso-section {
         position: relative;
+        top: -30px;
     }
     .asso-content {
         text-align: right;
+        position: relative;
+        z-index: 10;
     }
     .wave {
         svg {
+            display: block;
             vertical-align: bottom;
         }
     }
     .wave-down {
-        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: translateY(calc(100% - 1px));
         background-color: white;
+
+        svg {
+            filter: drop-shadow(0 -15px 12px #000)
+
+        }
     }
     .asso-content {
         background-color: white;
-        padding: 10px 0 274px 0;
+        padding-top: 10px;
     }
 </style>

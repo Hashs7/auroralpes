@@ -1,37 +1,60 @@
 <template>
     <section class="entry-video">
-        <div class="logo">
+        <div class="entry-logo">
             Auroralpes logo
         </div>
-        <div class="player">
-            <iframe class="ytplayer" type="text/html" width="720" height="405"
-                    :src="link+'?autoplay=1&loop=1&rel=0'"
-                    frameborder="0" allowfullscreen></iframe>
-        </div>
+        <iframe class="ytplayer" type="text/html" width="720" height="405"
+                :src="link+'?autoplay=1&loop=1&rel=0'"
+                frameborder="0" allowfullscreen></iframe>
         <div class="btn-rocket">
-
+            <Rocket />
         </div>
     </section>
 </template>
 
 <script>
+    import Rocket from '~/assets/icons/rocket.svg'
+
     export default {
         name: "EntryVideo",
+        components: { Rocket },
         props: ['link']
     }
 </script>
 
-<style scoped>
+<style lang="scss">
     .entry-video {
+        position: relative;
+        display: flex;
         height: 100vh;
         background: linear-gradient(135deg, #ff2379, #ffa023);
         background-size: 400% 400%;
-
         -webkit-animation: bgAnime 30s ease infinite;
         -moz-animation: bgAnime 30s ease infinite;
         animation: bgAnime 30s ease infinite;
     }
+    .entry-logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 140px;
+    }
+    .btn-rocket {
+        z-index: 1;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 100px;
+        svg {
+            vertical-align: bottom;
+        }
+    }
     .ytplayer {
+        margin: auto;
         width: 100%;
         height: calc(100vh - 226px);
     }

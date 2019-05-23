@@ -1,3 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 304.29">
-    <path style="fill: #fff" d="M0,0V304.29s74.32-54.47,181.24-107.61c153.63-76.37,299.19-123.19,538.39-54.27C1023.75,229.88,1286.25,221.77,1440,0Z"/>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 304.29">
+  <title>wave-down</title>
+  <path d="M0,0V304.29s74.32-54.47,181.24-107.61c153.63-76.37,299.19-123.19,538.39-54.27C1023.75,229.88,1286.25,221.77,1440,0Z" transform="translate(0 0)" style="fill: #fff"/>
 </svg>

@@ -41,7 +41,7 @@
     .event-section {
         font-size: 20px;
         font-weight: $weight-medium;
-        padding: 80px 0;
+        padding-top: 80px;
         color: white;
         background-color: $secondary-dark;
     }

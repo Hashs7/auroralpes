@@ -9,7 +9,6 @@ html {
 }
 
 body {
-  width: 100vw;
   line-height: $line-height-base;
   font-family: $font-main;
   font-weight: $weight-base;
@@ -17,7 +16,6 @@ body {
   color: $color-text;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 h1, h2, h3, h4, h6 {

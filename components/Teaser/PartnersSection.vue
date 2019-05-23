@@ -22,19 +22,23 @@
 </script>
 
 <style scoped>
+    h2 {
+        position: relative;
+    }
     .section-partners {
         text-align: center;
-        padding: 150px 0;
+        padding: 190px 0 80px 0;
         background-color: white;
     }
     .partners-container {
         margin: 100px auto 0 auto;
         max-width: 700px;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         flex-wrap: wrap;
     }
     .partners-logo {
         max-height: 140px;
+        margin-bottom: 70px;
     }
 </style>
