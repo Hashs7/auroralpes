@@ -71,13 +71,9 @@
         },
         mounted() {
             this.wHeight.height = window.innerHeight + 'px';
-            console.log('mounted2', this.wHeight);
-            window.screen.lockOrientationUniversal = window.screen.lockOrientation || window.screen.mozLockOrientation || window.screen.msLockOrientation;
         },
         methods: {
-            touchEvent(e) {
-                console.log(e);
-            },
+            touchEvent(e) {},
         }
     }
 </script>

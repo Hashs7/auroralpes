@@ -30,7 +30,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .social-container {
         position: fixed;
         bottom: 130px;

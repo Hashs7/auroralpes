@@ -1,0 +1,12 @@
+.btn {
+  display: inline-block;
+  padding: 0 42px;
+  font-weight: $weight-semibold;
+  font-size: 22px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 60px;
+  color: $primary;
+  background-color: white;
+  box-shadow: 0 0 15px -9px $primary;
+}

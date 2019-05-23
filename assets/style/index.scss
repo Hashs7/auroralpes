@@ -2,11 +2,17 @@
 @import '0-settings/settings-media';
 @import '0-settings/settings-typography';
 
-@import '1-base/base-default';
-@import '1-base/base-font';
-@import '1-base/base-normalize';
+@import
+  '1-base/base-default',
+  '1-base/base-font',
+  '1-base/base-normalize';
 
-@import '3-components/utils';
+@import
+  '2-elements/element-heading';
+
+@import
+  '3-components/utils',
+  '3-components/components-button';
 
 @import '5-objects/objects-container';
 @import '5-objects/objects-full';
