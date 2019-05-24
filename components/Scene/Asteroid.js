@@ -113,7 +113,7 @@ export default () => {
 
     window.addEventListener("resize", resizeRenderer);
 
-    loader.load('./models/asteroidv2.glb', ( gltf ) => {
+    loader.load('../models/asteroidv2.glb', ( gltf ) => {
         console.log(gltf);
         asteroid = gltf.scene;
         scene.add( gltf.scene );
