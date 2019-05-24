@@ -3,6 +3,9 @@
         <span class="wave wave-up">
             <WaveUp />
         </span>
+        <div id="asteroid">
+            <div class="asteroid"></div>
+        </div>
 
         <div class="asso-content">
             <div class="o-container">
@@ -25,6 +28,7 @@
 <script>
     import WaveUp from '~/assets/icons/wave-up.svg'
     import WaveDown from '~/assets/icons/wave-down.svg'
+    import Asteroid from '@/components/Scene/Asteroid';
 
     export default {
         name: "AssoSection",
@@ -40,6 +44,7 @@
             }
         },
         mounted() {
+            Asteroid();
             console.log(this.assoDesc.content);
         }
     }
@@ -54,6 +59,10 @@
         text-align: right;
         position: relative;
         z-index: 10;
+    }
+    #asteroid {
+        position: absolute;
+        z-index: 15;
     }
     .wave {
         svg {

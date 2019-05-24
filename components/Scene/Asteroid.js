@@ -4,6 +4,7 @@ let asteroid,
     renderer,
     camera,
     light,
+    scrollWidth,
     wWidth,
     wHeight;
 
@@ -22,13 +23,37 @@ const render = () => {
 
 const animate = () => {
     requestAnimationFrame(animate);
-    asteroid.children[0].rotation.x += 0.01;
+    asteroid.children[0].rotation.x += 0.005;
     asteroid.children[0].rotation.y += 0.01;
     render()
 };
+function getScrollbarWidth() {
+    const outer = document.createElement("div");
+    outer.style.visibility = "hidden";
+    outer.style.width = "100px";
+    outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+    document.body.appendChild(outer);
+
+    const widthNoScroll = outer.offsetWidth;
+    // force scrollbars
+    outer.style.overflow = "scroll";
+
+    // add innerdiv
+    const inner = document.createElement("div");
+    inner.style.width = "100%";
+    outer.appendChild(inner);
+
+    const widthWithScroll = inner.offsetWidth;
+
+    // remove divs
+    outer.parentNode.removeChild(outer);
+
+    return widthNoScroll - widthWithScroll;
+}
 
 const resizeRenderer = (e) => {
-    wWidth = window.innerWidth;
+    wWidth = window.innerWidth - getScrollbarWidth();
     wHeight = window.innerHeight;
     camera.aspect = wWidth / wHeight;
     camera.updateProjectionMatrix();
@@ -56,7 +81,8 @@ function onMouseMove(event) {
 }
 
 export default () => {
-    wWidth  = window.innerWidth;
+    scrollWidth = getScrollbarWidth();
+    wWidth  = window.innerWidth - scrollWidth;
     wHeight = window.innerHeight;
 
     camera = new THREE.PerspectiveCamera( 5, wWidth/wHeight, 0.1, 1000 );
@@ -94,7 +120,9 @@ export default () => {
         animate()
     });
     renderer.render( scene, camera );
-
+/*
     const main = document.querySelector('#main');
-    main.appendChild( renderer.domElement );
+    main.appendChild( renderer.domElement );*/
+    const main = document.querySelector('#asteroid');
+    main.replaceChild( renderer.domElement,  main.childNodes[0]);
 };

@@ -1,5 +1,8 @@
 <template>
-    <section class="container" @touchmove.stop.prevent="touchEvent">
+    <section class="container">
+        <!--<div class="intro">
+            <div ref="logoAnim"></div>
+        </div>-->
         <EntryVideo link="https://www.youtube.com/embed/uaZHpTBqW0k" />
 
         <EventSection :eventDesc="eventDesc" :link="crowdfunding"/>
@@ -9,19 +12,20 @@
         <PartnersSection :partners="patenaires"/>
 
         <SocialFooter
-                :fb="facebook"
-                :insta="instagram"
-                :twitter="twitter"/>
+            :fb="facebook"
+            :insta="instagram"
+            :twitter="twitter"/>
     </section>
 </template>
 
 <script>
     import EntryVideo from '~/components/Teaser/EntryVideo'
-    import EventSection from '~/components/Teaser/EventSection.vue'
-    import AssoSection from '~/components/Teaser/AssoSection.vue'
-    import PartnersSection from '~/components/Teaser/PartnersSection.vue'
-    import SocialFooter from '~/components/Teaser/SocialFooter.vue'
+    import EventSection from '~/components/Teaser/EventSection'
+    import AssoSection from '~/components/Teaser/AssoSection'
+    import PartnersSection from '~/components/Teaser/PartnersSection'
+    import SocialFooter from '~/components/Teaser/SocialFooter'
     import {createClient} from '~/plugins/contentful.js'
+    import bodymovin from 'lottie-web'
 
     const client = createClient();
 
@@ -52,7 +56,15 @@
             return {videoYT, eventDesc, crowdfunding, associationDesc, joinUs, patenaires, facebook, twitter, instagram};
         },
         mounted() {
-            console.log(this.patenaires, 'mounted');
+            /*const anim = bodymovin.loadAnimation({
+                container: this.$refs.logoAnim,
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'models/logo-animation.json'
+                // path: 'models/avion-enter.json'
+            });*/
+            // console.log(this.patenaires, anim, 'mounted');
         },
 
         methods: {
@@ -64,6 +76,13 @@
 <style lang="scss">
     body {
         background-color: $secondary-dark;
+    }
+    .intro {
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
     }
 
 </style>
