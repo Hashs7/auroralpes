@@ -80,7 +80,6 @@
 
         svg {
             filter: drop-shadow(0 -15px 12px #000)
-
         }
     }
     .asso-content {

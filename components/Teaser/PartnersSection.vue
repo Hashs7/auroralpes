@@ -31,11 +31,13 @@
         background-color: white;
     }
     .partners-container {
-        margin: 100px auto 0 auto;
-        max-width: 700px;
+        position: relative;
+        z-index: 10;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        max-width: 700px;
+        margin: 100px auto 0 auto;
     }
     .partners-logo {
         max-height: 140px;
