@@ -63,7 +63,7 @@
     }
 
     .number {
-        font-size: 115px;
+        font-size: 100px;
         display: inline-block;
         font-weight: $weight-ultrathin;
         text-align: center;

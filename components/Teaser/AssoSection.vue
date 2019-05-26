@@ -11,7 +11,12 @@
             <div class="o-container">
                 <div class="asso-description">
                     <h2>{{title}}</h2>
-                    <p v-for="(p, i) in content" :key="i" >{{p.content[0].value}}</p>
+                    <p v-for="(p, i) in content" :key="i" >
+                    <span v-for="(pa, j) in p.content" :key="j">
+                        <strong v-if="pa.marks.length">{{pa.value}}</strong>
+                        <template v-else>{{pa.value}}</template>
+                    </span>
+                    </p>
                 </div>
                 <div class="asso-support">
                     <a :href="link" class="btn btn-primary">Nous rejoindre</a>
@@ -44,7 +49,7 @@
             }
         },
         mounted() {
-            Asteroid();
+            // Asteroid();
             console.log(this.assoDesc.content);
         }
     }
@@ -54,6 +59,8 @@
     .asso-section {
         position: relative;
         top: -30px;
+        font-size: 20px;
+        font-weight: $weight-medium;
     }
     .asso-content {
         text-align: right;

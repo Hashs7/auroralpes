@@ -3,7 +3,12 @@
         <div class="event-content o-container">
             <div class="event-description">
                 <h2>{{title}}</h2>
-                <p v-for="(p, i) in content" :key="i" >{{p.content[0].value}}</p>
+                <p v-for="(p, i) in content" :key="i" >
+                    <span v-for="(pa, j) in p.content" :key="j">
+                        <strong v-if="pa.marks.length">{{pa.value}}</strong>
+                        <template v-else>{{pa.value}}</template>
+                    </span>
+                </p>
             </div>
             <div class="event-support">
                 <a :href="link" class="btn btn-primary">Soutenir le festival</a>

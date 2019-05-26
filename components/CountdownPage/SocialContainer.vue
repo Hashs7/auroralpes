@@ -1,16 +1,28 @@
 <template>
     <div class="social-container">
-        <a :href="fb" aria-label="Suivez nous sur facebook" class="social-link">
+        <a :href="fb"
+           aria-label="Suivez nous sur facebook"
+           class="social-link"
+           target="_blank"
+           rel="nofollow noopener">
           <span class="logo">
             <Facebook/>
           </span>
         </a>
-        <a :href="insta" aria-label="Suivez nous sur instagram" class="social-link">
+        <a :href="insta"
+           aria-label="Suivez nous sur instagram"
+           class="social-link"
+           target="_blank"
+           rel="nofollow noopener">
           <span class="logo">
             <Instagram/>
           </span>
         </a>
-        <a :href="twitter" aria-label="Suivez nous sur twitter" class="social-link">
+        <a :href="twitter"
+           aria-label="Suivez nous sur twitter"
+           class="social-link"
+           target="_blank"
+           rel="nofollow noopener">
           <span class="logo">
             <Twitter/>
           </span>

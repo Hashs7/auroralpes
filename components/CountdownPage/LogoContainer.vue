@@ -69,7 +69,7 @@
     }
 
     .logo-auro {
-        width: 230px;
+        width: 210px;
         height: auto;
         @media #{$lg-down} {
             width: 180px;
@@ -103,7 +103,7 @@
     }
 
     .logo-mondes {
-        width: 208px;
+        width: 190px;
         @media #{$lg-down} {
             width: 160px;
         }
