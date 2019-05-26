@@ -23,8 +23,10 @@ const render = () => {
 
 const animate = () => {
     requestAnimationFrame(animate);
-    asteroid.children[0].rotation.x += 0.005;
-    asteroid.children[0].rotation.y += 0.01;
+    asteroid.children[0].children.forEach(el => {
+        el.rotation.x += 0.005;
+        el.rotation.y += 0.01;
+    });
     render()
 };
 function getScrollbarWidth() {
@@ -61,13 +63,13 @@ const resizeRenderer = (e) => {
 };
 
 function onMouseMove(event) {
-    console.log(event, 'mousemove');
+    // console.log(event, 'mousemove');
 
     // Update the mouse variable
     event.preventDefault();
     mouse.x = ((event.clientX / window.innerWidth) * 2 - 1) * 100;
     mouse.y = (- (event.clientY / window.innerHeight) * 2 + 1) * 100;
-    console.log(mouse.x, mouse.y );
+    // console.log(mouse.x, mouse.y );
 
     // Make the sphere follow the mouse
     const vector = new THREE.Vector3(mouse.x, mouse.y, -5);
@@ -75,8 +77,8 @@ function onMouseMove(event) {
     const dir = vector.sub(camera.position).normalize();
     const distance = -camera.position.z / dir.z;
     const pos = camera.position.clone().add(dir.multiplyScalar(distance));
-    console.log(pos);
-    pos.z = 50;
+    // console.log(pos);
+    pos.z = 5000;
     light.position.copy(pos);
 }
 
@@ -86,9 +88,10 @@ export default () => {
     wHeight = window.innerHeight;
 
     camera = new THREE.PerspectiveCamera( 5, wWidth/wHeight, 0.1, 1000 );
-    camera.position.z = 5;
+    camera.position.z = 500;
 
     renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    // renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize( wWidth, wHeight );
 
     const hemilLight = new THREE.HemisphereLight( 0x5A5A86, 0x5A5A86, 1 );
@@ -113,13 +116,22 @@ export default () => {
 
     window.addEventListener("resize", resizeRenderer);
 
-    loader.load('../models/asteroidv2.glb', ( gltf ) => {
+    loader.load('../models/asteroids_4.glb', ( gltf ) => {
         console.log(gltf);
         asteroid = gltf.scene;
-        scene.add( gltf.scene );
-        animate()
+        const scale = 3;
+        asteroid.scale.x = scale;
+        asteroid.scale.y = scale;
+        asteroid.scale.z = scale;
+        scene.add( asteroid );
+        console.log(asteroid, 'scene');
+        animate();
+        console.log(asteroid.children[0].children[0]);
+        // camera = asteroid.children[0].children[0];
+        renderer.render( scene, camera );
+
     });
-    renderer.render( scene, camera );
+    // renderer.render( scene, camera );
 /*
     const main = document.querySelector('#main');
     main.appendChild( renderer.domElement );*/

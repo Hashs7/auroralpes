@@ -9,4 +9,6 @@
   color: $primary;
   background-color: white;
   box-shadow: 0 0 15px -9px $primary;
+  position: relative;
+  z-index: 10;
 }

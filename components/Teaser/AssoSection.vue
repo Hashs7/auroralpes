@@ -49,7 +49,7 @@
             }
         },
         mounted() {
-            // Asteroid();
+            Asteroid();
             console.log(this.assoDesc.content);
         }
     }
