@@ -1,7 +1,7 @@
 <template>
     <section class="entry-video">
         <div class="entry-logo">
-            Auroralpes logo
+            <Logo />
         </div>
         <iframe class="ytplayer" type="text/html" width="720" height="405"
                 :src="link+'?autoplay=1&loop=1&rel=0'"
@@ -14,10 +14,11 @@
 
 <script>
     import Rocket from '~/assets/icons/rocket.svg'
+    import Logo from '~/assets/icons/aurorales-logo-white.svg'
 
     export default {
         name: "EntryVideo",
-        components: { Rocket },
+        components: { Rocket, Logo },
         props: ['link']
     }
 </script>
@@ -35,11 +36,16 @@
     }
     .entry-logo {
         position: absolute;
-        top: 0;
+        top: 16px;
         left: 0;
         right: 0;
         margin: auto;
         width: 140px;
+        height: 90px;
+        svg {
+            width: 100%;
+            height: 100%;
+        }
     }
     .btn-rocket {
         z-index: 1;

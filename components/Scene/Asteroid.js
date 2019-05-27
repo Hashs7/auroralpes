@@ -89,17 +89,18 @@ export default () => {
 
     camera = new THREE.PerspectiveCamera( 5, wWidth/wHeight, 0.1, 1000 );
     camera.position.z = 500;
+    camera.position.x = 10;
 
     renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     // renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize( wWidth, wHeight );
 
-    const hemilLight = new THREE.HemisphereLight( 0x5A5A86, 0x5A5A86, 1 );
+    const hemilLight = new THREE.HemisphereLight( 0xA5A5D9, 0xA5A5D9, 1 );
     // const hemilLight = new THREE.HemisphereLight( 0xE0E0FF, 0x5A5A86, 1 );
     scene.add( hemilLight );
 
-    light = new THREE.PointLight(0xD9D9F9, 0.8, 0, 2);
-    light.position.set(0, 0, 500);
+    light = new THREE.PointLight(0xA5A5D9, 0.8, 0, 2);
+    light.position.set(0, 0, 100);
     scene.add(light);
 
     // const mouseGeometry = new THREE.SphereGeometry(1, 0, 10);
@@ -116,7 +117,7 @@ export default () => {
 
     window.addEventListener("resize", resizeRenderer);
 
-    loader.load('../models/asteroids_4.glb', ( gltf ) => {
+    loader.load('../models/asteroids_6.glb', ( gltf ) => {
         console.log(gltf);
         asteroid = gltf.scene;
         const scale = 3;

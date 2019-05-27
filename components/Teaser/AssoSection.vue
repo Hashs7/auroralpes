@@ -3,11 +3,12 @@
         <span class="wave wave-up">
             <WaveUp />
         </span>
-        <div id="asteroid">
-            <div class="asteroid"></div>
-        </div>
+
 
         <div class="asso-content">
+            <div id="asteroid">
+                <div class="asteroid"></div>
+            </div>
             <div class="o-container">
                 <div class="asso-description">
                     <h2>{{title}}</h2>
@@ -63,13 +64,14 @@
         font-weight: $weight-medium;
     }
     .asso-content {
-        text-align: right;
         position: relative;
         z-index: 10;
+        text-align: right;
     }
     #asteroid {
         position: absolute;
         z-index: 15;
+        top: -340px;
     }
     .wave {
         svg {
