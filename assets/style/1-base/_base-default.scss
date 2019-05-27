@@ -26,6 +26,10 @@ a {
   text-decoration: none;
 }
 
+canvas {
+  pointer-events: none;
+}
+
 button {
   padding: 0;
   background: none;

@@ -27,7 +27,7 @@
     }
     .section-partners {
         text-align: center;
-        padding: 190px 0 80px 0;
+        padding: 250px 0 80px 0;
         background-color: white;
     }
     .partners-container {

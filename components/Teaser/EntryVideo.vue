@@ -6,7 +6,19 @@
         <iframe class="ytplayer" type="text/html" width="720" height="405"
                 :src="link+'?autoplay=1&loop=1&rel=0'"
                 frameborder="0" allowfullscreen></iframe>
-        <div class="btn-rocket">
+        <div class="btn-rocket"
+             v-scroll-to="{
+                 el: '#EventSection',
+                 duration: 700,
+                 easing: 'ease-in-out',
+                 force: true,
+                 cancelable: true,
+                 // onStart: onStart,
+                 // onDone: onDone,
+                 // onCancel: onCancel,
+                 x: false,
+                 y: true
+             }">
             <Rocket />
         </div>
     </section>
@@ -15,6 +27,7 @@
 <script>
     import Rocket from '~/assets/icons/rocket.svg'
     import Logo from '~/assets/icons/aurorales-logo-white.svg'
+    // import { CustomBounce } from 'gsap'
 
     export default {
         name: "EntryVideo",
@@ -28,11 +41,11 @@
         position: relative;
         display: flex;
         height: 100vh;
-        background: linear-gradient(135deg, #ff2379, #ffa023);
+        background: linear-gradient(270deg, #ff226e, #fcac27);
         background-size: 400% 400%;
-        -webkit-animation: bgAnime 30s ease infinite;
-        -moz-animation: bgAnime 30s ease infinite;
-        animation: bgAnime 30s ease infinite;
+        -webkit-animation: AnimationName 20s ease infinite;
+        -moz-animation: AnimationName 20s ease infinite;
+        animation: AnimationName 20s ease infinite;
     }
     .entry-logo {
         position: absolute;
@@ -48,6 +61,7 @@
         }
     }
     .btn-rocket {
+        cursor: pointer;
         z-index: 1;
         position: absolute;
         bottom: 0;
@@ -65,17 +79,19 @@
         height: calc(100vh - 226px);
     }
 
-    @-webkit-keyframes bgAnime {
+
+
+    @-webkit-keyframes AnimationName {
         0%{background-position:0% 50%}
         50%{background-position:100% 50%}
         100%{background-position:0% 50%}
     }
-    @-moz-keyframes bgAnime {
+    @-moz-keyframes AnimationName {
         0%{background-position:0% 50%}
         50%{background-position:100% 50%}
         100%{background-position:0% 50%}
     }
-    @keyframes bgAnime {
+    @keyframes AnimationName {
         0%{background-position:0% 50%}
         50%{background-position:100% 50%}
         100%{background-position:0% 50%}

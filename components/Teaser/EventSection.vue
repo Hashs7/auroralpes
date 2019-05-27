@@ -1,5 +1,8 @@
 <template>
-    <section class="event-section">
+    <section class="event-section" id="EventSection">
+        <div class="lmdh-logo">
+            <LMDH />
+        </div>
         <div class="event-content o-container">
             <div class="event-description">
                 <div class="title-container" @mouseover="hoverTitle(true)" @mouseleave="hoverTitle(false)">
@@ -17,7 +20,9 @@
                 </p>
             </div>
             <div class="event-support">
-                <a :href="link" class="btn btn-primary">Soutenir le festival</a>
+                <a :href="link" class="btn-event">
+                    <RippleButton name="Soutenir le festival"/>
+                </a>
                 <span class="ulule">
                     <Ulule />
                 </span>
@@ -28,20 +33,21 @@
 
 <script>
     import Ulule from '~/assets/icons/ulule.svg'
+    import LMDH from '~/assets/icons/lmdh.svg'
     import {TimelineMax} from "gsap";
+    import RippleButton from '@/components/UI/RippleButton';
+
 
     const tl = new TimelineMax({
         repeat: -1,
         yoyo: true,
-        repeatDelay: 0.05 //delay the repeat by 0.05 seconds so that it's a total of 1 second long (last stagger is delayed 0.45 seconds, and the tween is 0.5 seconds long = 0.95 seconds total)
+        repeatDelay: 0.05
     });
-
-
 
     export default {
         name: "EventSection",
         props: ['eventDesc', 'link'],
-        components: { Ulule },
+        components: { Ulule, LMDH, RippleButton },
         computed: {
             title() {
                 const title = this.eventDesc.content.find(el => el.nodeType.includes('heading-'));
@@ -77,11 +83,23 @@
 
 <style scoped lang="scss">
     .event-section {
+        position: relative;
         font-size: 18px;
         font-weight: $weight-medium;
         padding-top: 80px;
         color: white;
         background-color: $secondary-dark;
+    }
+    .event-description {
+        width: calc(100% - 490px);
+        margin: 0 auto 0 0;
+    }
+    .lmdh-logo {
+        position: absolute;
+        top: 30px;
+        right: 0;
+        width: 784px;
+        height: auto;
     }
     .title-container {
         position: relative;
@@ -111,8 +129,11 @@
     .event-support {
         margin-top: 68px;
     }
-    .btn {
+    .btn-event {
+        display: inline-block;
         vertical-align: middle;
+        position: relative;
+        z-index: 40;
     }
     .ulule {
         display: inline-block;

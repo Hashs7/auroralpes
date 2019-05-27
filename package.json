@@ -21,7 +21,8 @@
     "lottie-web": "^5.5.3",
     "nuxt": "^2.4.0",
     "three": "^0.104.0",
-    "three-gltf-loader": "^1.104.0"
+    "three-gltf-loader": "^1.104.0",
+    "vue-scrollto": "^2.15.0"
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^0.1.2",

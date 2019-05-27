@@ -12,6 +12,7 @@
             <div class="o-container">
                 <div class="asso-description">
                     <h2>{{title}}</h2>
+
                     <p v-for="(p, i) in content" :key="i" >
                     <span v-for="(pa, j) in p.content" :key="j">
                         <strong v-if="pa.marks.length">{{pa.value}}</strong>
@@ -20,7 +21,12 @@
                     </p>
                 </div>
                 <div class="asso-support">
-                    <a :href="link" class="btn btn-primary">Nous rejoindre</a>
+                    <a :href="link" class="btn-support">
+                        <RippleButton name="Nous rejoindre"/>
+                    </a>
+                </div>
+                <div class="logo-auro">
+                    <AurorAlpes />
                 </div>
             </div>
         </div>
@@ -32,14 +38,16 @@
 </template>
 
 <script>
+    import AurorAlpes from '~/assets/icons/auroralpes-logo-blue.svg'
     import WaveUp from '~/assets/icons/wave-up.svg'
     import WaveDown from '~/assets/icons/wave-down.svg'
     import Asteroid from '@/components/Scene/Asteroid';
+    import RippleButton from '@/components/UI/RippleButton';
 
     export default {
         name: "AssoSection",
         props: ['assoDesc', 'link'],
-        components: { WaveUp, WaveDown },
+        components: { WaveUp, WaveDown, AurorAlpes, RippleButton },
         computed: {
             title() {
                 const title = this.assoDesc.content.find(el => el.nodeType.includes('heading-'));
@@ -67,17 +75,39 @@
         position: relative;
         z-index: 10;
         text-align: right;
+        background-color: white;
+        padding-top: 10px;
+    }
+    .asso-description {
+        width: calc(100% - 280px);
+        margin: 0 0 0 auto;
+    }
+    .o-container {
+        position: relative;
+    }
+    .logo-auro {
+        width: 320px;
+        height: 250px;
+        position: absolute;
+        bottom: 70px;
+        left: 0;
+        transform: rotate(-10deg);
     }
     #asteroid {
         position: absolute;
-        z-index: 15;
-        top: -340px;
+        z-index: -1;
+        top: -280px;
     }
     .wave {
         svg {
             display: block;
             vertical-align: bottom;
         }
+    }
+    .btn-support {
+        position: relative;
+        top: 40px;
+        z-index: 50;
     }
     .wave-down {
         position: absolute;
@@ -90,9 +120,5 @@
         svg {
             filter: drop-shadow(0 -15px 12px #000)
         }
-    }
-    .asso-content {
-        background-color: white;
-        padding-top: 10px;
     }
 </style>

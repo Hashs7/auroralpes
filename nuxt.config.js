@@ -87,7 +87,8 @@ export default {
         '@nuxtjs/axios',
         '@nuxtjs/pwa',
         '@nuxtjs/style-resources',
-        '@nuxtjs/dotenv'
+        '@nuxtjs/dotenv',
+        'vue-scrollto/nuxt'
     ],
     styleResources: {
         scss: [
@@ -123,6 +124,17 @@ export default {
             config.module.rules.push({
                 test: /\.svg$/,
                 loader: 'vue-svg-loader',
+                options: {
+                    svgo: {
+                        plugins: [
+                            {removeDoctype: true},
+                            {removeComments: true},
+                            {cleanupIDs: false},
+                            {collapseGroups: false},
+                            {removeEmptyContainers: false}
+                        ]
+                    }
+                }
             });
         },
     }

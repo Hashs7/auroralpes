@@ -23,7 +23,7 @@ const render = () => {
 
 const animate = () => {
     requestAnimationFrame(animate);
-    asteroid.children[0].children.forEach(el => {
+    asteroid.children[0].children.forEach((el, i) => {
         el.rotation.x += 0.005;
         el.rotation.y += 0.01;
     });

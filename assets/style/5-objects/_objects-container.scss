@@ -1,9 +1,9 @@
 .o-container {
   width: 100%;
-  max-width: 1120px;
+  max-width: 1280px;
   margin: 0 auto;
-  //padding-left: 16px;
-  //padding-right: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
 
   @media #{$md-up} {
     padding-left: 40px;
