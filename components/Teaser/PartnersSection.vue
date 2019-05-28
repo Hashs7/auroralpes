@@ -1,12 +1,14 @@
 <template>
     <section class="section-partners">
         <h2>Nos partenaires</h2>
-        <div class="partners-container">
-            <img v-for="(p, i) in partners"
-                 class="partners-logo"
-                 :key="i"
-                 :src="'https:' + p.fields.file.url"
-                 :alt="p.fields.description">
+        <div class="o-container">
+            <div class="partners-container">
+                <img v-for="(p, i) in partners"
+                     class="partners-logo"
+                     :key="i"
+                     :src="'https:' + p.fields.file.url"
+                     :alt="p.fields.description">
+            </div>
         </div>
     </section>
 </template>
@@ -21,7 +23,7 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     h2 {
         position: relative;
     }
@@ -29,18 +31,38 @@
         text-align: center;
         padding: 250px 0 80px 0;
         background-color: white;
+        @media #{$lg-down} {
+            padding: 150px 0 40px 0;
+        }
+        @media #{$md-down} {
+            padding: 150px 0 20px 0;
+        }
     }
     .partners-container {
         position: relative;
         z-index: 10;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-wrap: wrap;
         max-width: 700px;
         margin: 100px auto 0 auto;
+
+        @media #{$lg-down} {
+            margin-top: 80px;
+        }
+        @media #{$md-down} {
+            margin-top: 50px;
+        }
     }
     .partners-logo {
         max-height: 140px;
-        margin-bottom: 70px;
+        margin: 0 16px 70px 16px;
+        @media #{$lg-down} {
+            max-height: 100px;
+        }
+        @media #{$md-down} {
+            max-height: 66px;
+            margin-bottom: 40px;
+        }
     }
 </style>

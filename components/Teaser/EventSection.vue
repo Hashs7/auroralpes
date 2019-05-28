@@ -60,11 +60,11 @@
         methods: {
           hoverTitle(isIn) {
               if(isIn) {
-                  tl.play()
+                  tl.play();
                   return
               }
               tl.pause();
-              tl.startTime(0)
+              tl.startTime(0);
               console.log(isIn);
           }
         },
@@ -73,8 +73,8 @@
             tl.staggerFromTo(
                 this.$refs.child,   //target (all span tags)
                 0.5,     //duration (0.5 seconds)
-                {x:0},   //"from" values
-                {x:1000},  //"to" values
+                {x:0},
+                {x:1000},
                 -0.15    //stagger amount (seconds between each start time)
             );
         }
@@ -84,28 +84,57 @@
 <style scoped lang="scss">
     .event-section {
         position: relative;
-        font-size: 18px;
+        font-size: 20px;
         font-weight: $weight-medium;
         padding-top: 80px;
         color: white;
         background-color: $secondary-dark;
+        @media #{$md-down} {
+            padding-top: 120px;
+        }
+        @media #{$md-down} {
+            @include fluid-type(16px, 20px);
+        }
     }
     .event-description {
         width: calc(100% - 490px);
         margin: 0 auto 0 0;
+
+        p { margin-top: 0 }
+
+        @media #{$xll-down} {
+            width: 70%;
+        }
+        @media #{$md-down} {
+            width: 100%;
+        }
     }
     .lmdh-logo {
         position: absolute;
         top: 30px;
         right: 0;
-        width: 784px;
+        max-width: 784px;
+        min-height: 230px;
+        width: 55vw;
         height: auto;
+
+        @media #{$xll-down} {
+            right: -10vw;
+        }
+
+        @media #{$md-down} {
+            top: -26px;
+            right: -32px;
+        }
     }
     .title-container {
         position: relative;
         display: inline-block;
         margin-bottom: 40px;
         overflow: hidden;
+        @media #{$md-down} {
+            margin-bottom: 26px;
+        }
     }
     .title {
         display: inline-block;
@@ -128,6 +157,9 @@
     }
     .event-support {
         margin-top: 68px;
+        @media #{$md-down} {
+            margin-top: 40px;
+        }
     }
     .btn-event {
         display: inline-block;
@@ -137,14 +169,27 @@
     }
     .ulule {
         display: inline-block;
-        width: 174px;
         height: 54px;
         margin-left: 64px;
         vertical-align: middle;
 
+        @media #{$md-down} {
+            height: 36px;
+            margin-left: 26px;
+            width: auto;
+        }
+
+        @media #{$sm-down} {
+            height: 26px;
+            margin-left: 10px;
+
+        }
+
         svg {
-            width: 100%;
             height: 100%;
         }
+    }
+    strong {
+        font-weight: $weight-black;
     }
 </style>

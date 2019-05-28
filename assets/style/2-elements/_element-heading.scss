@@ -2,4 +2,9 @@ h2 {
   color: $primary;
   font-weight: $weight-bold;
   font-size: 40px;
+
+  @media #{$lg-down} {
+    @include fluid-type(30px, 40px);
+
+  }
 }

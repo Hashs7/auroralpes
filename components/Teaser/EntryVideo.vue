@@ -4,8 +4,10 @@
             <Logo />
         </div>
         <iframe class="ytplayer" type="text/html" width="720" height="405"
-                :src="link+'?autoplay=1&loop=1&rel=0'"
+                :src="link+'?loop=1&rel=0'"
                 frameborder="0" allowfullscreen></iframe>
+<!--        :src="link+'?autoplay=1&loop=1&rel=0'"-->
+
         <div class="btn-rocket"
              v-scroll-to="{
                  el: '#EventSection',
@@ -75,11 +77,9 @@
     }
     .ytplayer {
         margin: auto;
-        width: 100%;
+        width: 90%;
         height: calc(100vh - 226px);
     }
-
-
 
     @-webkit-keyframes AnimationName {
         0%{background-position:0% 50%}

@@ -82,7 +82,7 @@
     .name {
         position: relative;
         z-index: 20;
-        mix-blend-mode: exclusion;
+        /*mix-blend-mode: ;*/
     }
     .ripple-obj {
         width: 100%;
@@ -141,8 +141,9 @@
         transform: translate3d(0, 100%, 0);
     }
     .btn--tamaya:hover > .name {
+        color: white;
         opacity: 1;
         transform: scale3d(1, 1, 1);
-        mix-blend-mode: exclusion;
+        /*mix-blend-mode: exclusion;*/
     }
 </style>

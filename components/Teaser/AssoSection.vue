@@ -70,6 +70,9 @@
         top: -30px;
         font-size: 20px;
         font-weight: $weight-medium;
+        @media #{$md-down} {
+            @include fluid-type(16px, 20px);
+        }
     }
     .asso-content {
         position: relative;
@@ -77,10 +80,21 @@
         text-align: right;
         background-color: white;
         padding-top: 10px;
+        @media #{$md-down} {
+            text-align: left;
+        }
     }
     .asso-description {
         width: calc(100% - 280px);
         margin: 0 0 0 auto;
+        @media #{$md-down} {
+            width: 100%;
+        }
+    }
+    .asso-support {
+        @media #{$md-down} {
+            text-align: center;
+        }
     }
     .o-container {
         position: relative;

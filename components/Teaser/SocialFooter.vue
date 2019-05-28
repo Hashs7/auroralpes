@@ -43,23 +43,52 @@
         color: white;
         background-color: $secondary-dark;
         text-align: center;
+        @media #{$md-down} {
+            height: 200px;
+        }
+        @media #{$sm-down} {
+            height: 152px;
+        }
     }
     .social-title {
         font-size: 25px;
         margin-bottom: 70px;
+        @media #{$lg-down} {
+            margin-bottom: 50px;
+        }
+        @media #{$md-down} {
+            @include fluid-type(20px, 25px);
+            margin-bottom: 24px;
+        }
     }
     .social-container {
         margin: auto;
-        width: 360px;
+        max-width: 360px;
+        width: 100%;
     }
     .social-links {
         display: flex;
         justify-content: space-between;
+        @media #{$md-down} {
+            width: 220px;
+            margin: 0 auto;
+        }
+        @media #{$sm-down} {
+            width: 180px;
+        }
     }
     .logo {
         display: block;
         width: 50px;
         height: 50px;
+        @media #{$lg-down} {
+            width: 40px;
+            height: 40px;
+        }
+        @media #{$md-down} {
+            width: 30px;
+            height: 30px;
+        }
         path {
             fill: white;
         }
