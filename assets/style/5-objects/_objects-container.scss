@@ -13,4 +13,8 @@
     padding-left: 80px;
     padding-right: 80px;
   }
+  @media #{$xs-down} {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }

@@ -31,11 +31,17 @@
         text-align: center;
         padding: 250px 0 80px 0;
         background-color: white;
-        @media #{$lg-down} {
+        @media #{$xl-down} {
             padding: 150px 0 40px 0;
         }
+        @media #{$lg-down} {
+            padding: 120px 0 40px 0;
+        }
         @media #{$md-down} {
-            padding: 150px 0 20px 0;
+            padding: 80px 0 20px 0;
+        }
+        @media #{$sm-down} {
+            padding: 60px 0 20px 0;
         }
     }
     .partners-container {

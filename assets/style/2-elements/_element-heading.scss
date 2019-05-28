@@ -5,6 +5,5 @@ h2 {
 
   @media #{$lg-down} {
     @include fluid-type(30px, 40px);
-
   }
 }

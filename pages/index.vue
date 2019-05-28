@@ -1,5 +1,8 @@
 <template>
     <section class="container" @touchmove.stop.prevent="touchEvent">
+        <Intro />
+
+
         <div class="aurore">
             <Aurore/>
         </div>
@@ -37,6 +40,7 @@
     import Countdown from '~/components/CountdownPage/Countdown'
     import SocialContainer from '~/components/CountdownPage/SocialContainer'
     import LogoContainer from '~/components/CountdownPage/LogoContainer'
+    import Intro from '~/components/Intro'
     import {createClient} from '~/plugins/contentful.js'
 
     const client = createClient();
@@ -49,6 +53,7 @@
             Countdown,
             SocialContainer,
             LogoContainer,
+            Intro
         },
         layout: 'countdown',
         data: () => ({

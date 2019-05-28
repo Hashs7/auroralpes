@@ -21,7 +21,7 @@
             </div>
             <div class="event-support">
                 <a :href="link" class="btn-event">
-                    <RippleButton name="Soutenir le festival"/>
+                    <RippleButton name="Soutenir le festival" :bgDark="true"/>
                 </a>
                 <span class="ulule">
                     <Ulule />
@@ -81,14 +81,15 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
     .event-section {
         position: relative;
         font-size: 20px;
         font-weight: $weight-medium;
-        padding-top: 80px;
+        padding: 80px 0 10px 0;
         color: white;
         background-color: $secondary-dark;
+        overflow: hidden;
         @media #{$md-down} {
             padding-top: 120px;
         }
@@ -114,6 +115,7 @@
         top: 30px;
         right: 0;
         max-width: 784px;
+        min-width: 260px;
         min-height: 230px;
         width: 55vw;
         height: auto;
@@ -123,8 +125,9 @@
         }
 
         @media #{$md-down} {
-            top: -26px;
-            right: -32px;
+            top: -9vw;
+            /*<!--right: -62px;-->*/
+            right: 0;
         }
     }
     .title-container {
@@ -182,11 +185,15 @@
         @media #{$sm-down} {
             height: 26px;
             margin-left: 10px;
-
         }
 
         svg {
             height: 100%;
+        }
+    }
+    #lmdh-circle-container {
+        @media #{$md-down} {
+            opacity: 0 !important;
         }
     }
     strong {

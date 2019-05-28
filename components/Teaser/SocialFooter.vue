@@ -91,6 +91,10 @@
         }
         path {
             fill: white;
+            transition: fill .3s ease;
+        }
+        &:hover path {
+            fill: $teal;
         }
     }
 </style>

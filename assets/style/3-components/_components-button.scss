@@ -11,6 +11,15 @@
   box-shadow: 0 0 15px -9px $primary;
   position: relative;
   z-index: 10;
+  transition: box-shadow .3s ease;
+
+  &:hover {
+    box-shadow: 0 0 15px -5px $primary;
+  }
+
+  &.btnBgDark:hover  {
+    box-shadow: 0 0 15px 3px $primary;
+  }
 
   @media #{$md-down} {
     padding: 0 32px;

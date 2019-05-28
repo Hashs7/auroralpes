@@ -1,6 +1,11 @@
 <template>
     <div>
-        <button ref="rippleBtn" class="btn btn-ripple btn--tamaya" :data-text="name" data-hover="none" @mouseenter="rippleIn"  @mouseleave="rippleOut"  >
+        <button ref="rippleBtn"
+                class="btn btn-ripple btn--tamaya"
+                :class="{btnBgDark: bgDark}"
+                :data-text="name"
+                data-hover="none"
+                @mouseenter="rippleIn"  @mouseleave="rippleOut"  >
             <span class="name">{{name}}</span>
             <svg class="ripple-obj">
                 <use width="100"
@@ -12,7 +17,7 @@
         </button>
 
         <div style="height: 0; width: 0; position: absolute; visibility: hidden;" aria-hidden="true">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" focusable="false">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="height: 0; width: 0;" xmlns:xlink="http://www.w3.org/1999/xlink" focusable="false">
                 <symbol id="ripply-scott" viewBox="0 0 100 100">
                     <circle id="ripple-shape" cx="1" cy="1" r="1" style="fill: #FF0068;"/>
                 </symbol>
@@ -25,7 +30,7 @@
     import { TimelineMax } from 'gsap';
 
     export default {
-        props: ['name'],
+        props: ['name', 'bgDark'],
         methods: {
             rippleIn(event, timing = .5) {
                 const tl         = new TimelineMax();

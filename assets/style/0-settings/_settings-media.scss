@@ -1,12 +1,14 @@
 $landscape: 'screen and (orientation: landscape)';
 $portrait: 'screen and (orientation: portrait)';
 
+$xs-up: 'screen and (min-width: 375px)';
 $sm-up: 'screen and (min-width: 576px)';
 $md-up: 'screen and (min-width: 768px)';
 $lg-up: 'screen and (min-width: 992px)';
 $xl-up: 'screen and (min-width: 1220px)';
 $xll-up: 'screen and (min-width: 1440px)';
 
+$xs-down: 'screen and (max-width: 374px)';
 $sm-down: 'screen and (max-width: 575px)';
 $md-down: 'screen and (max-width: 767px)';
 $lg-down: 'screen and (max-width: 991px)';

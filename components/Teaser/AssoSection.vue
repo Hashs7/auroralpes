@@ -4,7 +4,6 @@
             <WaveUp />
         </span>
 
-
         <div class="asso-content">
             <div id="asteroid">
                 <div class="asteroid"></div>
@@ -58,7 +57,7 @@
             }
         },
         mounted() {
-            Asteroid();
+            // Asteroid();
             console.log(this.assoDesc.content);
         }
     }
@@ -82,6 +81,7 @@
         padding-top: 10px;
         @media #{$md-down} {
             text-align: left;
+            padding: 80px 0 100px 0;
         }
     }
     .asso-description {
@@ -100,28 +100,37 @@
         position: relative;
     }
     .logo-auro {
-        width: 320px;
-        height: 250px;
+        max-width: 320px;
+        min-width: 120px;
+        width: 20vw;
         position: absolute;
         bottom: 70px;
         left: 0;
         transform: rotate(-10deg);
+
+        @media #{$md-down} {
+            bottom: -110px;
+            left: auto;
+            right: 30px;
+            transform: translateY(100%), rotate(-10deg);
+        }
     }
     #asteroid {
         position: absolute;
         z-index: -1;
         top: -280px;
     }
-    .wave {
-        svg {
-            display: block;
-            vertical-align: bottom;
-        }
+    .wave svg {
+        display: block;
+        vertical-align: bottom;
     }
     .btn-support {
         position: relative;
         top: 40px;
         z-index: 50;
+        @media #{$md-down} {
+           top: 0;
+        }
     }
     .wave-down {
         position: absolute;

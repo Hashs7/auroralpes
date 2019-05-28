@@ -7,7 +7,7 @@
     export default {
         name: "home",
         mounted() {
-            Asteroid();
+            // Asteroid();
         },
         methods: {
         }
