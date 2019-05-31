@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import {debounce} from "../utils";
 
 Vue.directive('infocus', {
     isLiteral: true,
@@ -8,8 +9,8 @@ Vue.directive('infocus', {
             let inView = (
                 rect.width > 0 &&
                 rect.height > 0 &&
-                rect.top >= 70 &&
-                rect.bottom <= ((window.innerHeight || document.documentElement.clientHeight) - 70)
+                rect.top >= 50 &&
+                rect.bottom <= ((window.innerHeight || document.documentElement.clientHeight) - 50)
             )
             if (inView) {
                 el.classList.add(binding.value)
@@ -17,7 +18,8 @@ Vue.directive('infocus', {
                 el.classList.remove(binding.value)
             }
         }
-        window.addEventListener('scroll', f);
+        const scrollFunction = debounce(() => f(), 100, true);
+        window.addEventListener('scroll', scrollFunction);
         f()
     }
 })

@@ -119,7 +119,8 @@ export default () => {
 
     window.addEventListener("resize", resizeRenderer);
 
-    loader.load('../models/asteroids_6.glb', ( gltf ) => {
+    loader.load('../models/asteroids-mobile.glb', ( gltf ) => {
+    // loader.load('../models/asteroids-desktop.glb', ( gltf ) => {
         console.log(gltf);
         asteroid = gltf.scene;
         const scale = 3;
@@ -127,12 +128,9 @@ export default () => {
         asteroid.scale.y = scale;
         asteroid.scale.z = scale;
         scene.add( asteroid );
-        console.log(asteroid, 'scene');
+        console.log(asteroid, 'asteroid');
         animate();
-        console.log(asteroid.children[0].children[0]);
-        // camera = asteroid.children[0].children[0];
         renderer.render( scene, camera );
-
     });
     // renderer.render( scene, camera );
 /*

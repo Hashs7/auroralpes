@@ -21,12 +21,11 @@
 
             const tl = new TimelineMax();
 
-            tl.to(this.$refs.logoContainer, .7, {
-                height: 100,
-                y: -210,
+            tl.to(this.$refs.logoContainer, .8, {
+                height: 0,
                 // backgroundColor: 'transparent'
             });
-            tl.delay(3);
+            tl.delay(4.9);
         },
     }
 </script>
@@ -42,7 +41,8 @@
         background-color: white;
     }
     .intro-logo {
-        max-width: 1000px;
+        max-width: 300px;
+        width: 35%;
         height: 100%;
         margin: auto;
     }
