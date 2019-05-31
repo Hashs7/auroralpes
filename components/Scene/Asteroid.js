@@ -91,7 +91,7 @@ export default () => {
     camera.position.z = 500;
     camera.position.x = 10;
 
-    renderer = new THREE.WebGLRenderer({ alpha: false, antialias: true });
+    renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     // renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize( wWidth, wHeight );
 
@@ -129,7 +129,7 @@ export default () => {
         asteroid.scale.z = scale;
         scene.add( asteroid );
         console.log(asteroid, 'asteroid');
-        // animate();
+        animate();
         renderer.render( scene, camera );
     });
     // renderer.render( scene, camera );
