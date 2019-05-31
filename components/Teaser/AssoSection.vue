@@ -10,7 +10,7 @@
             </div>
             <div class="o-container">
                 <div class="asso-description">
-                    <h2>{{title}}</h2>
+                    <h2 v-infocus="'showTitle'">{{title}}</h2>
 
                     <p v-for="(p, i) in content" :key="i" >
                     <span v-for="(pa, j) in p.content" :key="j">
@@ -20,7 +20,7 @@
                     </p>
                 </div>
                 <div class="asso-support">
-                    <a :href="link" class="btn-support">
+                    <a :href="'mailto:'+link" class="btn-support">
                         <RippleButton name="Nous rejoindre"/>
                     </a>
                 </div>
@@ -57,7 +57,7 @@
             }
         },
         mounted() {
-            // Asteroid();
+            Asteroid();
             console.log(this.assoDesc.content);
         }
     }
@@ -93,6 +93,7 @@
     }
     .asso-support {
         @media #{$md-down} {
+            margin-top: 40px;
             text-align: center;
         }
     }

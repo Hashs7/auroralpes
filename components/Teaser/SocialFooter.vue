@@ -78,6 +78,7 @@
         }
     }
     .logo {
+        position: relative;
         display: block;
         width: 50px;
         height: 50px;
@@ -89,12 +90,32 @@
             width: 30px;
             height: 30px;
         }
+        svg {
+            position: relative;
+            z-index: 10;
+        }
         path {
             fill: white;
             transition: fill .3s ease;
         }
         &:hover path {
             fill: $teal;
+        }
+        &:before {
+            display: block;
+            content: '';
+            z-index: 1;
+            position: absolute;
+            top: 0; bottom: 0;
+            left: 0; right: 0;
+            border-radius: 50%;
+            transform: scale(.8);
+            background-color: rgba(255, 255, 255, 0);
+            transition: background-color .3s ease, transform .4s ease;
+        }
+        &:hover:before {
+            background-color: rgba(255, 255, 255, .4);
+            transform: scale(1.5);
         }
     }
 </style>

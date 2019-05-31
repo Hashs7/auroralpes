@@ -4,9 +4,8 @@
             <Logo />
         </div>
         <iframe class="ytplayer" type="text/html" width="720" height="405"
-                :src="link+'?loop=1&rel=0'"
+                :src="ytLink"
                 frameborder="0" allowfullscreen></iframe>
-<!--        :src="link+'?autoplay=1&loop=1&rel=0'"-->
 
         <div class="btn-rocket"
              v-scroll-to="{
@@ -29,12 +28,18 @@
 <script>
     import Rocket from '~/assets/icons/rocket.svg'
     import Logo from '~/assets/icons/aurorales-logo-white.svg'
-    // import { CustomBounce } from 'gsap'
 
     export default {
         name: "EntryVideo",
         components: { Rocket, Logo },
-        props: ['link']
+        props: ['link'],
+        computed: {
+            ytLink() {
+                const link = this.link.split('watch?v=');
+                // console.log('?autoplay=1loop=1&rel=0');
+                return link[0] + 'embed/' + link[1] + '?loop=1&rel=0';
+            }
+        }
     }
 </script>
 
@@ -78,7 +83,13 @@
     .ytplayer {
         margin: auto;
         width: 90%;
-        height: calc(100vh - 226px);
+        height: 50.625vw;
+        max-height: calc(100vh - 226px);
+
+        @media #{$md-down} {
+            width: 100%;
+            height: 56.25vw;
+        }
     }
 
     @-webkit-keyframes AnimationName {

@@ -95,11 +95,13 @@ export default () => {
     // renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize( wWidth, wHeight );
 
-    const hemilLight = new THREE.HemisphereLight( 0xA5A5D9, 0xA5A5D9, 1 );
+    const hemilLight = new THREE.HemisphereLight( 0x5E5E91, 0x5E5E91, 1 );
+    // const hemilLight = new THREE.HemisphereLight( 0xA5A5D9, 0xA5A5D9, 1 );
     // const hemilLight = new THREE.HemisphereLight( 0xE0E0FF, 0x5A5A86, 1 );
     scene.add( hemilLight );
 
-    light = new THREE.PointLight(0xA5A5D9, 0.8, 0, 2);
+    light = new THREE.PointLight(0xD9D9F9, 1, 0, 2);
+    // light = new THREE.PointLight(0xA5A5D9, 0.8, 0, 2);
     light.position.set(0, 0, 100);
     scene.add(light);
 

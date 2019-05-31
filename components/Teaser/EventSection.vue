@@ -1,12 +1,12 @@
 <template>
-    <section class="event-section" id="EventSection">
+    <section class="event-section" id="EventSection" v-infocus="'enter'">
         <div class="lmdh-logo">
             <LMDH />
         </div>
         <div class="event-content o-container">
             <div class="event-description">
                 <div class="title-container" @mouseover="hoverTitle(true)" @mouseleave="hoverTitle(false)">
-                    <h2 class="title">{{title}}</h2>
+                    <h2 class="title" v-infocus="'showTitle'">{{title}}</h2>
                     <div class="circle-container">
                         <span class="circle" v-for="i in 4" :key="i" ref="child"></span>
                     </div>
@@ -90,11 +90,10 @@
         color: white;
         background-color: $secondary-dark;
         overflow: hidden;
-        @media #{$md-down} {
-            padding-top: 120px;
-        }
+
         @media #{$md-down} {
             @include fluid-type(16px, 20px);
+            padding: 120px 0 60px 0;
         }
     }
     .event-description {
@@ -126,8 +125,7 @@
 
         @media #{$md-down} {
             top: -9vw;
-            /*<!--right: -62px;-->*/
-            right: 0;
+            right: -62px;
         }
     }
     .title-container {
@@ -161,6 +159,7 @@
     .event-support {
         margin-top: 68px;
         @media #{$md-down} {
+            text-align: center;
             margin-top: 40px;
         }
     }
@@ -177,21 +176,29 @@
         vertical-align: middle;
 
         @media #{$md-down} {
-            height: 36px;
-            margin-left: 26px;
+            display: block;
             width: auto;
+            height: 36px;
+            margin: 20px 0 0 0;
         }
 
         @media #{$sm-down} {
             height: 26px;
-            margin-left: 10px;
         }
 
         svg {
             height: 100%;
         }
     }
+    .enter #lmdh-circle-container {
+        transform: scale(1);
+        opacity: 1;
+    }
     #lmdh-circle-container {
+        opacity: 0;
+        transform-origin: right;
+        transform: scale(.7);
+        transition: transform .5s ease, opacity .3s ease;
         @media #{$md-down} {
             opacity: 0 !important;
         }

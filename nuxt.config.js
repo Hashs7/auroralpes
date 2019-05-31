@@ -76,7 +76,9 @@ export default {
     ** Plugins to load before mounting the App
     */
     plugins: [
-        '~/plugins/contentful'
+        // '~/plugins/pdfViewer',
+        '~/plugins/contentful',
+        '~/plugins/directives'
     ],
 
     /*
@@ -112,10 +114,8 @@ export default {
         /*
         ** You can extend webpack config here
         */
-        vendor: [
-            'three',
-            'three-gltf-loader'
-        ],
+        // transpile: ['vue-pdf'],
+        // vendor: ['three', 'three-gltf-loader'],
         extend: (config) => {
             const svgRule = config.module.rules.find(rule => rule.test.test('.svg'));
 

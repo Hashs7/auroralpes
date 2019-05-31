@@ -1,6 +1,6 @@
 <template>
     <section class="section-partners">
-        <h2>Nos partenaires</h2>
+        <h2 v-infocus="'showTitle'">Nos partenaires</h2>
         <div class="o-container">
             <div class="partners-container">
                 <img v-for="(p, i) in partners"

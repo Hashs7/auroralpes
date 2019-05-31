@@ -1,31 +1,31 @@
 .btn {
-  display: inline-block;
-  padding: 0 42px;
-  font-weight: $weight-semibold;
-  font-size: 22px;
-  height: 60px;
-  line-height: 60px;
-  border-radius: 60px;
-  color: $primary;
-  background-color: white;
-  box-shadow: 0 0 15px -9px $primary;
-  position: relative;
-  z-index: 10;
-  transition: box-shadow .3s ease;
+    display: inline-block;
+    padding: 0 42px;
+    font-weight: $weight-semibold;
+    font-size: 22px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 60px;
+    color: $primary;
+    background-color: white;
+    box-shadow: 0 0 15px -9px $primary;
+    position: relative;
+    z-index: 10;
+    transition: box-shadow .3s ease;
 
-  &:hover {
-    box-shadow: 0 0 15px -5px $primary;
-  }
+    &:hover {
+        box-shadow: 0 0 15px -5px $primary;
+    }
 
-  &.btnBgDark:hover  {
-    box-shadow: 0 0 15px 3px $primary;
-  }
+    &.btnBgDark:hover {
+        box-shadow: 0 0 15px 3px $primary;
+    }
 
-  @media #{$md-down} {
-    padding: 0 32px;
-    height: 42px;
-    line-height: 42px;
-    font-size: 15px;
-    text-align: center;
-  }
+    @media #{$md-down} {
+        padding: 0 32px;
+        height: 42px;
+        line-height: 42px;
+        font-size: 15px;
+        text-align: center;
+    }
 }

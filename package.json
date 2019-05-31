@@ -22,6 +22,7 @@
     "nuxt": "^2.4.0",
     "three": "^0.104.0",
     "three-gltf-loader": "^1.104.0",
+    "vue-pdf": "^4.0.7",
     "vue-scrollto": "^2.15.0"
   },
   "devDependencies": {

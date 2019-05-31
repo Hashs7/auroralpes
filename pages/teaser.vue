@@ -2,7 +2,7 @@
     <section class="container">
         <Intro />
 
-        <EntryVideo link="https://www.youtube.com/embed/uaZHpTBqW0k" />
+        <EntryVideo :link="videoYT" />
 
         <EventSection :eventDesc="eventDesc" :link="crowdfunding"/>
 
@@ -25,7 +25,6 @@
     import PartnersSection from '~/components/Teaser/PartnersSection'
     import SocialFooter from '~/components/Teaser/SocialFooter'
     import {createClient} from '~/plugins/contentful.js'
-
 
     const client = createClient();
 
