@@ -2,7 +2,6 @@
     <section class="container" @touchmove.stop.prevent="touchEvent">
         <Intro />
 
-
         <div class="aurore">
             <Aurore/>
         </div>
