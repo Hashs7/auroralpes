@@ -3,7 +3,7 @@
         <div class="entry-logo">
             <Logo />
         </div>
-        <iframe class="ytplayer" type="text/html" width="720" height="405"
+        <iframe title="Vidéo teaser du festival AurorAlpes" class="ytplayer" type="text/html" width="720" height="405"
                 :src="ytLink"
                 frameborder="0" allowfullscreen></iframe>
 

@@ -158,10 +158,9 @@
             <stop offset="1" stop-color="#ff0092" stop-opacity="0.9"/>
         </linearGradient>
     </defs>
-    <title>LMDH_2</title>
     <g style="isolation:isolate">
-        <g id="Calque_2" data-name="Calque 2">
-            <g id="Calque_2-2" data-name="Calque 2">
+        <g>
+            <g>
                 <rect x="217.62" y="115.91" width="12.81" height="654.5"
                       style="opacity:0.74;fill:url(#Dégradé_sans_nom_29)"/>
                 <g style="opacity:0.85" id="lmdh-circle-container">

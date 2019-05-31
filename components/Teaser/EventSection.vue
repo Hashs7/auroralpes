@@ -5,7 +5,7 @@
         </div>
         <div class="event-content o-container">
             <div class="event-description">
-                <div class="title-container" @mouseover="hoverTitle(true)" @mouseleave="hoverTitle(false)">
+                <div class="title-container">
                     <h2 class="title" v-infocus="'showTitle'">{{title}}</h2>
                     <div class="circle-container">
                         <span class="circle" v-for="i in 4" :key="i" ref="child"></span>

@@ -58,7 +58,6 @@
         },
         mounted() {
             Asteroid();
-            console.log(this.assoDesc.content);
         }
     }
 </script>
@@ -69,7 +68,7 @@
         top: -30px;
         font-size: 20px;
         font-weight: $weight-medium;
-        @media #{$md-down} {
+        @media #{$lg-down} {
             @include fluid-type(16px, 20px);
         }
     }
@@ -79,7 +78,7 @@
         text-align: right;
         background-color: white;
         padding-top: 10px;
-        @media #{$md-down} {
+        @media #{$lg-down} {
             text-align: left;
             padding: 80px 0 100px 0;
         }
@@ -87,12 +86,12 @@
     .asso-description {
         width: calc(100% - 280px);
         margin: 0 0 0 auto;
-        @media #{$md-down} {
+        @media #{$lg-down} {
             width: 100%;
         }
     }
     .asso-support {
-        @media #{$md-down} {
+        @media #{$lg-down} {
             margin-top: 40px;
             text-align: center;
         }
@@ -109,7 +108,7 @@
         left: 0;
         transform: rotate(-10deg);
 
-        @media #{$md-down} {
+        @media #{$lg-down} {
             bottom: -110px;
             left: auto;
             right: 30px;
