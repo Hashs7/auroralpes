@@ -11,12 +11,13 @@
     export default {
         name: "Intro",
         mounted() {
+
             const anim = bodymovin.loadAnimation({
                 container: this.$refs.logoAnim,
                 renderer: 'svg',
                 loop: false,
                 autoplay: true,
-                path: 'models/logo-intro.json'
+                path: window.origin + '/models/logo-intro.json'
             });
 
             const tl = new TimelineMax();
@@ -25,7 +26,7 @@
                 height: 0,
                 // backgroundColor: 'transparent'
             });
-            tl.delay(4.9);
+            tl.delay(5);
         },
     }
 </script>
