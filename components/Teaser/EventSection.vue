@@ -5,8 +5,8 @@
         </div>
         <div class="event-content o-container">
             <div class="event-description">
-                <div class="title-container">
-                    <h2 class="title" v-infocus="'showTitle'">{{title}}</h2>
+                <div class="title-container" v-infocus="'showTitle'">
+                    <h2 class="title">{{title}}</h2>
                     <div class="circle-container">
                         <span class="circle" v-for="i in 4" :key="i" ref="child"></span>
                     </div>
@@ -136,6 +136,13 @@
         @media #{$md-down} {
             margin-bottom: 26px;
         }
+        .circle-container {
+            transition: opacity .3s ease;
+            opacity: 0;
+        }
+        &.showTitle .circle-container{
+            opacity: 1;
+        }
     }
     .title {
         display: inline-block;
@@ -148,6 +155,11 @@
         bottom: 0;
         width: 100vw;
         transform: translateX(-50%);
+
+        @media #{$md-down} {
+            width: 200vw;
+            bottom: -8px;
+        }
     }
     .circle{
         display: inline-block;
@@ -190,14 +202,14 @@
             height: 100%;
         }
     }
-    .enter #lmdh-circle-container {
+    /*.enter #lmdh-circle-container {
         transform: scale(1);
         opacity: 1;
-    }
+    }*/
     #lmdh-circle-container {
-        opacity: 0;
+        /*opacity: 0;*/
         transform-origin: right;
-        transform: scale(.7);
+        /*transform: scale(.7);*/
         transition: transform .5s ease, opacity .3s ease;
         @media #{$md-down} {
             opacity: 0 !important;

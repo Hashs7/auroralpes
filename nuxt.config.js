@@ -35,7 +35,7 @@ export default {
     loading: {color: '#FF9357'},
 
     transition: {
-        mode: 'out-in',
+        /*mode: 'out-in',
         css: false,
         beforeEnter (el) {
             console.log('before');
@@ -60,7 +60,7 @@ export default {
                 ease: Back.easeIn
             });
             done()
-        }
+        }*/
     },
 
     /*
@@ -112,6 +112,9 @@ export default {
     ** Build configuration
     */
     build: {
+        analyze: {
+            analyzerMode: 'static'
+        },
         /*
         ** You can extend webpack config here
         */

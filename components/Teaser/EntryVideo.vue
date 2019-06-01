@@ -53,6 +53,9 @@
         -webkit-animation: AnimationName 20s ease infinite;
         -moz-animation: AnimationName 20s ease infinite;
         animation: AnimationName 20s ease infinite;
+        @media #{$lg-down} {
+            height: calc(100vh - 100px);
+        }
     }
     .entry-logo {
         position: absolute;
