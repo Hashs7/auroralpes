@@ -3,11 +3,13 @@
         <h2 v-infocus="'showTitle'">Nos partenaires</h2>
         <div class="o-container">
             <div class="partners-container">
-                <img v-for="(p, i) in partners"
-                     class="partners-logo"
-                     :key="i"
-                     :src="'https:' + p.fields.file.url"
-                     :alt="p.fields.description">
+                <a v-for="(p, i) in partners"
+                   :href="p.fields.description" target="_blank" rel="nofollow noopener">
+                    <img class="partners-logo"
+                        :key="i"
+                        :src="'https:' + p.fields.file.url"
+                        :alt="p.fields.title">
+                </a>
             </div>
         </div>
     </section>
@@ -61,8 +63,12 @@
         }
     }
     .partners-logo {
-        max-height: 140px;
+        max-height: 110px;
         margin: 0 16px 70px 16px;
+        transition: transform .2s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+        }
         @media #{$lg-down} {
             max-height: 100px;
         }

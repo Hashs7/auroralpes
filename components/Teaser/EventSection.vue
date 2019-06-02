@@ -1,5 +1,8 @@
 <template>
-    <section class="event-section" id="EventSection" v-infocus="'enter'">
+    <section class="event-section"
+             id="EventSection"
+             v-infocus="'enter'"
+             :style="background">
         <div class="lmdh-logo">
             <LMDH />
         </div>
@@ -55,6 +58,9 @@
             },
             content() {
                 return this.eventDesc.content.filter(el => el.nodeType.includes('paragraph'));
+            },
+            background() {
+                return 'background-image: url(../img/stars.svg)';
             }
         },
         methods: {
@@ -90,6 +96,8 @@
         color: white;
         background-color: $secondary-dark;
         overflow: hidden;
+        background-size: cover;
+        background-position: center;
 
         @media #{$md-down} {
             @include fluid-type(16px, 20px);

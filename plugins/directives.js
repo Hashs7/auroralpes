@@ -9,7 +9,7 @@ Vue.directive('infocus', {
             let inView = (
                 rect.width > 0 &&
                 rect.height > 0 &&
-                rect.top >= 50 &&
+                rect.top >= 15 &&
                 rect.bottom <= ((window.innerHeight || document.documentElement.clientHeight) - 50)
             )
             if (inView) {

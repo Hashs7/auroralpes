@@ -4,17 +4,17 @@
             <h3 class="social-title">Suivez nos aventures :</h3>
 
             <div class="social-links">
-                <a :href="fb" aria-label="Suivez nous sur facebook" class="social-link">
+                <a :href="fb" target="_new" aria-label="Suivez nous sur facebook" class="social-link">
                   <span class="logo">
                     <Facebook/>
                   </span>
                 </a>
-                <a :href="insta" aria-label="Suivez nous sur instagram" class="social-link">
+                <a :href="insta" target="_new" aria-label="Suivez nous sur instagram" class="social-link">
                   <span class="logo">
                     <Instagram/>
                   </span>
                 </a>
-                <a :href="twitter" aria-label="Suivez nous sur twitter" class="social-link">
+                <a :href="twitter" target="_new" aria-label="Suivez nous sur twitter" class="social-link">
                   <span class="logo">
                     <Twitter/>
                   </span>
@@ -77,15 +77,21 @@
             width: 180px;
         }
     }
+    .social-link {
+        padding: 8px;
+        &:hover path {
+            fill: $teal;
+        }
+        &:hover .logo:before {
+            background-color: rgba(255, 255, 255, .4);
+            transform: scale(1.5);
+        }
+    }
     .logo {
         position: relative;
         display: block;
-        width: 50px;
-        height: 50px;
-        @media #{$lg-down} {
-            width: 40px;
-            height: 40px;
-        }
+        width: 40px;
+        height: 40px;
         @media #{$md-down} {
             width: 30px;
             height: 30px;
@@ -96,11 +102,9 @@
         }
         path {
             fill: white;
-            transition: fill .3s ease;
+            transition: fill .2s ease;
         }
-        &:hover path {
-            fill: $teal;
-        }
+
         &:before {
             display: block;
             content: '';
@@ -109,13 +113,10 @@
             top: 0; bottom: 0;
             left: 0; right: 0;
             border-radius: 50%;
-            transform: scale(.8);
+            transform: scale(.5);
             background-color: rgba(255, 255, 255, 0);
-            transition: background-color .3s ease, transform .4s ease;
+            transition: background-color .3s ease, transform .3s ease-out;
         }
-        &:hover:before {
-            background-color: rgba(255, 255, 255, .4);
-            transform: scale(1.5);
-        }
+
     }
 </style>

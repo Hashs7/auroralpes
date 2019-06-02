@@ -1,13 +1,16 @@
 <template>
     <section class="entry-video">
         <div class="entry-logo">
-            <Logo />
+            <Logo ref="logo" />
         </div>
         <iframe title="Vidéo teaser du festival AurorAlpes" class="ytplayer" type="text/html" width="720" height="405"
                 :src="ytLink"
                 frameborder="0" allowfullscreen></iframe>
 
         <div class="btn-rocket"
+             ref="rocket"
+             @mouseover="rocketOver"
+             @mouseleave="rocketLeave"
              v-scroll-to="{
                  el: '#EventSection',
                  duration: 700,
@@ -28,6 +31,10 @@
 <script>
     import Rocket from '~/assets/icons/rocket.svg'
     import Logo from '~/assets/icons/aurorales-logo-white.svg'
+    import {TimelineMax, default as TweenMax} from "gsap";
+
+    const rocket = new TimelineMax({pause: true});
+
 
     export default {
         name: "EntryVideo",
@@ -39,6 +46,41 @@
                 // console.log('?autoplay=1loop=1&rel=0');
                 return link[0] + 'embed/' + link[1] + '?loop=1&rel=0';
             }
+        },
+        methods: {
+            rocketOver() {
+                rocket.play();
+            },
+            rocketLeave() {
+                rocket.reverse();
+            }
+        },
+        mounted() {
+            const eventSection = document.querySelector('.event-section');
+            const btnRocket = document.querySelector('.btn-rocket');
+            /*rocket.add(
+                TweenMax.to(eventSection, .3, {
+                    y: 100,
+                })
+            );
+            rocket.add(
+                TweenMax.to(btnRocket, .3, {
+                    y: 100,
+                })
+            );*/
+
+
+            const tl = new TimelineMax();
+
+            tl.from(this.$refs.logo, .5, {
+                y: -200,
+                // backgroundColor: 'transparent'
+            });
+            tl.delay(6);
+            tl.from(this.$refs.rocket, .7, {
+                y: 200,
+                // backgroundColor: 'transparent'
+            });
         }
     }
 </script>
