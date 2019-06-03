@@ -57,18 +57,6 @@
         },
         mounted() {
             const eventSection = document.querySelector('.event-section');
-            const btnRocket = document.querySelector('.btn-rocket');
-            /*rocket.add(
-                TweenMax.to(eventSection, .3, {
-                    y: 100,
-                })
-            );
-            rocket.add(
-                TweenMax.to(btnRocket, .3, {
-                    y: 100,
-                })
-            );*/
-
 
             const tl = new TimelineMax();
 
@@ -81,6 +69,17 @@
                 y: 200,
                 // backgroundColor: 'transparent'
             });
+
+            rocket.add(
+                TweenMax.to(eventSection, .3, {
+                    y: 20,
+                })
+            );
+            rocket.add(
+                TweenMax.to(this.$refs.rocket, .3, {
+                    y: 20,
+                })
+            );
         }
     }
 </script>

@@ -7,6 +7,10 @@
             <LMDH />
         </div>
         <div class="event-content o-container">
+            <div class="trail" ref="trail">
+                <Trail />
+            </div>
+
             <div class="event-description">
                 <div class="title-container" v-infocus="'showTitle'">
                     <h2 class="title">{{title}}</h2>
@@ -31,13 +35,18 @@
                 </span>
             </div>
         </div>
+        <span class="wave wave-up">
+            <WaveUp />
+        </span>
     </section>
 </template>
 
 <script>
     import Ulule from '~/assets/icons/ulule.svg'
     import LMDH from '~/assets/icons/lmdh.svg'
-    import {TimelineMax} from "gsap";
+    import WaveUp from '~/assets/icons/wave-up.svg'
+    import Trail from '~/assets/icons/trail.svg'
+    import {TimelineMax, default as TweenMax} from "gsap";
     import RippleButton from '@/components/UI/RippleButton';
 
 
@@ -50,7 +59,7 @@
     export default {
         name: "EventSection",
         props: ['eventDesc', 'link'],
-        components: { Ulule, LMDH, RippleButton },
+        components: { Ulule, LMDH, RippleButton, WaveUp, Trail },
         computed: {
             title() {
                 const title = this.eventDesc.content.find(el => el.nodeType.includes('heading-'));
@@ -83,6 +92,9 @@
                 {x:1000},
                 -0.15    //stagger amount (seconds between each start time)
             );
+            TweenMax.from(this.$refs.trail, 1, {
+                y: 1000,
+            })
         }
     }
 </script>
@@ -92,7 +104,7 @@
         position: relative;
         font-size: 20px;
         font-weight: $weight-medium;
-        padding: 80px 0 10px 0;
+        padding: 80px 0 0 0;
         color: white;
         background-color: $secondary-dark;
         overflow: hidden;
@@ -209,6 +221,12 @@
         svg {
             height: 100%;
         }
+    }
+    .trail {
+        position: absolute;
+        top: 116px;
+        left: -64px;
+        width: 22px;
     }
     /*.enter #lmdh-circle-container {
         transform: scale(1);

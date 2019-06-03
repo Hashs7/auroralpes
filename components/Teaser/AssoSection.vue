@@ -1,9 +1,5 @@
 <template>
     <section class="asso-section">
-        <span class="wave wave-up">
-            <WaveUp />
-        </span>
-
         <div class="asso-content">
             <div id="asteroid">
                 <div class="asteroid"></div>
@@ -38,7 +34,6 @@
 
 <script>
     import AurorAlpes from '~/assets/icons/auroralpes-logo-blue.svg'
-    import WaveUp from '~/assets/icons/wave-up.svg'
     import WaveDown from '~/assets/icons/wave-down.svg'
     import Asteroid from '@/components/Scene/Asteroid';
     import RippleButton from '@/components/UI/RippleButton';
@@ -46,7 +41,7 @@
     export default {
         name: "AssoSection",
         props: ['assoDesc', 'link'],
-        components: { WaveUp, WaveDown, AurorAlpes, RippleButton },
+        components: { WaveDown, AurorAlpes, RippleButton },
         computed: {
             title() {
                 const title = this.assoDesc.content.find(el => el.nodeType.includes('heading-'));
@@ -62,10 +57,10 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
     .asso-section {
         position: relative;
-        top: -30px;
+        /*top: -10px;*/
         font-size: 20px;
         font-weight: $weight-medium;
         @media #{$lg-down} {
