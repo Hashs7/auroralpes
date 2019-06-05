@@ -1,12 +1,11 @@
-<svg id="aurore" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1219.82 840.86">
+<svg id="aurore" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1219.82 840.86">
   <defs>
-    <linearGradient id="degrade-aurore" data-name="Dégradé sans nom" x1="360.87" y1="889.25" x2="359.57" y2="888.16" gradientTransform="matrix(1219.82, 0, 0, -840.86, -438725.88, 747528.37)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="degrade-aurore" x1="360.87" y1="889.25" x2="359.57" y2="888.16" gradientTransform="matrix(1219.82, 0, 0, -840.86, -438725.88, 747528.37)" gradientUnits="userSpaceOnUse">
       <stop offset="0.28" stop-color="#ff0092" stop-opacity="0.9"/>
       <stop offset="0.56" stop-color="#ff8139" stop-opacity="0.85"/>
       <stop offset="0.57" stop-color="#ff7f3a" stop-opacity="0.85"/>
       <stop offset="0.88" stop-color="#ff0092" stop-opacity="0.9"/>
     </linearGradient>
   </defs>
-  <title>aurore</title>
-  <path id="Tracé_50-2" data-name="Tracé 50-2" d="M1268.06,80.86s-504.3-92.1-549.62,153.52C674.37,473.26,650.91,502.86,349,591.4,65.09,674.68,71.87,774.92,49.38,889.11L48.24,337.25C200.49,167,514.4,532.32,611.27,215.16,692.53-50.87,1268.06,80.86,1268.06,80.86Z" transform="translate(-48.24 -48.25)" style="opacity: 0.9599999785423279;isolation: isolate;fill: url(#degrade-aurore)"/>
+  <path d="M1268.06,80.86s-504.3-92.1-549.62,153.52C674.37,473.26,650.91,502.86,349,591.4,65.09,674.68,71.87,774.92,49.38,889.11L48.24,337.25C200.49,167,514.4,532.32,611.27,215.16,692.53-50.87,1268.06,80.86,1268.06,80.86Z" transform="translate(-48.24 -48.25)" style="opacity: 0.9599999785423279;isolation: isolate;fill: url(#degrade-aurore)"/>
 </svg>

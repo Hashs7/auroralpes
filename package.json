@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Des étoiles dans les yeux",
   "author": "Sebastien Hernoux",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

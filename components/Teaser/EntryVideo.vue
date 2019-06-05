@@ -8,21 +8,21 @@
                 frameborder="0" allowfullscreen></iframe>
 
         <div class="btn-rocket"
-             ref="rocket"
              @mouseover="rocketOver"
              @mouseleave="rocketLeave"
+             @click="rocketLeave"
              v-scroll-to="{
                  el: '#EventSection',
                  duration: 700,
                  easing: 'ease-in-out',
                  force: true,
                  cancelable: true,
-                 // onStart: onStart,
-                 // onDone: onDone,
-                 // onCancel: onCancel,
                  x: false,
                  y: true
-             }">
+             }"></div>
+
+        <div class="container-rocket"
+             ref="rocket">
             <Rocket />
         </div>
     </section>
@@ -113,7 +113,18 @@
         }
     }
     .btn-rocket {
+        width: 140px;
+        height: 90px;
         cursor: pointer;
+        z-index: 2;
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 70px;
+    }
+    .container-rocket {
         z-index: 1;
         position: absolute;
         bottom: 0;
