@@ -79,7 +79,8 @@ export default {
     plugins: [
         // '~/plugins/pdfViewer',
         '~/plugins/contentful',
-        '~/plugins/directives'
+        '~/plugins/directives',
+        '~/plugins/parallax'
     ],
 
     /*

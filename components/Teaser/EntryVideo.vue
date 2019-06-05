@@ -33,7 +33,7 @@
     import Logo from '~/assets/icons/aurorales-logo-white.svg'
     import {TimelineMax, default as TweenMax} from "gsap";
 
-    const rocket = new TimelineMax({pause: true});
+    const rocket = new TimelineMax({paused: true});
 
 
     export default {
@@ -60,7 +60,18 @@
 
             const tl = new TimelineMax();
 
-            tl.from(this.$refs.logo, .5, {
+            rocket.fromTo(eventSection, .3, {
+                y: 0,
+            },{
+                y: -20,
+            });
+            rocket.fromTo(this.$refs.rocket, .3, {
+                y: 0,
+            },{
+                y: -20,
+            }, 0);
+
+            tl.from(this.$refs.logo, .7, {
                 y: -200,
                 // backgroundColor: 'transparent'
             });
@@ -70,16 +81,6 @@
                 // backgroundColor: 'transparent'
             });
 
-            rocket.add(
-                TweenMax.to(eventSection, .3, {
-                    y: 20,
-                })
-            );
-            rocket.add(
-                TweenMax.to(this.$refs.rocket, .3, {
-                    y: 20,
-                })
-            );
         }
     }
 </script>

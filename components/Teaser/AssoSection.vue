@@ -118,6 +118,8 @@
     .wave svg {
         display: block;
         vertical-align: bottom;
+        position: relative;
+        z-index: 10;
     }
     .btn-support {
         position: relative;

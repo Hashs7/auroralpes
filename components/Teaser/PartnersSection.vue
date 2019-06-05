@@ -40,10 +40,10 @@
             padding: 120px 0 40px 0;
         }
         @media #{$md-down} {
-            padding: 80px 0 20px 0;
+            padding: 150px 0 20px 0;
         }
         @media #{$sm-down} {
-            padding: 60px 0 20px 0;
+            padding: 120px 0 20px 0;
         }
     }
     .partners-container {

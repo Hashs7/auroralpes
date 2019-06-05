@@ -2,10 +2,21 @@
     <section class="event-section"
              id="EventSection"
              v-infocus="'enter'"
-             :style="background">
-        <div class="lmdh-logo">
+             >
+        <div class="lmdh-logo"  >
             <LMDH />
         </div>
+
+        <div class="stars-container stars-back" v-parallax="0.1">
+            <StarBack ></StarBack>
+        </div>
+        <div class="stars-container stars-mid" v-parallax="0.15">
+            <StarMid ></StarMid>
+        </div>
+        <div class="stars-container stars-front" v-parallax="0.2">
+            <StarFront ></StarFront>
+        </div>
+
         <div class="event-content o-container">
             <div class="trail" ref="trail">
                 <Trail />
@@ -44,10 +55,15 @@
 <script>
     import Ulule from '~/assets/icons/ulule.svg'
     import LMDH from '~/assets/icons/lmdh.svg'
+    import StarBack from '~/assets/icons/stars-back.svg'
+    import StarMid from '~/assets/icons/stars-mid.svg'
+    import StarFront from '~/assets/icons/stars-front.svg'
     import WaveUp from '~/assets/icons/wave-up.svg'
     import Trail from '~/assets/icons/trail.svg'
     import {TimelineMax, default as TweenMax} from "gsap";
     import RippleButton from '@/components/UI/RippleButton';
+    import Parallax from 'vue-parallaxy'
+    import VueParallaxJs from 'vue-parallax-js'
 
 
     const tl = new TimelineMax({
@@ -59,7 +75,7 @@
     export default {
         name: "EventSection",
         props: ['eventDesc', 'link'],
-        components: { Ulule, LMDH, RippleButton, WaveUp, Trail },
+        components: { Ulule, LMDH, RippleButton, WaveUp, Trail, Parallax, StarBack, StarMid, StarFront },
         computed: {
             title() {
                 const title = this.eventDesc.content.find(el => el.nodeType.includes('heading-'));
@@ -113,7 +129,18 @@
 
         @media #{$md-down} {
             @include fluid-type(16px, 20px);
-            padding: 120px 0 60px 0;
+            padding: 120px 0 0 0;
+        }
+    }
+    .stars-container {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        svg {
+            height: 100%;
         }
     }
     .event-description {
@@ -130,6 +157,7 @@
         }
     }
     .lmdh-logo {
+        z-index: 10;
         position: absolute;
         top: 30px;
         right: 0;

@@ -1,6 +1,6 @@
 <template>
     <section class="container">
-<!--        <Intro />-->
+        <Intro />
 
         <EntryVideo :link="videoYT" />
 
