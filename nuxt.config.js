@@ -77,7 +77,6 @@ export default {
     ** Plugins to load before mounting the App
     */
     plugins: [
-        // '~/plugins/pdfViewer',
         '~/plugins/contentful',
         '~/plugins/directives',
         '~/plugins/parallax'

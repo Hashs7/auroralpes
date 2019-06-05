@@ -62,8 +62,6 @@
     import Trail from '~/assets/icons/trail.svg'
     import {TimelineMax, default as TweenMax} from "gsap";
     import RippleButton from '@/components/UI/RippleButton';
-    import Parallax from 'vue-parallaxy'
-    import VueParallaxJs from 'vue-parallax-js'
 
 
     const tl = new TimelineMax({
@@ -75,7 +73,7 @@
     export default {
         name: "EventSection",
         props: ['eventDesc', 'link'],
-        components: { Ulule, LMDH, RippleButton, WaveUp, Trail, Parallax, StarBack, StarMid, StarFront },
+        components: { Ulule, LMDH, RippleButton, WaveUp, Trail, StarBack, StarMid, StarFront },
         computed: {
             title() {
                 const title = this.eventDesc.content.find(el => el.nodeType.includes('heading-'));
