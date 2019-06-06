@@ -42,8 +42,8 @@
                 <a :href="link" class="btn-event">
                     <RippleButton name="Soutenir le festival" :bgDark="true"/>
                 </a>
-                <span class="ulule">
-                    <Ulule />
+                <span class="Kkbb">
+                    <Kkbb />
                 </span>
             </div>
         </div>
@@ -54,7 +54,7 @@
 </template>
 
 <script>
-    import Ulule from '~/assets/icons/ulule.svg'
+    import Kkbb from '~/assets/icons/kkbb.svg'
     import LMDH from '~/assets/icons/lmdh.svg'
     import StarBack from '~/assets/icons/stars-back.svg'
     import StarMid from '~/assets/icons/stars-mid.svg'
@@ -74,7 +74,7 @@
     export default {
         name: "EventSection",
         props: ['eventDesc', 'link'],
-        components: { Ulule, LMDH, RippleButton, WaveUp, Trail, StarBack, StarMid, StarFront },
+        components: { Kkbb, LMDH, RippleButton, WaveUp, Trail, StarBack, StarMid, StarFront },
         computed: {
             title() {
                 const title = this.eventDesc.content.find(el => el.nodeType.includes('heading-'));
@@ -117,7 +117,6 @@
 <style lang="scss">
     .event-section {
         position: relative;
-        z-index: 10;
         font-size: 20px;
         font-weight: $weight-medium;
         padding: 80px 0 0 0;
@@ -131,6 +130,9 @@
             @include fluid-type(16px, 20px);
             padding: 120px 0 0 0;
         }
+    }
+    .event-content {
+        z-index: 10;
     }
     .stars-container {
         position: absolute;
@@ -166,6 +168,7 @@
         min-height: 230px;
         width: 55vw;
         height: auto;
+        img { width: 100%}
 
         @media #{$xll-down} {
             right: -10vw;
@@ -229,7 +232,7 @@
         position: relative;
         z-index: 40;
     }
-    .ulule {
+    .Kkbb {
         display: inline-block;
         height: 54px;
         margin-left: 64px;

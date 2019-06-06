@@ -114,6 +114,22 @@
         position: absolute;
         z-index: -1;
         top: -280px;
+
+        @media #{$xl-down} {
+            top: -220px
+        }
+        @media #{$lg-down} {
+            display: none;
+        }
+        @media #{$aste-down} {
+            display: block;
+        }
+        @media #{$sm-down} {
+            top: -40px
+        }
+        @media #{$sm-down-height} {
+            top: -10px
+        }
     }
     .wave svg {
         display: block;

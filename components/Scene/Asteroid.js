@@ -89,7 +89,6 @@ export default () => {
 
     camera = new THREE.PerspectiveCamera( 5, wWidth/wHeight, 0.1, 1000 );
     camera.position.z = 500;
-    camera.position.x = 10;
 
     renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     // renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -118,20 +117,76 @@ export default () => {
     const loader = new GLTFLoader();
 
     window.addEventListener("resize", resizeRenderer);
+    if(wWidth < 992) {
+        camera.position.x = 0;
+        if(wHeight < 550) {
+            renderer.setSize( wWidth, wHeight*1.7 );
+        } else {
+            renderer.setSize( wWidth, wHeight*1.5 );
 
-    // loader.load('../models/asteroids-mobile.glb', ( gltf ) => {
-    loader.load('../models/asteroids-desktop.glb', ( gltf ) => {
-        console.log(gltf);
-        asteroid = gltf.scene;
-        const scale = 3;
-        asteroid.scale.x = scale;
-        asteroid.scale.y = scale;
-        asteroid.scale.z = scale;
-        scene.add( asteroid );
-        console.log(asteroid, 'asteroid');
-        animate();
-        renderer.render( scene, camera );
-    });
+        }
+
+        loader.load('../models/asteroids-desktop.glb', ( gltf ) => {
+            console.log(gltf);
+            asteroid = gltf.scene;
+            const scale = 3;
+            asteroid.scale.x = scale;
+            asteroid.scale.y = scale;
+            asteroid.scale.z = scale;
+
+            asteroid.children[0].children.forEach((el, i) => {
+                console.log(i);
+                switch(i) {
+                    case 0:
+                        el.position.x += 1;
+                        el.position.y += 3;
+                        break;
+
+                    case 1:
+                        el.position.x -= 2;
+                        el.position.y += 2;
+                        break;
+
+                    case 2:
+                        el.position.y -= 1;
+                        el.position.x -= 7;
+                        break;
+
+                    case 3:
+                        const scale = 0.007;
+                        el.scale.x = scale;
+                        el.scale.y = scale;
+                        el.scale.z = scale;
+                        el.position.x += 2;
+                        el.position.y -= 1;
+                        break;
+                }
+            });
+
+            scene.add( asteroid );
+            animate();
+            renderer.render( scene, camera );
+        });
+    } else {
+        camera.position.x = 10;
+
+        loader.load('../models/asteroids-desktop.glb', ( gltf ) => {
+            console.log(gltf);
+            asteroid = gltf.scene;
+            const scale = 3;
+            asteroid.scale.x = scale;
+            asteroid.scale.y = scale;
+            asteroid.scale.z = scale;
+            scene.add( asteroid );
+            animate();
+            renderer.render( scene, camera );
+        });
+    }
+
+
+
+
+
     // renderer.render( scene, camera );
 /*
     const main = document.querySelector('#main');
