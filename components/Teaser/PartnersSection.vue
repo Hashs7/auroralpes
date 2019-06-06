@@ -1,6 +1,7 @@
 <template>
     <section class="section-partners">
-        <h2 v-infocus="'showTitle'">Nos partenaires</h2>
+        <h2 class="showTitle">Nos partenaires</h2>
+<!--        <h2 v-infocus="'showTitle'">Nos partenaires</h2>-->
         <div class="o-container">
             <div class="partners-container">
                 <a v-for="(p, i) in partners"

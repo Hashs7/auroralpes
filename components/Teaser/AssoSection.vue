@@ -6,7 +6,8 @@
             </div>
             <div class="o-container">
                 <div class="asso-description">
-                    <h2 v-infocus="'showTitle'">{{title}}</h2>
+<!--                    <h2 v-infocus="'showTitle'">{{title}}</h2>-->
+                    <h2 class="showTitle">{{title}}</h2>
 
                     <p v-for="(p, i) in content" :key="i" >
                     <span v-for="(pa, j) in p.content" :key="j">

@@ -18,8 +18,8 @@ Vue.directive('infocus', {
                 el.classList.remove(binding.value)
             }
         }
-        const scrollFunction = debounce(() => f(), 100, true);
-        window.addEventListener('scroll', scrollFunction);
+        const scrollFunction = debounce(() => f(), 200, true);
+        window.addEventListener('scroll', scrollFunction, {passive: true});
         f()
     }
 })

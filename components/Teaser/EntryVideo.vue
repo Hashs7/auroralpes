@@ -93,11 +93,11 @@
         -moz-animation: AnimationName 20s ease infinite;
         animation: AnimationName 20s ease infinite;
 
-        @media screen and (-webkit-min-device-pixel-ratio:0) {
+        /*@media screen and (-webkit-min-device-pixel-ratio:0) {
             @media #{$lg-down} {
                 height: calc(100vh - 100px);
             }
-        }
+        }*/
     }
     .entry-logo {
         position: absolute;

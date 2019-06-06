@@ -24,6 +24,7 @@
             </div>
 
             <div class="event-description">
+<!--                <div class="title-container showTitle">-->
                 <div class="title-container" v-infocus="'showTitle'">
                     <h2 class="title">{{title}}</h2>
                     <div class="circle-container">
