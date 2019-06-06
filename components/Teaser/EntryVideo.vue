@@ -43,8 +43,7 @@
         computed: {
             ytLink() {
                 const link = this.link.split('watch?v=');
-                // console.log('?autoplay=1loop=1&rel=0');
-                return link[0] + 'embed/' + link[1] + '?loop=1&rel=0';
+                return link[0] + 'embed/' + link[1] + '?autoplay=1&loop=1&rel=0';
             }
         },
         methods: {
@@ -73,12 +72,10 @@
 
             tl.from(this.$refs.logo, .7, {
                 y: -200,
-                // backgroundColor: 'transparent'
             });
             tl.delay(6);
             tl.from(this.$refs.rocket, .7, {
                 y: 200,
-                // backgroundColor: 'transparent'
             });
 
         }
@@ -95,8 +92,11 @@
         -webkit-animation: AnimationName 20s ease infinite;
         -moz-animation: AnimationName 20s ease infinite;
         animation: AnimationName 20s ease infinite;
-        @media #{$lg-down} {
-            height: calc(100vh - 100px);
+
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            @media #{$lg-down} {
+                height: calc(100vh - 100px);
+            }
         }
     }
     .entry-logo {

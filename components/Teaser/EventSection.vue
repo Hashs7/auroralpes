@@ -39,7 +39,9 @@
                 </p>
             </div>
             <div class="event-support">
-                <a :href="link" class="btn-event">
+                <a :href="link" class="btn-event"
+                   target="_blank"
+                   rel="nofollow noopener">
                     <RippleButton name="Soutenir le festival" :bgDark="true"/>
                 </a>
                 <span class="Kkbb">
@@ -175,7 +177,7 @@
         }
 
         @media #{$md-down} {
-            top: -9vw;
+            top: -17vw;
             right: -62px;
         }
     }

@@ -119,12 +119,6 @@ export default () => {
     window.addEventListener("resize", resizeRenderer);
     if(wWidth < 992) {
         camera.position.x = 0;
-        if(wHeight < 550) {
-            renderer.setSize( wWidth, wHeight*1.7 );
-        } else {
-            renderer.setSize( wWidth, wHeight*1.5 );
-
-        }
 
         loader.load('../models/asteroids-desktop.glb', ( gltf ) => {
             console.log(gltf);
@@ -148,7 +142,7 @@ export default () => {
                         break;
 
                     case 2:
-                        el.position.y -= 1;
+                        el.position.y -= 10;
                         el.position.x -= 7;
                         break;
 
@@ -157,7 +151,7 @@ export default () => {
                         el.scale.x = scale;
                         el.scale.y = scale;
                         el.scale.z = scale;
-                        el.position.x += 2;
+                        el.position.x += 1;
                         el.position.y -= 1;
                         break;
                 }
@@ -184,13 +178,6 @@ export default () => {
     }
 
 
-
-
-
-    // renderer.render( scene, camera );
-/*
-    const main = document.querySelector('#main');
-    main.appendChild( renderer.domElement );*/
     const main = document.querySelector('#asteroid');
     main.replaceChild( renderer.domElement,  main.childNodes[0]);
 };
