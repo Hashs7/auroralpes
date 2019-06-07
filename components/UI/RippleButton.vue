@@ -84,6 +84,9 @@
         background-color: white;
         overflow: hidden;
     }
+    .btn:focus {
+        outline: none;
+    }
     .name {
         position: relative;
         z-index: 20;
