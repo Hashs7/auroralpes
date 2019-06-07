@@ -104,12 +104,18 @@
           }
         },
         mounted() {
+            let distance = 1000;
+            const duration = 0.2;
+
+            if(window.innerWidth < 400){
+                distance = 500
+            }
             tl.staggerFromTo(
                 this.$refs.child,   //target (all span tags)
                 0.5,     //duration (0.5 seconds)
                 {x:0},
-                {x:1000},
-                -0.15    //stagger amount (seconds between each start time)
+                {x:distance},
+                -duration    //stagger amount (seconds between each start time)
             );
             TweenMax.from(this.$refs.trail, 1, {
                 y: 1000,

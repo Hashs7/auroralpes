@@ -113,6 +113,10 @@
             width: 100%;
             height: 100%;
         }
+        @media #{$landscape} {
+            top: 5px;
+            height: 45px;
+        }
     }
     .btn-rocket {
         width: 140px;
@@ -147,6 +151,11 @@
         @media #{$md-down} {
             width: 100%;
             height: 56.25vw;
+        }
+
+        @media #{$landscape} {
+            height: 60vw;
+            max-height: calc(100vh - 116px);
         }
     }
 
