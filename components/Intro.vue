@@ -59,6 +59,7 @@
         width: 100%;
         height: 100vh;
         background-color: white;
+        color: #1a1a4e
     }
     .intro-logo {
         max-width: 300px;
