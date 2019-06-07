@@ -91,6 +91,10 @@ export default {
         '@nuxtjs/pwa',
         '@nuxtjs/style-resources',
         '@nuxtjs/dotenv',
+        '@nuxtjs/sitemap',
+        ['@nuxtjs/google-analytics', {
+            id: 'UA-12301-2'
+        }],
         'vue-scrollto/nuxt'
     ],
     styleResources: {
@@ -118,8 +122,6 @@ export default {
         /*
         ** You can extend webpack config here
         */
-        // transpile: ['vue-pdf'],
-        // vendor: ['three', 'three-gltf-loader'],
         extend: (config) => {
             const svgRule = config.module.rules.find(rule => rule.test.test('.svg'));
 
