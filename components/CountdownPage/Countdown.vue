@@ -42,14 +42,14 @@
         methods: {
             timerCount(start, end) {
                 const now      = new Date().getTime();
-                const neardate  = new Date(2019, 5, 7, 11, 57);
-                const nearEnd  = neardate.getTime();
+                // const neardate  = new Date(2019, 5, 7, 11, 57);
+                // const nearEnd  = neardate.getTime();
                 const distance = start - now;
                 // const passTime = nearEnd - now;
                 const passTime = end - now;
                 // console.log(distance, passTime);
                 if(distance <= 0 && passTime < 0) {
-                    console.log(this.watchingBefore);
+                    // console.log(this.watchingBefore);
                     const delay = this.watchingBefore ? 2000 : 4000;
                     // "expired";
                     this.$store.commit('setCounterDown');
@@ -61,7 +61,7 @@
                     clearInterval(this.interval);
                     return;
                 } else {
-                    console.log('watching');
+                    // console.log('watching');
                     this.watchingBefore = true;
                     this.calcTime(passTime);
                 }
