@@ -73,9 +73,7 @@
             tl.from(this.$refs.logo, .7, {
                 y: -200,
             });
-            tl.delay(.3);
-            // width intro
-            // tl.delay(6);
+            tl.delay(4);
             tl.from(this.$refs.rocket, .7, {
                 y: 200,
             });

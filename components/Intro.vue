@@ -32,21 +32,8 @@
                 path: window.origin + '/models/logo-intro-for-back.json'
             });
 
-            if(this.$store.state.counterDown) {
-                console.log('iscounter');
-            }
-
             this.removeLayer(true)
         },
-        computed: {
-            counterDown() {
-                console.log(this.$store.state.counterDown);
-                if(this.$store.state.counterDown) {
-                    this.removeLayer()
-                }
-            }
-        }
-
     }
 </script>
 
