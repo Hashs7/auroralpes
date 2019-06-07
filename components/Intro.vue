@@ -19,7 +19,7 @@
                     // backgroundColor: 'transparent'
                 });
                 if(delay) {
-                    tl.delay(5);
+                    tl.delay(3.4);
                 }
             }
         },
@@ -59,7 +59,7 @@
         width: 100%;
         height: 100vh;
         background-color: white;
-        color: #1a1a4e
+        color: #2e317a
     }
     .intro-logo {
         max-width: 300px;

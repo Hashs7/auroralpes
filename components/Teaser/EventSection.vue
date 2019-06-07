@@ -121,6 +121,7 @@
 <style lang="scss">
     .event-section {
         position: relative;
+        z-index: 2;
         font-size: 20px;
         font-weight: $weight-medium;
         padding: 80px 0 0 0;
