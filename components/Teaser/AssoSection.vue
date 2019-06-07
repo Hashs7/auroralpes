@@ -17,13 +17,16 @@
                     </p>
                 </div>
                 <div class="asso-support">
-                    <a :href="'mailto:'+link" class="btn-support block">
-                        <RippleButton name="Devenir bénévoles"/>
-                    </a>
-                    <a :href="'mailto:'+link" class="btn-support">
+                    <div class="block">
+                        <a href="mailto:benevoles@auroralpes.fr" class="btn-support">
+                            <RippleButton name="Devenir bénévoles"/>
+                        </a>
+                    </div>
+
+                    <a href="contact@auroralpes.fr" class="btn-support">
                         <RippleButton name="Un partenariat"/>
                     </a>
-                    <a :href="'mailto:'+link" class="btn-support">
+                    <a href="lmdh@auroralpes.fr" class="btn-support">
                         <RippleButton name="Une idée ?"/>
                     </a>
                 </div>
