@@ -50,7 +50,7 @@
                 // console.log(distance, passTime);
                 if(distance <= 0 && passTime < 0) {
                     // console.log(this.watchingBefore);
-                    const delay = this.watchingBefore ? 2000 : 4000;
+                    const delay = this.watchingBefore ? 1500 : 4000;
                     // "expired";
                     this.$store.commit('setCounterDown');
 
