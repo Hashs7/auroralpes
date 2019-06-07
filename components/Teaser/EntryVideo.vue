@@ -113,7 +113,7 @@
             width: 100%;
             height: 100%;
         }
-        @media #{$landscape} {
+        @media #{$xxs-down-height} {
             top: 5px;
             height: 45px;
         }
