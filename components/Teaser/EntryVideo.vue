@@ -153,7 +153,7 @@
             height: 56.25vw;
         }
 
-        @media #{$landscape} {
+        @media #{$xxs-down-height} {
             height: 60vw;
             max-height: calc(100vh - 116px);
         }
