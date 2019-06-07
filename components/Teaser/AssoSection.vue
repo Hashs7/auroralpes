@@ -23,10 +23,10 @@
                         </a>
                     </div>
 
-                    <a href="contact@auroralpes.fr" class="btn-support">
+                    <a href="mailto:contact@auroralpes.fr" class="btn-support">
                         <RippleButton name="Un partenariat"/>
                     </a>
-                    <a href="lmdh@auroralpes.fr" class="btn-support">
+                    <a href="mailto:lmdh@auroralpes.fr" class="btn-support">
                         <RippleButton name="Une idée ?"/>
                     </a>
                 </div>
