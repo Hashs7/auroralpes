@@ -45,7 +45,12 @@ button {
 a:focus {
     outline: none;
 }
-
+button:focus {
+    outline: none;
+}
+:focus {
+    outline: none;
+}
 :focus:not(:focus-visible) {
   outline: none;
 }
