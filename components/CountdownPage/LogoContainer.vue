@@ -1,7 +1,7 @@
 <template>
     <div class="logo-container">
         <div>
-            <img :src="auroUrl" :alt="logoAuro.title" class="logo-auro">
+            <img :src="auroUrl" :alt="logoAuro.title" class="logo-auroralpes">
             <span class="logo-auro__txt">Des étoiles dans les yeux</span>
         </div>
         <span class="cross">
@@ -68,7 +68,7 @@
         }
     }
 
-    .logo-auro {
+    .logo-auroralpes {
         width: 210px;
         height: auto;
         @media #{$lg-down} {

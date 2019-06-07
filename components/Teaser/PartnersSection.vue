@@ -19,10 +19,7 @@
 <script>
     export default {
         name: "PartnersSection",
-        props: ['partners'],
-        mounted() {
-            console.log(this.partners, 'part');
-        }
+        props: ['partners']
     }
 </script>
 

@@ -7,27 +7,46 @@
 <script>
     import bodymovin from 'lottie-web'
     import { TimelineMax } from 'gsap';
+    const tl = new TimelineMax();
 
     export default {
         name: "Intro",
+        props: ['counter'],
+        methods: {
+            removeLayer(delay = false) {
+                tl.to(this.$refs.logoContainer, .8, {
+                    height: 0,
+                    // backgroundColor: 'transparent'
+                });
+                if(delay) {
+                    tl.delay(5);
+                }
+            }
+        },
         mounted() {
-
             const anim = bodymovin.loadAnimation({
                 container: this.$refs.logoAnim,
                 renderer: 'svg',
                 loop: false,
                 autoplay: true,
-                path: window.origin + '/models/logo-intro.json'
+                path: window.origin + '/models/logo-intro-for-back.json'
             });
 
-            const tl = new TimelineMax();
+            if(this.$store.state.counterDown) {
+                console.log('iscounter');
+            }
 
-            tl.to(this.$refs.logoContainer, .8, {
-                height: 0,
-                // backgroundColor: 'transparent'
-            });
-            tl.delay(5);
+            this.removeLayer(true)
         },
+        computed: {
+            counterDown() {
+                console.log(this.$store.state.counterDown);
+                if(this.$store.state.counterDown) {
+                    this.removeLayer()
+                }
+            }
+        }
+
     }
 </script>
 

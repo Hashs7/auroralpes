@@ -1,6 +1,6 @@
 <template>
-    <section class="container" @touchmove.stop.prevent="touchEvent">
-        <Intro />
+    <section class="count-container" @touchmove.stop.prevent="touchEvent">
+        <Intro :counter="true"/>
 
         <div class="aurore">
             <Aurore/>
@@ -83,7 +83,7 @@
 </script>
 
 <style lang="scss">
-    .container {
+    .count-container {
         margin: 0 auto;
         overflow: hidden;
         display: flex;
@@ -94,6 +94,9 @@
         @supports (-webkit-overflow-scrolling: touch) {
             height: calc(100vh - 129px);
         }
+    }
+    body {
+        background-color: white !important;
     }
 
     .aurore {

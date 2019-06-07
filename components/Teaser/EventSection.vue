@@ -4,8 +4,10 @@
              v-infocus="'enter'"
              >
         <div class="lmdh-logo"  >
-            <img src="~/assets/img/lmdh-logo.png" alt="">
-<!--            <LMDH />-->
+            <div class="relative">
+                <img src="~/assets/img/lmdh-logo.png" alt="logo des mondes d'en haut" class="short-logo">
+                <LMDH />
+            </div>
         </div>
 
         <div class="stars-container stars-back" v-parallax="0.1">
@@ -58,7 +60,7 @@
 
 <script>
     import Kkbb from '~/assets/icons/kkbb.svg'
-    import LMDH from '~/assets/icons/lmdh.svg'
+    import LMDH from '~/assets/icons/bulles.svg'
     import StarBack from '~/assets/icons/stars-back.svg'
     import StarMid from '~/assets/icons/stars-mid.svg'
     import StarFront from '~/assets/icons/stars-front.svg'
@@ -98,11 +100,10 @@
               }
               tl.pause();
               tl.startTime(0);
-              console.log(isIn);
+              // console.log(isIn);
           }
         },
         mounted() {
-            console.log(this.eventDesc.content);
             tl.staggerFromTo(
                 this.$refs.child,   //target (all span tags)
                 0.5,     //duration (0.5 seconds)
@@ -165,19 +166,37 @@
         z-index: 10;
         position: absolute;
         top: 30px;
-        right: 0;
-        max-width: 784px;
+        right: 30px;
+        max-width: 786px;
         min-width: 260px;
         min-height: 230px;
         width: 55vw;
         height: auto;
-        img { width: 100%}
+
+        .relative {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        img { width: 80%}
+        svg {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+        }
+
 
         @media #{$xll-down} {
-            right: -10vw;
+            right: -12vw;
         }
 
         @media #{$md-down} {
+            svg {display: none}
+            img { width: 100%}
             top: -17vw;
             right: -62px;
         }
@@ -196,6 +215,12 @@
         }
         &.showTitle .circle-container{
             opacity: 1;
+        }
+    }
+    .wave-up svg {
+        @media #{$lg-down} {
+            position: relative;
+            bottom: -1px;
         }
     }
     .title {

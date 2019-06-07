@@ -43,7 +43,7 @@
         computed: {
             ytLink() {
                 const link = this.link.split('watch?v=');
-                return link[0] + 'embed/' + link[1] + '?autoplay=1&loop=1&rel=0';
+                return link[0] + 'embed/' + link[1] + '?loop=1&rel=0';
             }
         },
         methods: {
@@ -73,7 +73,9 @@
             tl.from(this.$refs.logo, .7, {
                 y: -200,
             });
-            tl.delay(6);
+            tl.delay(.3);
+            // width intro
+            // tl.delay(6);
             tl.from(this.$refs.rocket, .7, {
                 y: 200,
             });
@@ -116,7 +118,7 @@
         width: 140px;
         height: 90px;
         cursor: pointer;
-        z-index: 2;
+        z-index: 10;
         position: absolute;
         bottom: -20px;
         left: 0;

@@ -121,7 +121,7 @@ export default () => {
         camera.position.x = 0;
 
         loader.load('../models/asteroids-desktop.glb', ( gltf ) => {
-            console.log(gltf);
+            // console.log(gltf);
             asteroid = gltf.scene;
             const scale = 3;
             asteroid.scale.x = scale;
@@ -129,7 +129,6 @@ export default () => {
             asteroid.scale.z = scale;
 
             asteroid.children[0].children.forEach((el, i) => {
-                console.log(i);
                 switch(i) {
                     case 0:
                         el.position.x += 1;
@@ -165,7 +164,7 @@ export default () => {
         camera.position.x = 10;
 
         loader.load('../models/asteroids-desktop.glb', ( gltf ) => {
-            console.log(gltf);
+            // console.log(gltf);
             asteroid = gltf.scene;
             const scale = 3;
             asteroid.scale.x = scale;

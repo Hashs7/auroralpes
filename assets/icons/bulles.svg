@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 871.52 859.46">
+    <defs>
+        <radialGradient id="Dégradé_sans_nom_81" cx="201.33" cy="430.89" r="63.56" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#48e5c2"/>
+            <stop offset="0.13" stop-color="#62dbcd" stop-opacity="0.84"/>
+            <stop offset="0.34" stop-color="#86ccdd" stop-opacity="0.61"/>
+            <stop offset="0.53" stop-color="#a1c1e9" stop-opacity="0.44"/>
+            <stop offset="0.67" stop-color="#b2baf0" stop-opacity="0.34"/>
+            <stop offset="0.75" stop-color="#b8b8f3" stop-opacity="0.3"/>
+            <stop offset="1" stop-color="#b8b8f3" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="Dégradé_sans_nom_81-2" cx="-193.13" cy="-314.93" r="88.01"
+                        gradientTransform="translate(134.75 574.73) rotate(24.53)" xlink:href="#Dégradé_sans_nom_81"/>
+        <radialGradient id="Dégradé_sans_nom_81-3" cx="141.78" cy="620.45" r="62.88" xlink:href="#Dégradé_sans_nom_81"/>
+        <radialGradient id="Dégradé_sans_nom_81-4" cx="-1871.77" cy="-266.03" r="62.88"
+                        gradientTransform="matrix(-0.68, 0.74, -0.74, -0.68, -1000.29, 1262.02)"
+                        xlink:href="#Dégradé_sans_nom_81"/>
+        <radialGradient id="Dégradé_sans_nom_83" cx="410.06" cy="735.4" r="118.26" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#48e5c2"/>
+            <stop offset="0.13" stop-color="#58dfc9" stop-opacity="0.9"/>
+            <stop offset="0.41" stop-color="#81cedb" stop-opacity="0.65"/>
+            <stop offset="0.75" stop-color="#b8b8f3" stop-opacity="0.3"/>
+            <stop offset="1" stop-color="#b8b8f3" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="Dégradé_sans_nom_86" cx="574.85" cy="542.84" r="65.31" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#48e5c2"/>
+            <stop offset="0.23" stop-color="#6fd5d3" stop-opacity="0.75"/>
+            <stop offset="0.63" stop-color="#b8b8f3" stop-opacity="0.3"/>
+            <stop offset="1" stop-color="#b8b8f3" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="Dégradé_sans_nom_86-2" cx="-367.58" cy="1756.63" r="41.72"
+                        gradientTransform="translate(-1254.99 -117.04) rotate(-90)" xlink:href="#Dégradé_sans_nom_86"/>
+        <radialGradient id="Dégradé_sans_nom_81-5" cx="701.95" cy="652.45" r="75.31" xlink:href="#Dégradé_sans_nom_81"/>
+        <radialGradient id="Dégradé_sans_nom_81-6" cx="-0.86" cy="-370.27" r="88.93"
+                        gradientTransform="translate(658.2 706.01) rotate(15.99)" xlink:href="#Dégradé_sans_nom_81"/>
+    </defs>
+    <g style="opacity:0.85">
+        <circle cx="169.66" cy="441.97" r="31.43" style="fill:url(#Dégradé_sans_nom_81)"/>
+        <circle cx="43.54" cy="203.79" r="43.53" style="opacity:0.74;fill:url(#Dégradé_sans_nom_81-2)"/>
+        <circle cx="113.92" cy="650.83" r="20.5" style="fill:url(#Dégradé_sans_nom_81-3)"/>
+        <circle cx="456.68" cy="20.5" r="20.5" style="opacity:0.45;fill:url(#Dégradé_sans_nom_81-4)"/>
+        <circle cx="406.95" cy="794.52" r="64.93" style="opacity:0.61;fill:url(#Dégradé_sans_nom_83)"/>
+        <circle cx="590.42" cy="563.46" r="29.6" style="opacity:0.84;fill:url(#Dégradé_sans_nom_86)"/>
+        <circle cx="514.81" cy="240.59" r="18.91" style="fill:url(#Dégradé_sans_nom_86-2)"/>
+        <circle cx="747.6" cy="690" r="38.66" style="opacity:0.71;fill:url(#Dégradé_sans_nom_81-5)"/>
+        <circle cx="823.87" cy="342.64" r="47.64"
+                style="opacity:0.6900000000000001;fill:url(#Dégradé_sans_nom_81-6)"/>
+    </g>
+</svg>

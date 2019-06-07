@@ -17,8 +17,14 @@
                     </p>
                 </div>
                 <div class="asso-support">
+                    <a :href="'mailto:'+link" class="btn-support block">
+                        <RippleButton name="Devenir bénévoles"/>
+                    </a>
                     <a :href="'mailto:'+link" class="btn-support">
-                        <RippleButton name="Nous rejoindre"/>
+                        <RippleButton name="Un partenariat"/>
+                    </a>
+                    <a :href="'mailto:'+link" class="btn-support">
+                        <RippleButton name="Une idée ?"/>
                     </a>
                 </div>
                 <div class="logo-auro">
@@ -87,9 +93,11 @@
         }
     }
     .asso-support {
+        max-width: 570px;
+        margin: 0 0 0 auto;
         @media #{$lg-down} {
-            margin-top: 40px;
             text-align: center;
+            margin: 40px auto 0 auto;
         }
     }
     .o-container {
@@ -139,11 +147,21 @@
         z-index: 10;
     }
     .btn-support {
+        display: inline-block;
+        margin: 0 15px 30px 15px;
         position: relative;
         top: 40px;
         z-index: 50;
+
+        &.block {
+            display: block;
+        }
         @media #{$md-down} {
            top: 0;
+        }
+        @media #{$sm-down} {
+           display: block;
+            margin-bottom: 15px;
         }
     }
     .wave-down {

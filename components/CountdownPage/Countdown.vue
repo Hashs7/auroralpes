@@ -29,6 +29,7 @@
             hoursCt: 0,
             minutesCt: 0,
             secondsCt: 0,
+            watchingBefore: false
         }),
         created() {
             this.start = new Date().getTime();
@@ -41,8 +42,28 @@
         methods: {
             timerCount(start, end) {
                 const now      = new Date().getTime();
-                const passTime = end - now;
-                this.calcTime(passTime);
+                const neardate  = new Date(2019, 5, 6, 20, 14);
+                const nearEnd  = neardate.getTime();
+                const distance = start - now;
+                const passTime = nearEnd - now;
+                // const passTime = end - now;
+
+                if(distance < 0 && passTime < 0) {
+                    console.log(this.watchingBefore);
+                    const delay = this.watchingBefore ? 0 : 6000;
+                    // "expired";
+                    this.$store.commit('setCounterDown');
+
+                    setTimeout(() => {
+                        this.$router.push('/teaser');
+                    }, delay);
+                    clearInterval(this.interval);
+                    return;
+                } else {
+                    console.log('watching');
+                    this.watchingBefore = true;
+                    this.calcTime(passTime);
+                }
             },
             calcTime(dist) {
                 this.daysCt    = Math.floor(dist / (1000 * 60 * 60 * 24));
