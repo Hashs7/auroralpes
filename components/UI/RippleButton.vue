@@ -115,6 +115,7 @@
     }
     .btn--tamaya::before,
     .btn--tamaya::after {
+        z-index: 20;
         content: attr(data-text);
         position: absolute;
         width: 100%;
