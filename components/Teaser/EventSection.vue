@@ -42,7 +42,8 @@
                 </p>
             </div>
             <div class="event-support">
-                <a :href="link" class="btn-event"
+                <a :href="link"
+                   class="btn-event"
                    target="_blank"
                    rel="nofollow noopener">
                     <RippleButton name="Soutenir le festival" :bgDark="true"/>
@@ -68,7 +69,6 @@
     import Trail from '~/assets/icons/trail.svg'
     import {TimelineMax, default as TweenMax} from "gsap";
     import RippleButton from '@/components/UI/RippleButton';
-
 
     const tl = new TimelineMax({
         repeat: -1,

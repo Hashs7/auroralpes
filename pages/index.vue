@@ -8,7 +8,7 @@
 
         <AssoSection :assoDesc="associationDesc" :link="joinUs"/>
 
-        <PartnersSection :partners="patenaires"/>
+        <PartnersSection :partners="patenaires" :link="crowdfunding"/>
 
         <SocialFooter
             :fb="facebook"

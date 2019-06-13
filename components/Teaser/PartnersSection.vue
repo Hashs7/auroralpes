@@ -12,20 +12,37 @@
                         :alt="p.fields.title">
                 </a>
             </div>
+
+            <h3 class="action-title">Venez découvrir notre projet et venez nous aider à le réaliser</h3>
+
+            <a :href="link"
+               class="btn-event"
+               target="_blank"
+               rel="nofollow noopener">
+                <RippleButton name="Plus d'informations" :bgDark="true"/>
+            </a>
         </div>
     </section>
 </template>
 
 <script>
+    import RippleButton from '@/components/UI/RippleButton';
+
     export default {
         name: "PartnersSection",
-        props: ['partners']
+        props: ['partners', 'link'],
+        components: { RippleButton }
     }
 </script>
 
 <style scoped lang="scss">
     h2 {
         position: relative;
+    }
+    .action-title {
+        font-weight: normal;
+        font-size: 20px;
+        margin: 24px 0;
     }
     .section-partners {
         text-align: center;
