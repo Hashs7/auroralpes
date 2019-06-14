@@ -3,9 +3,16 @@
         <div class="entry-logo">
             <Logo ref="logo" />
         </div>
-        <iframe title="Vidéo teaser du festival AurorAlpes" class="ytplayer" type="text/html" width="720" height="405"
+        <iframe title="Vidéo teaser du festival AurorAlpes"
+                class="ytplayer"
+                type="text/html"
+                width="720"
+                height="405"
                 :src="ytLink"
-                frameborder="0" allowfullscreen></iframe>
+                frameborder="0" allowfullscreen>
+        </iframe>
+
+        <SocialEntry :fb="fb" :insta="insta" :twitter="twitter"/>
 
         <div class="btn-rocket"
              @mouseover="rocketOver"
@@ -31,6 +38,7 @@
 <script>
     import Rocket from '~/assets/icons/rocket.svg'
     import Logo from '~/assets/icons/aurorales-logo-white.svg'
+    import SocialEntry from '~/components/Teaser/SocialEntry'
     import {TimelineMax, default as TweenMax} from "gsap";
 
     const rocket = new TimelineMax({paused: true});
@@ -38,8 +46,8 @@
 
     export default {
         name: "EntryVideo",
-        components: { Rocket, Logo },
-        props: ['link'],
+        components: { Rocket, Logo, SocialEntry },
+        props: ['link', 'fb', 'insta', 'twitter'],
         computed: {
             ytLink() {
                 const link = this.link.split('watch?v=');

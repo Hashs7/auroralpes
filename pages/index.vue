@@ -2,7 +2,11 @@
     <section class="container">
 <!-- <Intro />-->
 
-        <EntryVideo :link="videoYT" />
+        <EntryVideo
+            :link="videoYT"
+            :fb="facebook"
+            :insta="instagram"
+            :twitter="twitter"/>
 
         <EventSection :eventDesc="eventDesc" :link="crowdfunding"/>
 
