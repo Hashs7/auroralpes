@@ -13,7 +13,7 @@
                 </a>
             </div>
 
-            <h3 class="action-title">Venez découvrir notre projet et venez nous aider à le réaliser</h3>
+            <h3 class="action-title">Venez découvrir notre projet et nous aider à le réaliser</h3>
 
             <a :href="link"
                class="btn-event"
