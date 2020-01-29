@@ -1,17 +1,24 @@
 <template>
-  <main class="homepage">
+  <main>
+<!--    <Header v-if="header" :datas="header" />-->
+    <component v-bind:is="template" v-if="template" :key="datas.sys.id" :datas="datas" />
   </main>
 </template>
 <script>
+/* eslint-disable */
+import client from '~/plugins/contentful';
+// import Page from '@/components/page/Page';
 
 export default {
   components: {
+    // Header,
+    // Page,
   },
   /**
    * SEO data with Contentful
    */
   head() {
-    if (!this.datas.fields || !this.datas.fields.seo) return {};
+    if (!this.datas.fields) return {};
     return {
       title: this.datas.fields.seo.fields.title,
       meta: [
@@ -54,22 +61,50 @@ export default {
       ],
     };
   },
+  computed: {
+    template() {
+      // Return template to use
+      if (this.datas.sys) {
+        return this.datas.sys.contentType.sys.id;
+      }
+      return false;
+    },
+    header() {
+      return this.datas.fields.header;
+    },
+  },
   /**
    * Get the page data
    */
-  // eslint-disable-next-line no-unused-vars
   async asyncData({ store, error, payload, params }) {
     // Generated route, use defined payload
     if (payload) {
       return { datas: payload };
     }
-    console.log(store.state.global.settings.fields.homepage);
 
-    return {
-      datas: store.state.global.settings.fields.homepage,
-    };
+    const { pages } = store.state.global.settings.fields;
+    const loadPage = pages.find((page) => page.fields.page.fields.slug === params.slug);
+
+    if (loadPage) {
+      return {
+        datas: loadPage.fields.page,
+      };
+    }
+
+    // Find page in Contentful with the slug
+    const { items: [simplePage] } = await client.getEntries({
+      content_type: 'page',
+      'fields.slug': params.slug,
+    });
+
+    if (simplePage) {
+      return {
+        datas: simplePage,
+      };
+    }
+
+    // Not found
+    return error({ statusCode: 404, message: 'Not found' });
   },
 };
 </script>
-<style lang="scss">
-</style>
