@@ -2,19 +2,9 @@ h2 {
   color: $primary;
   font-weight: $weight-bold;
   font-size: 40px;
-  opacity: 0;
-  transform: translateX(-200px);
   transition: opacity .3s ease, transform .5s ease-out;
 
   @media #{$lg-down} {
     @include fluid-type(30px, 40px);
   }
-  &.showTitle {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-.showTitle h2 {
-    opacity: 1;
-    transform: translateX(0);
 }

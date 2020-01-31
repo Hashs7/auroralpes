@@ -1,17 +1,24 @@
 <template>
   <main id="main" role="main">
     <header>
-      <Navigation/>
+      <MenuNavigation/>
     </header>
     <nuxt/>
+    <Footer />
   </main>
 </template>
 
 <script>
   import Navigation from '@/components/Navigation';
+  import MenuNavigation from "../components/layout/menu/MenuNavigation";
+  import Footer from "../components/layout/Footer";
 
   export default {
-    components: { Navigation },
+    components: {
+      MenuNavigation,
+      Navigation,
+      Footer,
+    },
   }
 </script>
 <style>

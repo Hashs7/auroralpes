@@ -1,20 +1,30 @@
 .o-container {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding-left: 32px;
-    padding-right: 32px;
+  width: 100%;
+  max-width: 1560px;
+  margin: 0 auto;
+  padding-left: 32px;
+  padding-right: 32px;
 
-    @media #{$md-up} {
-        padding-left: 40px;
-        padding-right: 40px;
-    }
-    @media #{$xl-up} {
-        padding-left: 80px;
-        padding-right: 80px;
-    }
-    @media #{$xs-down} {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
+  @media #{$md-up} {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @media #{$xl-up} {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  @media #{$xs-down} {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.o-section {
+  color: $white;
+
+  &--white {
+    @extend .o-section;
+    color: $black;
+    background-color: $white;
+  }
 }

@@ -12,9 +12,12 @@ body {
   line-height: $line-height-base;
   font-family: $font-main;
   font-weight: $weight-base;
-  background-color: $color-body;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  background-color: $secondary-background;
   color: $color-text;
-  -webkit-font-smoothing: antialiased;
+  font-size: 22px;
   -moz-osx-font-smoothing: grayscale;
 }
 

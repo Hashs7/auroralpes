@@ -1,11 +1,24 @@
 <template>
   <main class="homepage">
+    <HomeHeader />
+    <HomeResume />
+    <HomeTeam />
+    <HomeProjects />
+
   </main>
 </template>
 <script>
+import HomeHeader from '~/components/page/home/HomeHeader';
+import HomeResume from '~/components/page/home/HomeResume';
+import HomeTeam from '~/components/page/home/HomeTeam';
+import HomeProjects from '~/components/page/home/HomeProjects';
 
 export default {
   components: {
+    HomeHeader,
+    HomeResume,
+    HomeTeam,
+    HomeProjects,
   },
   /**
    * SEO data with Contentful

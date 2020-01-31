@@ -98,11 +98,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .link-translate {
   position: relative;
   display: inline-block;
   overflow: hidden;
+  color: $primary;
 }
 .link-translate__title {
   display: block;
