@@ -76,7 +76,6 @@ export default {
     if (payload) {
       return { datas: payload };
     }
-    console.log(store.state.global.settings.fields.homepage);
 
     return {
       datas: store.state.global.settings.fields.homepage,

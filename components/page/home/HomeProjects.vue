@@ -4,15 +4,17 @@
       <div class="o-section__content">
         <h2>Nos projets</h2>
         <div class="project-container">
-          <div
+          <n-link
+            v-for="(proj, i) in projects"
+            :to="url(proj)"
+            :key="i"
             class="project"
-            v-for="(proj, i) in 4"
           >
             <div class="project__img">
               <img src="" alt="">
             </div>
-            <h4 class="project__title">Festival d'astronomie</h4>
-          </div>
+            <h4 class="project__title">{{ proj.fields.title }}</h4>
+          </n-link>
         </div>
       </div>
     </div>
@@ -21,7 +23,23 @@
 
 <script>
   export default {
-    name: "HomeResume"
+    name: 'HomeResume',
+    computed: {
+      slug() {
+        return this.$store.state.global.projects.pageSlug;
+      },
+      projects() {
+        return this.$store.state.global.projects.items;
+      }
+    },
+    created() {
+      this.$store.dispatch('global/getProjects');
+    },
+    methods: {
+      url(project) {
+        return this.slug + '/' + project.fields.slug;
+      }
+    },
   }
 </script>
 

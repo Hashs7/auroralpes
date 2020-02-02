@@ -1,19 +1,17 @@
 <template>
-    <div class="social-container">
-      <h3 class="social-title">Suivez nos aventures :</h3>
-
-      <div class="social-links">
-        <a :href="fb" target="_new" aria-label="Suivez nous sur facebook" class="social-link">
+    <div class="socials">
+      <div class="socials-links">
+        <a v-if="fb.length" :href="fb" target="_new" aria-label="Suivez nous sur facebook" class="socials-link">
           <span class="logo">
             <Facebook/>
           </span>
         </a>
-        <a :href="insta" target="_new" aria-label="Suivez nous sur instagram" class="social-link">
+        <a v-if="insta.length" :href="insta" target="_new" aria-label="Suivez nous sur instagram" class="socials-link">
           <span class="logo">
             <Instagram/>
           </span>
         </a>
-        <a :href="twitter" target="_new" aria-label="Suivez nous sur twitter" class="social-link">
+        <a v-if="twitter.length" :href="twitter" target="_new" aria-label="Suivez nous sur twitter" class="socials-link">
           <span class="logo">
             <Twitter/>
           </span>
@@ -30,26 +28,29 @@
   export default {
     name: "SocialFooter",
     components: { Facebook, Twitter, Instagram },
-    props: ['fb', 'insta', 'twitter']
+    props: {
+      fb: {
+        type: String,
+        default: ''
+      },
+      insta: {
+        type: String,
+        default: ''
+      },
+      twitter: {
+        type: String,
+        default: ''
+      },
+    }
   }
 </script>
 
 <style scoped lang="scss">
-  .social-footer {
-    display: flex;
-    height: 312px;
-    color: white;
-    background-color: $secondary-dark;
-    text-align: center;
-    @media #{$md-down} {
-      height: 200px;
-    }
-    @media #{$sm-down} {
-      height: 152px;
-    }
+  .socials {
+    max-width: 360px;
   }
 
-  .social-title {
+  .socials-title {
     font-size: 25px;
     margin-bottom: 70px;
     @media #{$lg-down} {
@@ -59,12 +60,6 @@
       @include fluid-type(20px, 25px);
       margin-bottom: 24px;
     }
-  }
-
-  .social-container {
-    margin: auto;
-    max-width: 360px;
-    width: 100%;
   }
 
   .social-links {
@@ -79,7 +74,8 @@
     }
   }
 
-  .social-link {
+  .socials-link {
+    display: inline-block;
     padding: 8px;
 
     &:hover path {
@@ -126,6 +122,5 @@
       background-color: rgba(255, 255, 255, 0);
       transition: background-color .3s ease, transform .3s ease-out;
     }
-
   }
 </style>
