@@ -93,7 +93,7 @@
             margin-right: 25px;
         }
         @media #{$xl-down} {
-            @include fluid-type(38px, 90px);
+            // @include fluid-type(38px, 90px);
         }
         @media #{$md-down} {
             &:not(.sec) {
@@ -125,6 +125,6 @@
         font-size: 40px;
         font-weight: $weight-thin;
         margin-top: 5px;
-        @include fluid-type(18px, 40px);
+        // @include fluid-type(18px, 40px);
     }
 </style>

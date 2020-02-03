@@ -125,9 +125,9 @@ export default {
   styleResources: {
     scss: [
       '~/assets/style/0-settings/_settings-colors.scss',
+      '~/assets/style/0-settings/_settings-mixins.scss',
       '~/assets/style/0-settings/_settings-media.scss',
       '~/assets/style/0-settings/_settings-typography.scss',
-      '~/assets/style/8-utilities/_utilities-fluid-font.scss'
     ]
   },
   /*

@@ -33,8 +33,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 354px;
-
+    width: 330px;
+    font-size: 1.3rem;
+    color: $black;
+    font-weight: $weight-medium;
   }
   .mail__icon {
     display: inline-flex;

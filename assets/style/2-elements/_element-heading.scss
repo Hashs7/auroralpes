@@ -3,10 +3,6 @@ h2 {
   font-weight: $weight-bold;
   font-size: 40px;
   transition: opacity .3s ease, transform .5s ease-out;
-
-  @media #{$lg-down} {
-    @include fluid-type(30px, 40px);
-  }
 }
 
 h1, h2, h3, h4, h5, h6 {

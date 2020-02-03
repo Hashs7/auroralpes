@@ -9,20 +9,36 @@
           Mauris euismod odio id aliquet porttitor. Aliquam facilisis sapien at tristique tincidunt. In hac habitasse platea dictumst. Quisque ac purus risus. Ut commodo ligula quis est mollis lacinia. In eget faucibus diam, ut facilisis turpis.
         </p>
       </div>
+      <div class="o-section__illu">
+        <IlluResume />
+      </div>
     </div>
   </section>
 </template>
 
 <script>
+  import IlluResume from '~/assets/icons/home/illu-resume.svg';
+
   export default {
-    name: "HomeResume"
+    name: 'HomeResume',
+    components: { IlluResume },
   }
 </script>
 
 <style lang="scss" scoped>
   .home-resume {
+    .o-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+    }
   }
   .o-section__content {
     padding: 160px 0;
+    width: calc(50% - 20px);
+  }
+  .o-section__illu {
+    width: 550px;
   }
 </style>

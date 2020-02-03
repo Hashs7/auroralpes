@@ -57,7 +57,7 @@
       margin-bottom: 50px;
     }
     @media #{$md-down} {
-      @include fluid-type(20px, 25px);
+      // @include fluid-type(20px, 25px);
       margin-bottom: 24px;
     }
   }

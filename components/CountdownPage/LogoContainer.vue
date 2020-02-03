@@ -86,7 +86,6 @@
         display: block;
         font-weight: bold;
         color: $secondary;
-        @include fluid-type(8px, 18px);
     }
 
     .cross {

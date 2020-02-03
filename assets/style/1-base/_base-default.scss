@@ -12,13 +12,13 @@ body {
   line-height: $line-height-base;
   font-family: $font-main;
   font-weight: $weight-base;
-    font-smoothing: antialiased;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   background-color: $secondary-background;
-  color: $color-text;
-  font-size: 22px;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
+  @include fluid-type(font-size, $mobile-s, $tablet-m, 16px, 18px);
+  @include fluid-type(font-size, $desktop-m, $desktop-l, 20px, 22px);
 }
 
 h1, h2, h3, h4, h6 {
