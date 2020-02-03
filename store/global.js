@@ -41,10 +41,11 @@ export const actions = {
     commit('setFooter', footer);
   },
   async getProjects({ commit }) {
-    let { fields: { slug, projects } } = await client.getEntry({
+    let { items: [fields] } = await client.getEntries({
       content_type: 'pageProjects',
     });
-    console.log(slug);
+    // const { fields } = await client.getEntry('pageProjects');
+    const { projects, slug } = fields.fields;
     commit('setProject', { projects, slug });
   },
 };
