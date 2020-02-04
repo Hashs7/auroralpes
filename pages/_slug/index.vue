@@ -7,12 +7,14 @@
 <script>
 /* eslint-disable */
 import client from '~/plugins/contentful';
-// import Page from '@/components/page/Page';
+import PageProjects from '@/components/page/projects/PageProjects';
+import PageTeam from '@/components/page/team/PageTeam';
 
 export default {
   components: {
     // Header,
-    // Page,
+    PageProjects,
+    PageTeam,
   },
   /**
    * SEO data with Contentful
@@ -83,11 +85,12 @@ export default {
     }
 
     const { pages } = store.state.global.settings.fields;
-    const loadPage = pages.find((page) => page.fields.page.fields.slug === params.slug);
+    const loadPage = pages.find((page) => page.fields.slug === params.slug);
 
     if (loadPage) {
+      console.log(loadPage);
       return {
-        datas: loadPage.fields.page,
+        datas: loadPage,
       };
     }
 

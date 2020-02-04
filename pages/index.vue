@@ -1,10 +1,9 @@
 <template>
-  <main class="homepage">
+  <main class="home-page">
     <HomeHeader />
     <HomeResume />
     <HomeTeam />
     <HomeProjects />
-
   </main>
 </template>
 <script>
