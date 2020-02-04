@@ -1,40 +1,17 @@
 /**
- * @param ctx
- * @param rect
- * @param radius
- * @param fill
- * @param stroke
+ *
+ * @param date
+ * @returns {string}
  */
-export const roundRect = (ctx, rect, radius = 5, fill, stroke) => {
-  const { x, y, width, height } = rect;
-  const radiusObj = {
-    tl: radius,
-    tr: radius,
-    br: radius,
-    bl: radius,
-  };
+export const formatedDate = (date) => {
+  const d = new Date(`${date}`);
+  let month = d.getMonth() + 1;
+  let day = d.getDate();
 
-  ctx.beginPath();
-  ctx.moveTo(x + radiusObj.tl, y);
-  ctx.lineTo(x + width - radiusObj.tr, y);
-  ctx.quadraticCurveTo(x + width, y, x + width, y + radiusObj.tr);
-  ctx.lineTo(x + width, y + height - radiusObj.br);
-  ctx.quadraticCurveTo(x + width, y + height, x + width - radiusObj.br, y + height);
-  ctx.lineTo(x + radiusObj.bl, y + height);
-  ctx.quadraticCurveTo(x, y + height, x, y + height - radiusObj.bl);
-  ctx.lineTo(x, y + radiusObj.tl);
-  ctx.quadraticCurveTo(x, y, x + radiusObj.tl, y);
-  ctx.closePath();
-  ctx.clip();
+  if (month < 10) month = `0${month}`;
+  if (day < 10) day = `0${day}`;
 
-  if (fill && fill.length) {
-    ctx.fillStyle = fill;
-    ctx.fill();
-  }
-  if (stroke && stroke.length) {
-    ctx.strokeStyle = stroke;
-    ctx.stroke();
-  }
+  return `${day}/${month}/${d.getFullYear()}`;
 };
 
 /**

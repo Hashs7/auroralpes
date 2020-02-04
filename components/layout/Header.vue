@@ -1,8 +1,9 @@
 <template>
-  <div class="header">
+  <div :class="{'header--project': project}" class="header">
     <div class="o-container">
       <div class="header__content">
         <h1 class="header__title">{{ title }}</h1>
+        <p v-if="date.length">{{ formatDate }}</p>
         <RichText v-if="description" :content="description" />
       </div>
     </div>
@@ -15,6 +16,7 @@
 <script>
   import RichText from '~/components/common/RichText';
   import Asset from '~/components/common/Asset';
+  import { formatedDate } from "../../utils/helpers";
 
   export default {
     name: 'Header',
@@ -35,7 +37,20 @@
         type: Object,
         default: () => {},
       },
+      date: {
+        type: String,
+        default: '',
+      },
+      project: {
+        type: Boolean,
+        default: false,
+      },
     },
+    computed: {
+      formatDate() {
+        return formatedDate(this.date);
+      },
+    }
   }
 </script>
 
@@ -77,6 +92,13 @@
       left: 0;
       right: 0;
       background-color: rgba(0, 0, 0, .35);
+    }
+  }
+
+  .header--project {
+    .header__content {
+      max-width: none;
+      text-align: center;
     }
   }
 </style>

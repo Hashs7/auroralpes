@@ -34,9 +34,6 @@ export default {
       return this.settings.fields.pages;
     },
   },
-  mounted() {
-    console.log(this.settings);
-  },
 };
 </script>
 

@@ -7,14 +7,14 @@
 html {
   line-height: $line-height-base;
   font-family: $font-main;
-  font-weight: $weight-base;
+  font-weight: $weight-regular;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   background-color: $secondary-background;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 20px;
-  @include fluid-type(font-size, $mobile-s, $tablet-m, 16px, 18px);
-  @include fluid-type(font-size, $desktop-m, $desktop-l, 20px, 22px);
+  font-size: 16px;
+  //@include fluid-type(font-size, $mobile-s, $tablet-m, 16px, 18px);
+  //@include fluid-type(font-size, $desktop-m, $desktop-l, 20px, 22px);
 }
 
 body {
@@ -23,6 +23,14 @@ body {
 
 h1, h2, h3, h4, h6 {
   margin: 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.875rem;
 }
 
 a {

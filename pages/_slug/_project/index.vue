@@ -1,24 +1,23 @@
 <template>
   <main>
-<!--    <Header v-if="header" :datas="header" />-->
-    <component v-bind:is="template" v-if="template" :key="datas.sys.id" :datas="datas" />
+    <Project :key="datas.sys.id" :datas="datas" />
   </main>
 </template>
 <script>
-/* eslint-disable */
+/* -------- Services -------- */
 import client from '~/plugins/contentful';
-import PageProjects from '@/components/page/projects/PageProjects';
-import PageTeam from '@/components/page/team/PageTeam';
+import Project from '~/components/page/projects/Project';
+import Header from '~/components/layout/Header';
 
+/* -------------------- Module -------------------- */
 export default {
   components: {
-    // Header,
-    PageProjects,
-    PageTeam,
+    Header,
+    Project,
   },
   /**
-   * SEO data with Contentful
-   */
+     * SEO data with Contentful
+     */
   head() {
     if (!this.datas.fields) return {};
     return {
@@ -63,40 +62,31 @@ export default {
       ],
     };
   },
+
   computed: {
-    template() {
-      // Return template to use
-      if (this.datas.sys) {
-        return this.datas.sys.contentType.sys.id;
-      }
-      return false;
-    },
     header() {
-      return this.datas.fields.header;
+      return {
+        fields: {
+          title: this.datas.fields.title,
+          image: this.datas.fields.image,
+        },
+      };
     },
   },
   /**
    * Get the page data
    */
+  // eslint-disable-next-line no-unused-vars
   async asyncData({ store, error, payload, params }) {
     // Generated route, use defined payload
     if (payload) {
       return { datas: payload };
     }
 
-    const { pages } = store.state.global.settings.fields;
-    const loadPage = pages.find((page) => page.fields.slug === params.slug);
-
-    if (loadPage) {
-      return {
-        datas: loadPage,
-      };
-    }
-
     // Find page in Contentful with the slug
     const { items: [simplePage] } = await client.getEntries({
-      content_type: 'page',
-      'fields.slug': params.slug,
+      content_type: 'project',
+      'fields.slug': params.project,
     });
 
     if (simplePage) {

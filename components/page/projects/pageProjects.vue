@@ -7,7 +7,16 @@
     />
     <section class="projects-container o-section--white">
       <div class="o-container">
-
+        <ProjectPreview
+            v-for="(project, i) in datas.fields.projects"
+            :key="i"
+            :title="project.fields.title"
+            :date="project.fields.date"
+            :resume="project.fields.resume"
+            :slug="project.fields.slug"
+            :image="project.fields.image"
+            :prefix="datas.fields.slug"
+        />
       </div>
     </section>
   </main>
@@ -15,10 +24,13 @@
 
 <script>
   import Header from '~/components/layout/Header';
+  import ProjectPreview from '~/components/page/projects/ProjectPreview';
+
   export default {
     name: 'pageProjects',
     components: {
       Header,
+      ProjectPreview,
     },
     props: {
       datas: {
@@ -30,5 +42,7 @@
 </script>
 
 <style scoped>
-
+  .projects-container {
+    padding: 80px 0;
+  }
 </style>
