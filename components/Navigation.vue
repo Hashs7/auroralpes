@@ -25,11 +25,14 @@
     }
 
     .nuxt-link {
-        color: $primary;
+        color: $white;
         text-decoration: none;
+      &.exact-active-link {
+        opacity: .3;
+      }
     }
+
     .exact-active-link {
-        text-decoration: underline;
     }
 
 </style>

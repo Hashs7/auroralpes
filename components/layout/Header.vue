@@ -53,7 +53,8 @@
     margin: 0 0 0 auto;
     text-align: right;
     color: $white;
-    font-size: 0.73rem;
+    font-size: 16px;
+    line-height: 1.5;
   }
   .header__title {
     margin-bottom: 30px;

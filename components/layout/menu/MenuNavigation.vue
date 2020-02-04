@@ -48,7 +48,13 @@ export default {
   right: 0;
   z-index: 100;
   padding-top: 40px;
-  color: $primary;
+
+  .link-translate {
+    color: $white !important;
+    &.exact-active-link {
+      opacity: .4;
+    }
+  }
 }
 
 .navigation__container {
@@ -60,9 +66,7 @@ export default {
   font-weight: 500;
   font-size: 1rem;
 
-  &.nuxt-link-exact-active {
-    opacity: .4;
-  }
+
 
   &:not(:last-child) {
     margin-right: 26px;

@@ -5,7 +5,6 @@
 }
 
 html {
-  font-size: 100%;
   line-height: $line-height-base;
   font-family: $font-main;
   font-weight: $weight-base;
@@ -13,7 +12,7 @@ html {
   text-rendering: optimizeLegibility;
   background-color: $secondary-background;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 18px;
+  font-size: 20px;
   @include fluid-type(font-size, $mobile-s, $tablet-m, 16px, 18px);
   @include fluid-type(font-size, $desktop-m, $desktop-l, 20px, 22px);
 }
