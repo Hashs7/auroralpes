@@ -1,7 +1,7 @@
 <template>
   <main class="home-page">
     <HomeHeader />
-    <HomeResume />
+    <HomeResume :resume="datas.fields.festivalResume" />
     <HomeTeam />
     <HomeProjects />
   </main>

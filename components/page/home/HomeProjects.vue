@@ -2,7 +2,7 @@
   <section class="o-section--white">
     <div class="o-container">
       <div class="o-section__content">
-        <h2>Nos projets</h2>
+        <h2>{{ projectPage.title }}</h2>
         <div class="project-container">
           <n-link
             v-for="(proj, i) in projects"
@@ -16,7 +16,7 @@
             <h4 class="project-home__title">{{ proj.fields.title }}</h4>
           </n-link>
         </div>
-        <n-link :to="projectPage">
+        <n-link :to="projectPage.slug">
           <RippleButton name="Voir tous nos projets"/>
         </n-link>
       </div>
@@ -42,7 +42,7 @@
         return this.$store.state.global.projects.items;
       },
       projectPage() {
-        return this.$store.state.global.settings.fields.pages.find(page => page.sys.contentType.sys.id === 'pageProjects').fields.slug;
+        return this.$store.state.global.settings.fields.pages.find(page => page.sys.contentType.sys.id === 'pageProjects').fields;
       }
     },
     created() {

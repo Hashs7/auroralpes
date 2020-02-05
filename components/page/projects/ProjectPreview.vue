@@ -1,6 +1,6 @@
 <template>
   <n-link :to="prefix+'/'+slug">
-    <div class="project" :class="{'project--image': image}">
+    <div class="project" :class="{'project--image': thumbnail}">
       <div v-if="thumbnail" class="project__img">
         <Asset :datas="thumbnail" />
       </div>

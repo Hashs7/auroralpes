@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 172.61">
+<defs>
+    <filter id="Tracé_223" x="0" y="0" filterUnits="userSpaceOnUse">
+        <feOffset input="SourceAlpha"/>
+        <feGaussianBlur stdDeviation="20" result="blur"/>
+        <feFlood flood-opacity="0.184"/>
+        <feComposite operator="in" in2="blur"/>
+        <feComposite in="SourceGraphic"/>
+    </filter>
+</defs>
+  <path filter="url(#Tracé_223)" d="M1920,0V172.61s-532.26-155.93-823.45-80S486.23,138,330.86,65.29,0,19.82,0,19.82V0Z" style="fill: #fff"/>
+</svg>

@@ -1,32 +1,45 @@
 <template>
   <section class="o-section--white home-resume">
+    <WaveUp class="wave wave--up" />
     <div class="o-container">
       <div class="o-section__content">
         <h2>Présentation</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce urna purus, varius vel consequat vitae, molestie vitae risus. Praesent tincidunt nulla vitae vulputate feugiat. Donec in varius tellus, sit amet vulputate orci. Mauris euismod tellus et euismod euismod.
-
-          Mauris euismod odio id aliquet porttitor. Aliquam facilisis sapien at tristique tincidunt. In hac habitasse platea dictumst. Quisque ac purus risus. Ut commodo ligula quis est mollis lacinia. In eget faucibus diam, ut facilisis turpis.
-        </p>
+        <RichText :content="resume" />
       </div>
       <div class="o-section__illu">
         <IlluResume />
       </div>
     </div>
+    <WaveDown class="wave wave--down" />
   </section>
 </template>
 
 <script>
   import IlluResume from '~/assets/icons/home/illu-resume.svg';
+  import WaveUp from '~/assets/icons/home/wave-home-up.svg';
+  import WaveDown from '~/assets/icons/home/wave-home-down.svg';
+  import RichText from '~/components/common/RichText';
 
   export default {
     name: 'HomeResume',
-    components: { IlluResume },
+    components: {
+      RichText,
+      IlluResume,
+      WaveUp,
+      WaveDown,
+    },
+    props: {
+      resume: {
+        type: Object,
+        required: true,
+      },
+    },
   }
 </script>
 
 <style lang="scss" scoped>
   .home-resume {
+    position: relative;
     .o-container {
       display: flex;
       justify-content: space-between;
@@ -40,5 +53,19 @@
   }
   .o-section__illu {
     width: 550px;
+  }
+  .wave {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    &--up {
+      top: 0;
+      transform: translateY(-99%);
+    }
+    &--down {
+      bottom: 0;
+      transform: translateY(99%);
+    }
   }
 </style>
