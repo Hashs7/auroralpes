@@ -1,8 +1,8 @@
 <template>
   <n-link :to="prefix+'/'+slug">
     <div class="project" :class="{'project--image': image}">
-      <div v-if="image" class="project__img">
-        <Asset :datas="image" />
+      <div v-if="thumbnail" class="project__img">
+        <Asset :datas="thumbnail" />
       </div>
       <div class="project__content">
         <h3 class="project__title">{{ title }}</h3>
@@ -17,7 +17,7 @@
   import RichText from '~/components/common/RichText';
   import Asset from '~/components/common/Asset';
   import Socials from '~/components/common/Socials';
-  import { formatedDate } from "../../../utils/helpers";
+  import { formatedDate } from '../../../utils/helpers';
 
   export default {
     name: 'Project',
@@ -47,7 +47,7 @@
         type: String,
         default: '',
       },
-      image: {
+      thumbnail: {
         type: Object,
         default: () => {},
       },
@@ -62,15 +62,15 @@
 
 <style lang="scss">
   .project {
+    display: flex;
     margin-bottom: 70px;
   }
 
   .project__img {
     display: inline-block;
     max-width: 590px;
-    max-height: 270px;
     width: 100%;
-    height: 100%;
+    height: 270px;
     margin-right: 45px;
   }
 
@@ -91,7 +91,7 @@
   }
 
   .project__resume {
-    margin-top: 5px;
+    margin-top: 24px;
     font-size: 1rem;
   }
 

@@ -14,7 +14,7 @@
             :date="project.fields.date"
             :resume="project.fields.resume"
             :slug="project.fields.slug"
-            :image="project.fields.image"
+            :thumbnail="project.fields.thumbnail"
             :prefix="datas.fields.slug"
         />
       </div>
