@@ -8,14 +8,27 @@
 
           Mauris euismod odio id aliquet porttitor. Aliquam facilisis sapien at tristique tincidunt. In hac habitasse platea dictumst. Quisque ac purus risus. Ut commodo ligula quis est mollis lacinia. In eget faucibus diam, ut facilisis turpis.
         </p>
+        <n-link :to="teamPage">
+          <RippleButton name="Voir l'équipe"/>
+        </n-link>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+  import RippleButton from '~/components/UI/RippleButton';
+
   export default {
-    name: "HomeResume"
+    name: 'HomeResume',
+    components: {
+      RippleButton,
+    },
+    computed: {
+      teamPage() {
+        return this.$store.state.global.settings.fields.pages.find(page => page.sys.contentType.sys.id === 'pageTeam').fields.slug;
+      }
+    }
   }
 </script>
 
@@ -24,6 +37,6 @@
     color: $white;
   }
   .o-section__content {
-    padding: 160px 0;
+    padding: 170px 0 140px;
   }
 </style>

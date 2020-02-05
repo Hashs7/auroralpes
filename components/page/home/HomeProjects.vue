@@ -8,28 +8,41 @@
             v-for="(proj, i) in projects"
             :to="url(proj)"
             :key="i"
-            class="project"
+            class="project-home"
           >
-            <div class="project__img">
-              <img src="" alt="">
+            <div class="project-home__img">
+              <Asset :datas="proj.fields.thumbnail" />
             </div>
-            <h4 class="project__title">{{ proj.fields.title }}</h4>
+            <h4 class="project-home__title">{{ proj.fields.title }}</h4>
           </n-link>
         </div>
+        <n-link :to="projectPage">
+          <RippleButton name="Voir tous nos projets"/>
+        </n-link>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+  import Asset from '~/components/common/Asset';
+  import RippleButton from '~/components/UI/RippleButton';
+
   export default {
     name: 'HomeResume',
+    components: {
+      Asset,
+      RippleButton,
+    },
     computed: {
       slug() {
         return this.$store.state.global.projects.pageSlug;
       },
       projects() {
         return this.$store.state.global.projects.items;
+      },
+      projectPage() {
+        return this.$store.state.global.settings.fields.pages.find(page => page.sys.contentType.sys.id === 'pageProjects').fields.slug;
       }
     },
     created() {
@@ -48,19 +61,23 @@
     color: $white;
   }
   .o-section__content {
-    padding: 160px 0;
+    padding: 80px 0;
   }
   .project-container {
     display: flex;
     justify-content: space-between;
   }
-  .project {
+  .project-home {
     display: inline-block;
-    text-align: center;
   }
-  .project__img {
+  .project-home__img {
     width: 320px;
     height: 320px;
     background-color: $gray;
+  }
+  .project-home__title {
+    margin-top: 16px;
+    font-size: 1.38rem;
+    font-weight: $weight-medium;
   }
 </style>

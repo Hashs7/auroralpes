@@ -27,7 +27,7 @@
 </template>
 
 <script>
-    import { TimelineMax } from 'gsap';
+    import { TimelineMax, Linear, Power2 } from 'gsap';
 
     export default {
         props: ['name', 'bgDark'],
