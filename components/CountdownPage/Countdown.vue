@@ -32,12 +32,13 @@
             watchingBefore: false
         }),
         created() {
-            this.start = new Date().getTime();
-            this.end   = new Date(this.endtime).getTime();
+          if (process.server) return;
+          this.start = new Date().getTime();
+          this.end   = new Date(this.endtime).getTime();
+          this.timerCount(this.start, this.end);
+          this.interval = setInterval(() => {
             this.timerCount(this.start, this.end);
-            this.interval = setInterval(() => {
-                this.timerCount(this.start, this.end);
-            }, 1000);
+          }, 1000);
         },
         methods: {
             timerCount(start, end) {

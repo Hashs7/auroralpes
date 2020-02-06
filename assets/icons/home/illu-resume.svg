@@ -1,101 +1,97 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="550.609" height="486.595" viewBox="0 0 550.609 486.595">
+<svg id="b36925cc-6a48-40a7-83da-a1d45fd3f547" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 550.61 382.19">
   <defs>
-    <linearGradient id="linear-gradient" x1="-0.318" y1="0.5" x2="1.166" y2="0.5" gradientUnits="objectBoundingBox">
+    <linearGradient id="f1104711-5a4f-462d-947a-06934fe3f05b" data-name="Dégradé sans nom" x1="-60.12" y1="35.6" x2="-58.64" y2="35.6" gradientTransform="translate(18954 -11042.76) scale(314.65)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ff0092"/>
-      <stop offset="0.125" stop-color="#ff1384"/>
-      <stop offset="0.379" stop-color="#ff4562"/>
-      <stop offset="0.737" stop-color="#ff952b"/>
+      <stop offset="0.13" stop-color="#ff1384"/>
+      <stop offset="0.38" stop-color="#ff4562"/>
+      <stop offset="0.74" stop-color="#ff952b"/>
       <stop offset="1" stop-color="#ffd400"/>
     </linearGradient>
-    <filter id="Ellipse_7" x="48.912" y="0" width="486.595" height="486.595" filterUnits="userSpaceOnUse">
-      <feOffset input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="28.657" result="blur"/>
-      <feFlood flood-color="#ff0068" flood-opacity="0.749"/>
-      <feComposite operator="in" in2="blur"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <linearGradient id="linear-gradient-2" x1="-0.589" y1="0.554" x2="1.082" y2="0.471" gradientUnits="objectBoundingBox">
-      <stop offset="0.405" stop-color="#22034c"/>
-      <stop offset="0.458" stop-color="#390253"/>
-      <stop offset="0.656" stop-color="#8d016d"/>
-      <stop offset="0.819" stop-color="#ca0081"/>
-      <stop offset="0.938" stop-color="#f0008d"/>
+    <linearGradient id="f6d1d89e-c52b-411b-a050-ee6fa8ecffee" data-name="Dégradé sans nom 2" x1="-56.73" y1="57.44" x2="-55.06" y2="57.35" gradientTransform="translate(955.08 -770.87) scale(15.54)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.41" stop-color="#22034c"/>
+      <stop offset="0.46" stop-color="#390253"/>
+      <stop offset="0.66" stop-color="#8d016d"/>
+      <stop offset="0.82" stop-color="#ca0081"/>
+      <stop offset="0.94" stop-color="#f0008d"/>
       <stop offset="1" stop-color="#ff0092"/>
     </linearGradient>
-    <linearGradient id="linear-gradient-3" x1="-0.564" y1="0.307" x2="1.187" y2="0.624" xlink:href="#linear-gradient-2"/>
-    <linearGradient id="linear-gradient-4" x1="-0.528" y1="1.208" x2="0.967" y2="0.179" gradientUnits="objectBoundingBox">
-      <stop offset="0.457" stop-color="#22034c"/>
-      <stop offset="0.505" stop-color="#390253"/>
-      <stop offset="0.686" stop-color="#8d016d"/>
-      <stop offset="0.835" stop-color="#ca0081"/>
-      <stop offset="0.943" stop-color="#f0008d"/>
+    <linearGradient id="afbb2e98-7b35-4f88-9836-69441bb4a389" data-name="Dégradé sans nom 3" x1="-58.72" y1="45.24" x2="-56.97" y2="45.55" gradientTransform="translate(1909.43 -1313.49) scale(32.49)" xlink:href="#f6d1d89e-c52b-411b-a050-ee6fa8ecffee"/>
+    <linearGradient id="a22df279-9a60-4f9a-96f9-ed362d0f1b0c" data-name="Dégradé sans nom 4" x1="-57.99" y1="50.19" x2="-56.5" y2="49.16" gradientTransform="translate(1421.57 -875.77) scale(23.71)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.46" stop-color="#22034c"/>
+      <stop offset="0.51" stop-color="#390253"/>
+      <stop offset="0.69" stop-color="#8d016d"/>
+      <stop offset="0.83" stop-color="#ca0081"/>
+      <stop offset="0.94" stop-color="#f0008d"/>
       <stop offset="1" stop-color="#ff0092"/>
     </linearGradient>
-    <linearGradient id="linear-gradient-5" x1="-0.109" y1="1.512" x2="0.785" y2="0.026" gradientUnits="objectBoundingBox">
-      <stop offset="0.457" stop-color="#22034c"/>
-      <stop offset="0.508" stop-color="#2b024f"/>
-      <stop offset="0.595" stop-color="#460257"/>
-      <stop offset="0.706" stop-color="#700165"/>
-      <stop offset="0.838" stop-color="#ac0177"/>
-      <stop offset="0.986" stop-color="#f7008f"/>
+    <linearGradient id="e514bf14-464a-4ed0-a052-cd5cc596f8a3" data-name="Dégradé sans nom 5" x1="-59.55" y1="38.76" x2="-58.66" y2="37.28" gradientTransform="translate(6593.4 -3782.29) scale(108.67)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.46" stop-color="#22034c"/>
+      <stop offset="0.51" stop-color="#2b024f"/>
+      <stop offset="0.6" stop-color="#460257"/>
+      <stop offset="0.71" stop-color="#700165"/>
+      <stop offset="0.84" stop-color="#ac0177"/>
+      <stop offset="0.99" stop-color="#f7008f"/>
       <stop offset="1" stop-color="#ff0092"/>
     </linearGradient>
-    <linearGradient id="linear-gradient-6" x1="-0.43" y1="0.554" x2="1.106" y2="0.465" xlink:href="#linear-gradient-4"/>
-    <linearGradient id="linear-gradient-7" x1="-0.884" y1="0.589" x2="1.418" y2="0.441" xlink:href="#linear-gradient-4"/>
-    <linearGradient id="linear-gradient-8" x1="-3.852" y1="3.098" x2="-3.227" y2="5.147" gradientUnits="objectBoundingBox">
+    <linearGradient id="b36f07f9-52a0-48da-8a1d-50c3f3eb6c50" data-name="Dégradé sans nom 6" x1="-58.91" y1="43.59" x2="-57.37" y2="43.5" gradientTransform="translate(2311.08 -1489.16) scale(39.52)" xlink:href="#a22df279-9a60-4f9a-96f9-ed362d0f1b0c"/>
+    <linearGradient id="eceb7580-2ed3-401d-a6ea-2da01a1e335f" data-name="Dégradé sans nom 7" x1="-49.55" y1="101.57" x2="-47.24" y2="101.42" gradientTransform="translate(306.36 -310.91) scale(5.28)" xlink:href="#a22df279-9a60-4f9a-96f9-ed362d0f1b0c"/>
+    <linearGradient id="f69f3c4a-6276-4bf2-bfb8-aec878f0c42c" data-name="Dégradé sans nom 8" x1="-58.73" y1="40.54" x2="-58.1" y2="42.59" gradientTransform="translate(8806.26 -2513.2) scale(143.04 72.57)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ffd400"/>
-      <stop offset="0.048" stop-color="#ffb415"/>
-      <stop offset="0.121" stop-color="#ff8a32"/>
-      <stop offset="0.201" stop-color="#ff654c"/>
-      <stop offset="0.287" stop-color="#ff4562"/>
-      <stop offset="0.379" stop-color="#ff2c73"/>
-      <stop offset="0.481" stop-color="#ff1881"/>
-      <stop offset="0.598" stop-color="#ff0a8a"/>
-      <stop offset="0.743" stop-color="#ff0290"/>
+      <stop offset="0.05" stop-color="#ffb415"/>
+      <stop offset="0.12" stop-color="#ff8a32"/>
+      <stop offset="0.2" stop-color="#ff654c"/>
+      <stop offset="0.29" stop-color="#ff4562"/>
+      <stop offset="0.38" stop-color="#ff2c73"/>
+      <stop offset="0.48" stop-color="#ff1881"/>
+      <stop offset="0.6" stop-color="#ff0a8a"/>
+      <stop offset="0.74" stop-color="#ff0290"/>
       <stop offset="1" stop-color="#ff0092"/>
     </linearGradient>
-    <linearGradient id="linear-gradient-9" x1="0.549" y1="1.631" x2="0.484" y2="0.133" xlink:href="#linear-gradient-4"/>
-    <linearGradient id="linear-gradient-10" x1="-3.878" y1="3.318" x2="-3.251" y2="5.58" xlink:href="#linear-gradient-8"/>
-    <linearGradient id="linear-gradient-11" x1="0.979" y1="0.941" x2="0.16" y2="0.187" gradientUnits="objectBoundingBox">
-      <stop offset="0.157" stop-color="#22034c"/>
-      <stop offset="0.241" stop-color="#2e0250"/>
-      <stop offset="0.396" stop-color="#50025a"/>
-      <stop offset="0.605" stop-color="#86016b"/>
-      <stop offset="0.857" stop-color="#d10083"/>
+    <linearGradient id="e5fbb670-87a7-4c21-a896-03bffe218371" data-name="Dégradé sans nom 9" x1="-58.71" y1="39.96" x2="-58.78" y2="38.46" gradientTransform="translate(5154.97 -2832.79) scale(81.69)" xlink:href="#a22df279-9a60-4f9a-96f9-ed362d0f1b0c"/>
+    <linearGradient id="fca52f63-c2e2-45ba-a777-3a9e125a52a7" data-name="Dégradé sans nom 10" x1="-58.65" y1="41.37" x2="-58.02" y2="43.63" gradientTransform="translate(8766.47 -2269.89) scale(142.36 65.7)" xlink:href="#f69f3c4a-6276-4bf2-bfb8-aec878f0c42c"/>
+    <linearGradient id="a3f5ee02-6b52-4b3c-bc37-c76cf4c7973c" data-name="Dégradé sans nom 11" x1="-57.57" y1="43.63" x2="-58.39" y2="42.88" gradientTransform="translate(2852.43 -1465.89) scale(40.86)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.16" stop-color="#22034c"/>
+      <stop offset="0.24" stop-color="#2e0250"/>
+      <stop offset="0.4" stop-color="#50025a"/>
+      <stop offset="0.6" stop-color="#86016b"/>
+      <stop offset="0.86" stop-color="#d10083"/>
       <stop offset="1" stop-color="#ff0092"/>
     </linearGradient>
-    <linearGradient id="linear-gradient-12" x1="1.415" y1="0.64" x2="-0.037" y2="0.418" gradientUnits="objectBoundingBox">
-      <stop offset="0.319" stop-color="#22034c"/>
-      <stop offset="0.395" stop-color="#320251"/>
-      <stop offset="0.547" stop-color="#5f025f"/>
-      <stop offset="0.759" stop-color="#a60175"/>
+    <linearGradient id="ffddc113-b18b-4320-9e98-fe203af87181" data-name="Dégradé sans nom 12" x1="-56.99" y1="44.13" x2="-58.44" y2="43.91" gradientTransform="translate(2704.23 -1414.52) scale(37.52)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.32" stop-color="#22034c"/>
+      <stop offset="0.4" stop-color="#320251"/>
+      <stop offset="0.55" stop-color="#5f025f"/>
+      <stop offset="0.76" stop-color="#a60175"/>
       <stop offset="1" stop-color="#ff0092"/>
     </linearGradient>
   </defs>
-  <g id="Groupe_53" data-name="Groupe 53" transform="translate(-303.459 -36.789)">
-    <g transform="matrix(1, 0, 0, 1, 303.46, 36.79)" filter="url(#Ellipse_7)">
-      <circle id="Ellipse_7-2" data-name="Ellipse 7" cx="157.327" cy="157.327" r="157.327" transform="translate(134.88 85.97)" fill="url(#linear-gradient)"/>
-    </g>
-    <g id="Groupe_52" data-name="Groupe 52" transform="translate(303.459 235.799)">
-      <circle id="Ellipse_8" data-name="Ellipse 8" cx="7.77" cy="7.77" r="7.77" transform="translate(82.68 0)" fill="url(#linear-gradient-2)"/>
-      <circle id="Ellipse_9" data-name="Ellipse 9" cx="16.245" cy="16.245" r="16.245" transform="translate(20.031 33.186)" fill="url(#linear-gradient-3)"/>
-      <circle id="Ellipse_10" data-name="Ellipse 10" cx="11.855" cy="11.855" r="11.855" transform="translate(58.971 172.643)" fill="url(#linear-gradient-4)"/>
-      <circle id="Ellipse_11" data-name="Ellipse 11" cx="54.333" cy="54.333" r="54.333" transform="translate(133.319 154.517)" fill="url(#linear-gradient-5)"/>
-      <g id="Groupe_48" data-name="Groupe 48" transform="translate(0 98.552)">
-        <circle id="Ellipse_12" data-name="Ellipse 12" cx="19.758" cy="19.758" r="19.758" fill="url(#linear-gradient-6)"/>
-        <circle id="Ellipse_13" data-name="Ellipse 13" cx="2.642" cy="2.642" r="2.642" transform="translate(49.442 10.648)" opacity="0.37" fill="url(#linear-gradient-7)"/>
-      </g>
-      <g id="Groupe_51" data-name="Groupe 51" transform="translate(283.987 183.046)">
-        <g id="Groupe_49" data-name="Groupe 49" transform="translate(0 13.305)">
-          <path id="Tracé_221" data-name="Tracé 221" d="M746.684,628.839c-18.272,4.713-36.985,6.76-41.017-2.952-7.868-18.956,55.5-45.9,62.747-48.91,18.008-7.477,35.644-12.94,49.665-15.389,16.938-2.958,26.513-1.164,29.274,5.485h0c7.868,18.957-55.5,45.9-62.748,48.91A312.746,312.746,0,0,1,746.684,628.839Zm-31.474-6.914c4.891,2.494,29.5-.325,65.52-15.275s55.391-30.392,57.078-35.614c-4.889-2.492-29.5.324-65.519,15.276S716.9,616.7,715.21,621.925Z" transform="translate(-704.992 -560.21)" fill="url(#linear-gradient-8)"/>
+  <title>illu-resume</title>
+  <g id="f57e7569-0d45-4f1a-89f4-ee85441d216b" data-name="e0eee170-cc15-4bd2-8ae9-df67d6a10856">
+    <g id="fba080c1-6611-4034-a181-77a39dd2f33f" data-name="e152cf7a-2f7f-4d01-bea4-a0170e306ed0">
+      <g id="ffb5e01f-bd04-48f4-9638-2c23782ee6a6" data-name="bc2125dc-c0b0-4fad-bc61-6bfffbda2c22">
+        <circle id="ad507d1e-6698-4704-9edf-01dbf1fb46e7" data-name="e585b773-70e1-4857-99e4-e641f7f09f0d" cx="292.21" cy="157.33" r="157.33" style="fill: url(#f1104711-5a4f-462d-947a-06934fe3f05b)"/>
+        <g id="bf4bcb36-54ff-4143-a2ed-bf0a326bf793" data-name="e257371f-55ed-4ad1-8907-6d377cca2fd0">
+          <circle id="b7e22721-36a9-46e7-a204-92a829283794" data-name="ef341b9b-8ccd-4a29-b654-e98e9c301a27" cx="90.45" cy="120.81" r="7.77" style="fill: url(#f6d1d89e-c52b-411b-a050-ee6fa8ecffee)"/>
+          <circle id="b8833638-8f36-422b-85f9-03cb9dc09a80" data-name="b6a019fb-88e5-41ce-afbf-e6dc03094e11" cx="36.28" cy="162.47" r="16.25" style="fill: url(#afbb2e98-7b35-4f88-9836-69441bb4a389)"/>
+          <circle id="b5562517-3f95-4b0d-afc8-3c2bbaed9017" data-name="ac1be0a9-f193-4382-a1a4-c2b566fa94ba" cx="70.83" cy="297.54" r="11.85" style="fill: url(#a22df279-9a60-4f9a-96f9-ed362d0f1b0c)"/>
+          <circle id="fb7324fd-f669-4b35-a040-d784b998aa7e" data-name="b1b11eec-fef8-428d-bcee-730ce2001e54" cx="187.65" cy="321.89" r="54.33" style="fill: url(#e514bf14-464a-4ed0-a052-cd5cc596f8a3)"/>
+          <g id="e08cd06a-4ab0-44d9-a91b-90c6431c1210" data-name="a40e6171-cf9b-4799-9063-4561ad2ff382">
+            <circle id="b80093b0-2d90-48d4-9a42-c53b8eda3fba" data-name="f03f2e07-0b6d-47f3-a770-1c6972eb33ef" cx="19.76" cy="231.35" r="19.76" style="fill: url(#b36f07f9-52a0-48da-8a1d-50c3f3eb6c50)"/>
+            <circle id="b30afc84-d29c-49e8-b7ab-7e37a405c650" data-name="b13e29e5-2d0b-4ac0-8410-478a2a2d473b" cx="52.08" cy="224.88" r="2.64" style="opacity: 0.3700000047683716;isolation: isolate;fill: url(#eceb7580-2ed3-401d-a6ea-2da01a1e335f)"/>
+          </g>
+          <g id="ae9ad7ed-fc0b-431d-a506-44befb720b31" data-name="b534ca8f-b3ca-4c11-94b6-00b2918f10cd">
+            <g id="b9e67f57-e2bc-4c65-850f-26ea520fd4d3" data-name="e105e437-7f33-4c5f-b5bc-fae773a8f1b2">
+              <path id="f206f713-0276-4234-8fb0-9600b1fcf6ac" data-name="b9065794-b1e5-4f40-868a-fbf5e0903ba9" d="M325.68,378c-18.27,4.71-37,6.76-41-2.95-7.87-19,55.5-45.9,62.75-48.91,18-7.48,35.64-12.94,49.66-15.39,16.94-3,26.52-1.17,29.28,5.48h0c7.87,19-55.5,45.9-62.75,48.91A313,313,0,0,1,325.68,378Zm-31.47-6.92c4.89,2.5,29.5-.32,65.52-15.27s55.39-30.39,57.07-35.61c-4.89-2.5-29.5.32-65.52,15.27s-55.38,30.41-57.07,35.63Z" style="fill: url(#f69f3c4a-6276-4bf2-bfb8-aec878f0c42c)"/>
+            </g>
+            <circle id="aa63d5f7-3c66-4c65-a4d2-85f065887562" data-name="b620bee0-c57d-41e8-8b78-f13bf06d2d3e" cx="354.3" cy="336.93" r="40.85" style="fill: url(#e5fbb670-87a7-4c21-a896-03bffe218371)"/>
+            <g id="a1237572-3257-4292-baf9-acb5101783a6" data-name="ef9e5e5a-a0ae-40d4-80b7-4895f98d1bdf">
+              <path id="bc8f3d53-34fe-489d-8b3f-f77ea33dc789" data-name="e564e584-8dcf-4a20-9713-975265df1301" d="M325.74,378.24c-18.27,4.72-37,6.77-41-2.95l9.33-3.87a1,1,0,0,0-.25-.39c3.55,3,28.63.53,66-15s56.8-31.54,57.2-36.15a1,1,0,0,0,.1.45l9.33-3.88c7.87,19-55.5,45.9-62.75,48.91A312.81,312.81,0,0,1,325.74,378.24Z" style="fill: url(#fca52f63-c2e2-45ba-a777-3a9e125a52a7)"/>
+            </g>
+          </g>
+          <circle id="a0653729-6587-4bd3-950d-e5aba52462ee" data-name="b5c4bf46-7672-48b5-92fa-1eb0e212f789" cx="481.32" cy="299.7" r="20.43" style="fill: url(#a3f5ee02-6b52-4b3c-bc37-c76cf4c7973c)"/>
+          <circle id="e934dc84-2875-403e-bd07-826778ba49a6" data-name="a8117e6b-dec5-408e-8cb2-e490f45f9907" cx="531.85" cy="235.94" r="18.76" style="fill: url(#ffddc113-b18b-4320-9e98-fe203af87181)"/>
         </g>
-        <circle id="Ellipse_14" data-name="Ellipse 14" cx="40.847" cy="40.847" r="40.847" transform="translate(29.462)" fill="url(#linear-gradient-9)"/>
-        <g id="Groupe_50" data-name="Groupe 50" transform="translate(0.734 20.396)">
-          <path id="Tracé_222" data-name="Tracé 222" d="M747.049,632c-18.272,4.713-36.987,6.762-41.02-2.95l9.334-3.874a1.11,1.11,0,0,0-.251-.385c3.548,2.981,28.629.528,65.98-14.978s56.8-31.534,57.193-36.151a1.1,1.1,0,0,0,.1.45l9.334-3.875c7.868,18.957-55.5,45.9-62.747,48.91A312.882,312.882,0,0,1,747.049,632Z" transform="translate(-706.029 -570.237)" fill="url(#linear-gradient-10)"/>
-        </g>
       </g>
-      <circle id="Ellipse_15" data-name="Ellipse 15" cx="20.429" cy="20.429" r="20.429" transform="translate(460.887 166.235)" fill="url(#linear-gradient-11)"/>
-      <circle id="Ellipse_16" data-name="Ellipse 16" cx="18.759" cy="18.759" r="18.759" transform="translate(513.09 104.144)" fill="url(#linear-gradient-12)"/>
     </g>
   </g>
 </svg>

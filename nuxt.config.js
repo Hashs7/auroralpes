@@ -2,7 +2,6 @@ require('dotenv').config();
 const contentful = require('contentful');
 const { getNestedReferences } = require('./utils/contentful');
 
-
 export default {
   mode: 'universal',
   // mode: 'spa',
@@ -107,7 +106,6 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
@@ -167,6 +165,36 @@ export default {
           }
         }
       });
+    },
+  },
+
+  generate: {
+    fallback: true,
+    routes: async () => {
+      // Generate Contentful client
+      const client = contentful.createClient({
+        space: process.env.CTF_SPACE_ID,
+        accessToken: process.env.CTF_CDA_ACCESS_TOKEN,
+      });
+
+      // Get setting
+      const { items: [settings] } = await client.getEntries({
+        content_type: 'settings',
+      });
+
+      const pages = (await getNestedReferences(settings)).fields.pages;
+
+      // Get pages (you might need to duplicate this for every content type you have
+      /* const { items: simplePages } = await client.getEntries({
+        content_type: 'page',
+      });
+      pages.push(...simplePages); */
+
+      // Generate page
+      return pages.filter((page) => page.sys.contentType.sys.id !== 'homepage').map((page) => ({
+        route: page.fields.slug,
+        payload: page,
+      }));
     },
   },
 

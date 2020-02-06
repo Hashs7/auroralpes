@@ -75,10 +75,6 @@ export default {
       }
     },
     sendSize() {
-      if (this.$refs.asset.offsetWidth < 10 || this.$refs.asset.offsetHeight < 10) {
-        setTimeout(() => this.sendSize(), 100);
-        return;
-      }
       this.$emit('loaded', {
         width: this.$refs.asset.offsetWidth,
         height: this.$refs.asset.offsetHeight,

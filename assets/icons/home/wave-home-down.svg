@@ -1,12 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 172.61">
-<defs>
-    <filter id="Tracé_223" x="0" y="0" filterUnits="userSpaceOnUse">
-        <feOffset input="SourceAlpha"/>
-        <feGaussianBlur stdDeviation="20" result="blur"/>
-        <feFlood flood-opacity="0.184"/>
-        <feComposite operator="in" in2="blur"/>
-        <feComposite in="SourceGraphic"/>
-    </filter>
-</defs>
-  <path filter="url(#Tracé_223)" d="M1920,0V172.61s-532.26-155.93-823.45-80S486.23,138,330.86,65.29,0,19.82,0,19.82V0Z" style="fill: #fff"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 216.9" style="enable-background:new 0 0 1920 216.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<g transform="matrix(1, 0, 0, 1, 0, 0)">
+	<path class="st0" d="M1920,0v172.6c0,0-532.3-155.9-823.4-80S486.2,138,330.9,65.3S0,19.8,0,19.8V0H1920z"/>
+</g>
 </svg>

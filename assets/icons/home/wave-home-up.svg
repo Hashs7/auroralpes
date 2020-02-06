@@ -1,12 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 217.72">
-    <defs>
-        <filter id="Tracé_467" x="0" y="0" filterUnits="userSpaceOnUse">
-            <feOffset input="SourceAlpha"/>
-            <feGaussianBlur stdDeviation="20" result="blur"/>
-            <feFlood flood-opacity="0.184"/>
-            <feComposite operator="in" in2="blur"/>
-            <feComposite in="SourceGraphic"/>
-        </filter>
-    </defs>
-  <path filter="url(#Tracé_467)" d="M0,92.41S326.78-7.83,637.88,63s346.49,210.08,683.24,132,598.88,0,598.88,0v60.47H0Z" transform="translate(0 -37.66)" style="fill: #fff"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 255.4" style="enable-background:new 0 0 1920 255.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{filter:url(#Tracé_467);}
+	.st1{fill:#FFFFFF;}
+</style>
+<filter  filterUnits="userSpaceOnUse" id="Tracé_467" x="0" y="0">
+	<feOffset  input="SourceAlpha"></feOffset>
+	<feGaussianBlur  result="blur" stdDeviation="20"></feGaussianBlur>
+	<feFlood  flood-opacity="0.184"></feFlood>
+	<feComposite  in2="blur" operator="in"></feComposite>
+	<feComposite  in="SourceGraphic" operator="over"></feComposite>
+</filter>
+<g transform="matrix(1, 0, 0, 1, 0, 0)" class="st0">
+	<path class="st1" d="M0,92.4C0,92.4,326.8-7.8,637.9,63s346.5,210.1,683.2,132s598.9,0,598.9,0v60.5H0V92.4z"/>
+</g>
 </svg>
