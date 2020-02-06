@@ -7,8 +7,8 @@
 <script>
 /* eslint-disable */
 import client from '~/plugins/contentful';
-import PageProjects from '@/components/page/projects/PageProjects';
-import PageTeam from '@/components/page/team/PageTeam';
+import PageProjects from '~/components/page/projects/pageProjects';
+import PageTeam from '~/components/page/team/pageTeam';
 
 export default {
   components: {
