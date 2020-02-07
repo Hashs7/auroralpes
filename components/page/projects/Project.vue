@@ -11,18 +11,27 @@
         <RichText :content="datas.fields.description" />
       </div>
     </section>
+    <section class="o-section--white">
+      <div class="o-container">
+        <div class="project-gallery">
+          <Asset v-for="(img, i) in datas.fields.images" :key="i" :datas="img" class="project-gallery__item"/>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
   import Header from '~/components/layout/Header';
   import RichText from '~/components/common/RichText';
+  import Asset from '~/components/common/Asset';
 
   export default {
     name: 'Project',
     components: {
       Header,
       RichText,
+      Asset,
     },
     props: {
       datas: {
@@ -30,6 +39,9 @@
         required: true,
       },
     },
+    mounted() {
+      console.log(this.datas);
+    }
   }
 </script>
 
@@ -39,6 +51,34 @@
 
   h2, h3, h4, h5, h6 {
     color: #535353;
+  }
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 340px 400px auto;
+  grid-column-gap: 32px;
+  grid-row-gap: 24px;
+}
+
+.project-gallery__item {
+  position: relative;
+  width: 100%;
+  border: 1px solid #ccc;
+
+  &:nth-child(4n - 3) {
+    grid-column: 1 / 4;
+  }
+  &:nth-child(4n - 2) {
+    grid-column: 4 / 7;
+    justify-self: center;
+  }
+  &:nth-child(4n - 1) {
+    grid-column: 1 / 3;
+  }
+  &:nth-child(4n) {
+    grid-column: 3 / 7;
   }
 }
 </style>
