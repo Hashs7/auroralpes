@@ -9,12 +9,14 @@
 import client from '~/plugins/contentful';
 import PageProjects from '~/components/page/projects/pageProjects';
 import PageTeam from '~/components/page/team/pageTeam';
+import PageFestival from '~/components/page/festival/pageFestival';
 
 export default {
   components: {
     // Header,
     PageProjects,
     PageTeam,
+    PageFestival,
   },
   /**
    * SEO data with Contentful

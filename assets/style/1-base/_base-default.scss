@@ -15,6 +15,10 @@ html {
   font-size: 16px;
   //@include fluid-type(font-size, $mobile-s, $tablet-m, 16px, 18px);
   //@include fluid-type(font-size, $desktop-m, $desktop-l, 20px, 22px);
+
+  &.page--festival {
+    background-color: #00020A;
+  }
 }
 
 body {

@@ -81,6 +81,10 @@ export default {
       ssr: false,
     },
     {
+      src: '~/plugins/smooth-scroll',
+      ssr: false,
+    },
+    {
       src: '~/plugins/scrollmagic',
       ssr: false,
     },
