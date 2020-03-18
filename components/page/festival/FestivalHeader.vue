@@ -21,7 +21,7 @@
           src="~@/assets/img/festival-illu/plan3.png"
           ref="plan3"
           alt=""
-          v-parallax="0.2"
+          v-parallax="0.15"
       >
     </div>
     <div >
@@ -29,7 +29,7 @@
           class="illu-plan plan--parallax plan2"
           src="~@/assets/img/festival-illu/plan2.png"
           ref="plan2"
-          v-parallax="0.3"
+          v-parallax="0.2"
           alt=""
       >
     </div>
@@ -38,7 +38,7 @@
           class="illu-plan plan--parallax plan1"
           src="~@/assets/img/festival-illu/plan1.png"
           ref="plan1"
-          v-parallax="0.4"
+          v-parallax="0.22"
           alt=""
       >
     </div>
@@ -86,7 +86,7 @@
   }
   @media screen and (max-width: 1570px) {
     .plan1 {
-      bottom: 0;
+      /*bottom: 0;*/
     }
   }
   @media #{$xll-down} {

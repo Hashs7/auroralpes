@@ -28,3 +28,12 @@
     background-color: $white;
   }
 }
+
+.o-section--dark__title {
+  color: $teal;
+  font-family: $font-accent;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 3.75rem;
+  margin-bottom: 45px;
+}

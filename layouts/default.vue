@@ -1,12 +1,12 @@
 <template>
   <main id="main" role="main">
-    <smooth-scrollbar :options="{thumbMinSize: 35}">
+<!--    <smooth-scrollbar :options="{thumbMinSize: 35}">-->
       <header>
         <MenuNavigation/>
       </header>
       <nuxt/>
       <Footer/>
-    </smooth-scrollbar>
+<!--    </smooth-scrollbar>-->
   </main>
 </template>
 
@@ -24,21 +24,21 @@
   }
 </script>
 <style>
-  #main {
+/*  #main {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-  }
-  body {
+  }*/
+/*  body {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     margin: 0;
-  }
+  }*/
 
   .page-loader-enter-active {
     animation: bounce-in .5s;
