@@ -12,7 +12,7 @@
         src="~@/assets/img/festival-illu/plan4.png"
         ref="plan4"
         alt=""
-        v-parallax="0.1"
+        v-parallax="-0.1"
       >
     </div>
     <div >
@@ -21,7 +21,7 @@
           src="~@/assets/img/festival-illu/plan3.png"
           ref="plan3"
           alt=""
-          v-parallax="0.15"
+          v-parallax="-0.15"
       >
     </div>
     <div >
@@ -29,7 +29,7 @@
           class="illu-plan plan--parallax plan2"
           src="~@/assets/img/festival-illu/plan2.png"
           ref="plan2"
-          v-parallax="0.2"
+          v-parallax="-0.3"
           alt=""
       >
     </div>
@@ -38,7 +38,7 @@
           class="illu-plan plan--parallax plan1"
           src="~@/assets/img/festival-illu/plan1.png"
           ref="plan1"
-          v-parallax="0.22"
+          v-parallax="-0.22"
           alt=""
       >
     </div>
@@ -55,11 +55,15 @@
   .festival-header {
     position: relative;
     overflow: hidden;
-    padding-bottom: 300px;
+    /*padding-bottom: 300px;*/
   }
   .illu-plan {
     width: 100%;
     min-width: 1400px;
+  }
+  .plan--bg {
+    height: 100vw;
+    width: auto;
   }
   .plan--parallax {
     position: absolute;
@@ -69,20 +73,21 @@
   }
   .plan1 {
     // bottom: -200px;
-    top: 900px;
+    /*top: 620px;*/
+    top: 820px;
   }
   .plan2 {
-    top: 275px
+    /*top: 275px*/
+    top: 475px;
   }
   .plan3 {
     /*top: 40px;*/
-    top: 170px;
+    /*top: 170px;*/
+    top: 370px;
   }
   .plan4 {
-    top: 180px;
-  }
-  .plan5 {
-    bottom: 0;
+    /*top: 180px;*/
+    top: 280px;
   }
   @media screen and (max-width: 1570px) {
     .plan1 {

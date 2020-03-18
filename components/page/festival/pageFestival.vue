@@ -49,7 +49,7 @@
 <style lang="scss">
   .section--header {
     position: relative;
-    height: 510px;
+    height: 100vh;
   }
   .festival-page {
     .section--header {
@@ -60,7 +60,8 @@
   }
   .festival-page__logo {
     position: absolute;
-    bottom: -56px;
+    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
