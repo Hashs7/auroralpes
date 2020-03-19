@@ -84,13 +84,13 @@
                 this.children.forEach(child => {
                   console.log(child.material);
                   // child.material = new THREE.MeshPhongMaterial();
-                  child.material = new THREE.MeshToonMaterial({
+/*                  child.material = new THREE.MeshToonMaterial({
                     bumpScale: 1,
                     color: new THREE.Color().setHSL( color.h / 360, color.s, color.v),
                     // color: new THREE.Color().setHSL( alpha, 0.34, 0.4).multiplyScalar( 1 - beta * 0.2 ),
                     specular: 0.3,
                     shininess: 0.3,
-                  })
+                  })*/
                   // child.material.metalness = 0
                   // child.material.metalness = 0.2
                 });
@@ -101,8 +101,6 @@
                 // Fires on every change, drag, keypress, etc.
                 setColor(value)
               });
-
-
 
               gsap.timeline({ repeat: -1 })
                 .to(gltf.scene.position, {
@@ -141,28 +139,26 @@
                   x: 0,
                   duration: 2
                 }, 'end')
-
-              // light = new THREE.AmbientLight(0x63b8ff);
             });
         });
 
 
-        this.light = new THREE.DirectionalLight(0xffffff);
-        const ambiantLight =new THREE.AmbientLight(0xffffff);
-        this.light = new THREE.DirectionalLight(0xffffff);
-        this.light.position.set(30, 10, 0)
+        // this.light = new THREE.DirectionalLight(0xffffff);
+        // this.light = new THREE.DirectionalLight(0xffffff);
+        // this.light.position.set(30, 10, 0)
         // const light = new THREE.HemisphereLight(0x00ff00, 0x0000ff);
         // this.lightHelper = new THREE.DirectionalLightHelper(this.light, 5, 0xffffff);
 
 
+        const ambiantLight = new THREE.AmbientLight(0xffffff, 2.5);
         this.scene.add(ambiantLight);
-        this.scene.add(this.light);
+        // this.scene.add(this.light);
         // this.scene.add(this.lightHelper);
 
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
-        this.camera.position.set(13, 13, 10);
+        this.camera.position.set(12, 12, 10);
 
-        this.renderer = new THREE.WebGLRenderer({ alpha: true, canvas: this.$refs.canvas });
+        this.renderer = new THREE.WebGLRenderer({ alpha: true, canvas: this.$refs.canvas, antialias: true  });
         this.mainLoop()
       },
       mainLoop() {
@@ -200,8 +196,12 @@
     transform: translateY(50%) rotate(180deg);
   }
   .entry-content {
-    padding: 315px 0 440px 0;
+    padding: 350px 0;
     background: linear-gradient(-165deg, rgba(255,217,229,1) 0%, rgba(0,0,0,0) 50%);
+
+    .o-container {
+      position: relative;
+    }
   }
   .entry-content__title {
     font-size: 60px;
@@ -217,7 +217,7 @@
   }
   .canvas {
     position: absolute;
-    top: 315px;
-    right: 0;
+    top: -100px;
+    right: 80px;
   }
 </style>
