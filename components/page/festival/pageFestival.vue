@@ -38,10 +38,10 @@
       }
     },
     mounted() {
-      document.querySelector('html').classList.add('page--festival')
+      document.querySelector('html').classList.add('page--festival');
     },
     beforeDestroy() {
-      document.querySelector('html').classList.remove(' ')
+      document.querySelector('html').classList.remove('page--festival')
     }
   }
 </script>

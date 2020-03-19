@@ -19,21 +19,6 @@
       Navigation,
       Footer,
     },
-    data() {
-      return {
-        lmS: null
-      };
-    },
-    mounted() {
-      this.$nextTick(function () {
-        this.lmS = new this.locomotiveScroll({
-          el: document.querySelector("#main"),
-          smooth: true,
-          getSpeed: true,
-        });
-      console.log("lmS", this.lmS);
-      });
-    }
   }
 </script>
 <style>

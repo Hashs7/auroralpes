@@ -2,6 +2,7 @@
 export const state = () => ({
   counterDown: false,
   menuOpen: false,
+  lmS: null,
 });
 
 /* -------- Mutations -------- */
@@ -15,6 +16,9 @@ export const mutations = {
   },
   setBackgroundColor(state, isTransparent) {
     state.backgroundColor = isTransparent ? 'transparent' : '#FFF';
+  },
+  setScroll(state, locomotiveScroll) {
+    state.lmS = locomotiveScroll;
   },
 };
 

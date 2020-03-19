@@ -8,6 +8,7 @@
 import client from '~/plugins/contentful';
 import Project from '~/components/page/projects/Project';
 import Header from '~/components/layout/Header';
+import locomotive from "~/mixins/locomotive.js";
 
 /* -------------------- Module -------------------- */
 export default {
@@ -15,6 +16,7 @@ export default {
     Header,
     Project,
   },
+  mixins: [locomotive],
   /**
      * SEO data with Contentful
      */

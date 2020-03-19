@@ -10,6 +10,7 @@ import client from '~/plugins/contentful';
 import PageProjects from '~/components/page/projects/pageProjects';
 import PageTeam from '~/components/page/team/pageTeam';
 import PageFestival from '~/components/page/festival/pageFestival';
+import locomotive from "~/mixins/locomotive.js";
 
 export default {
   components: {
@@ -18,6 +19,7 @@ export default {
     PageTeam,
     PageFestival,
   },
+  mixins: [locomotive],
   /**
    * SEO data with Contentful
    */

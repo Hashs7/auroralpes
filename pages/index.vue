@@ -11,6 +11,7 @@ import HomeHeader from '~/components/page/home/HomeHeader';
 import HomeResume from '~/components/page/home/HomeResume';
 import HomeTeam from '~/components/page/home/HomeTeam';
 import HomeProjects from '~/components/page/home/HomeProjects';
+import locomotive from "~/mixins/locomotive.js";
 
 export default {
   components: {
@@ -19,6 +20,7 @@ export default {
     HomeTeam,
     HomeProjects,
   },
+  mixins: [locomotive],
   /**
    * SEO data with Contentful
    */
