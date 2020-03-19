@@ -1,12 +1,10 @@
 <template>
   <main id="main" role="main">
-<!--    <smooth-scrollbar :options="{thumbMinSize: 35}">-->
       <header>
         <MenuNavigation/>
       </header>
       <nuxt/>
       <Footer/>
-<!--    </smooth-scrollbar>-->
   </main>
 </template>
 
@@ -21,24 +19,24 @@
       Navigation,
       Footer,
     },
+    data() {
+      return {
+        lmS: null
+      };
+    },
+    mounted() {
+      this.$nextTick(function () {
+        this.lmS = new this.locomotiveScroll({
+          el: document.querySelector("#main"),
+          smooth: true,
+          getSpeed: true,
+        });
+      console.log("lmS", this.lmS);
+      });
+    }
   }
 </script>
 <style>
-/*  #main {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }*/
-/*  body {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-  }*/
 
   .page-loader-enter-active {
     animation: bounce-in .5s;

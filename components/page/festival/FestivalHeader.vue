@@ -12,7 +12,7 @@
         src="~@/assets/img/festival-illu/plan4.png"
         ref="plan4"
         alt=""
-        v-parallax="-0.1"
+        data-scroll data-scroll-speed="1"
       >
     </div>
     <div >
@@ -21,7 +21,7 @@
           src="~@/assets/img/festival-illu/plan3.png"
           ref="plan3"
           alt=""
-          v-parallax="-0.15"
+          data-scroll data-scroll-speed="1.5"
       >
     </div>
     <div >
@@ -29,7 +29,7 @@
           class="illu-plan plan--parallax plan2"
           src="~@/assets/img/festival-illu/plan2.png"
           ref="plan2"
-          v-parallax="-0.3"
+          data-scroll data-scroll-speed="2"
           alt=""
       >
     </div>
@@ -38,7 +38,7 @@
           class="illu-plan plan--parallax plan1"
           src="~@/assets/img/festival-illu/plan1.png"
           ref="plan1"
-          v-parallax="-0.22"
+          data-scroll data-scroll-speed="2.2"
           alt=""
       >
     </div>

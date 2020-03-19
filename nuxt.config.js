@@ -81,7 +81,7 @@ export default {
       ssr: false,
     },
     {
-      src: '~/plugins/smooth-scroll',
+      src: '~/plugins/locomotive-scroll',
       ssr: false,
     },
     {
