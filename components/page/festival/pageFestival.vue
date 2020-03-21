@@ -8,6 +8,7 @@
         :title="datas.fields.entryContent.fields.title"
         :description="datas.fields.entryContent.fields.description"
     />
+    <FestivalPlanning />
     <FestivalSpeakers />
   </main>
 </template>
@@ -16,6 +17,7 @@
   import Asset from '@/components/common/Asset';
   import FestivalHeader from '@/components/page/festival/FestivalHeader';
   import EntryContent from '@/components/page/festival/FestivalEntryContent';
+  import FestivalPlanning from '@/components/page/festival/FestivalPlanning';
   import FestivalSpeakers from '@/components/page/festival/FestivalSpeakers';
 
   export default {
@@ -24,6 +26,7 @@
       Asset,
       FestivalHeader,
       EntryContent,
+      FestivalPlanning,
       FestivalSpeakers,
     },
     props: {

@@ -1,7 +1,7 @@
 <template>
   <section class="o-section o-section--dark">
     <div class="o-container">
-      <h2 class="o-section--dark__title">Les intervenants</h2>
+      <h2 class="o-section--dark__title">Le planning</h2>
       <p>Wowwwlj jdozqjojdozqj ojdzoqj ojdzqo ojdzq oijd ozqjd ozqj ojojdozqjod jzq</p>
     </div>
   </section>
@@ -9,12 +9,12 @@
 
 <script>
   export default {
-    name: 'FestivalPlanning'
+    name: "FestivalSpeakers"
   }
 </script>
 
 <style scoped>
   .o-section--dark {
-    padding: 200px 0;
+    padding-top: 200px;
   }
 </style>

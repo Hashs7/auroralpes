@@ -1,9 +1,9 @@
 <template>
   <a :href="'mailto:'+email" class="mail">
-    <span class="mail__label">{{ label }}</span>
     <span class="mail__icon">
       <MailIcon />
     </span>
+    <span class="mail__label">{{ label }}</span>
   </a>
 </template>
 
@@ -32,11 +32,13 @@
   .mail {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 330px;
     font-size: 1.3rem;
     color: $black;
     font-weight: $weight-medium;
+  }
+  .mail__label {
+    padding-left: 25px;
   }
   .mail__icon {
     display: inline-flex;

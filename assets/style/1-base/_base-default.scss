@@ -10,9 +10,10 @@ html {
   font-weight: $weight-regular;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  background-color: $secondary-background;
+  background: linear-gradient(220deg, #404553, #0D0026);
+  //background-color: $secondary-background;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
+  font-size: 18px;
   //@include fluid-type(font-size, $mobile-s, $tablet-m, 16px, 18px);
   //@include fluid-type(font-size, $desktop-m, $desktop-l, 20px, 22px);
 

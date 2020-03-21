@@ -91,8 +91,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 55px 65px 55px 45px;
+    padding: 25px 120px 20px 120px;
     color: $white;
+    background: linear-gradient(150deg, #404553, #000000);
   }
   .footer__socials-title {
     display: inline-block;

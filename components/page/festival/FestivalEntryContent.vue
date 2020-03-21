@@ -65,7 +65,6 @@
             loader.load('../models/vaisseau2.glb', (gltf) => {
               this.scene.add(gltf.scene);
               this.camera.lookAt(gltf.scene.position);
-              this.children = gltf.scene.children[0].children[0].children;
 
               gsap.timeline({ repeat: -1 })
                 .to(gltf.scene.position, {

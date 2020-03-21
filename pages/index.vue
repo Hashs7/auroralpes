@@ -1,9 +1,10 @@
 <template>
   <main class="home-page">
     <HomeHeader />
-    <HomeResume :resume="datas.fields.festivalResume" />
-    <HomeTeam />
+    <HomeResume :resume="datas.fields.introResume" />
+    <HomeTeam :resume="datas.fields.teamResume" />
     <HomeProjects />
+<!--    <HomeFestival :resume="datas.fields.festivalResume" />-->
   </main>
 </template>
 <script>
