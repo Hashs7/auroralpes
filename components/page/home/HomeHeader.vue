@@ -7,12 +7,17 @@
 
 <script>
   import Logo from '~/assets/icons/aurorales-logo-white.svg';
+  import SceneHome from '@/components/Scene/SceneHome';
 
   export default {
-    name: "HomeHeader",
+    name: 'HomeHeader',
     components: {
       Logo,
     },
+    mounted() {
+      if (process.server) return;
+      new SceneHome(this.$refs.canvas);
+    }
   }
 </script>
 
@@ -25,6 +30,6 @@
     display: block;
     width: 335px;
     padding-top: 310px;
-    margin: auto 20% auto auto;
+    margin: auto;
   }
 </style>

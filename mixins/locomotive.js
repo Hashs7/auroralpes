@@ -16,24 +16,23 @@ export default {
     }
   },
   mounted() {
-    this.$nextTick(
-      function() {
-        this.lmS = new this.locomotiveScroll({
-          el: document.querySelector("#main"),
-          smooth: true /* if false disable overflow: hidden on html, body */
-        });
+    this.$nextTick(() => {
+      this.lmS = new this.locomotiveScroll({
+        el: document.querySelector("#main"),
+        smooth: true /* if false disable overflow: hidden on html, body */
+      });
 
-        // this.lmS.on("scroll", _.throttle(this.onLmsScroll, 150));
-        // this.lmS.on("scroll", this.onLmsScroll);
-        window.addEventListener(
-          "resize",
-          // _.debounce(this.onLmsResize.bind(this), 100)
-          this.onLmsResize
-        );
-      }.bind(this)
-    );
+      // this.lmS.on("scroll", _.throttle(this.onLmsScroll, 150));
+      // this.lmS.on("scroll", this.onLmsScroll);
+      window.addEventListener(
+        "resize",
+        // _.debounce(this.onLmsResize.bind(this), 100)
+        this.onLmsResize
+      );
+    });
   },
-  destroyed() {
+  beforeDestroy() {
+    if (!this.lmS) return;
     this.lmS.destroy();
     window.removeEventListener("resize", this.onLmsResize);
   },
@@ -42,16 +41,16 @@ export default {
       this.scrollPosition = obj["scroll"]["y"];
       console.log("scrollPosition + na", this.scrollPosition);
       /*if (this.scrollPosition < OFFSET) {
-        if (this.isNavSmall) {
-          console.log("grow");
-          mutations.growNav();
-        }
-      } else {
-        if (!this.isNavSmall) {
-          console.log("shrink");
-          mutations.shrinkNav();
-        }
-      }*/
+       if (this.isNavSmall) {
+       console.log("grow");
+       mutations.growNav();
+       }
+       } else {
+       if (!this.isNavSmall) {
+       console.log("shrink");
+       mutations.shrinkNav();
+       }
+       }*/
     },
     onLmsResize() {
       this.lmS.update();

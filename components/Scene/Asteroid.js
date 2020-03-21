@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import GLTFLoader from 'three-gltf-loader';
+
 let asteroid,
     renderer,
     camera,
@@ -29,6 +30,7 @@ const animate = () => {
     });
     render()
 };
+
 function getScrollbarWidth() {
     const outer = document.createElement("div");
     outer.style.visibility = "hidden";

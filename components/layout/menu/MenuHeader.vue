@@ -1,9 +1,7 @@
 <template>
   <header class="header">
     <div class="o-container">
-      <n-link
-          to="/"
-      >
+      <n-link to="/">
         <Logo />
       </n-link>
 
