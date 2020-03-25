@@ -1,24 +1,26 @@
 <template>
-  <section class="o-section home-team">
+  <section class="o-section--white home-team">
     <div class="o-container">
       <div class="o-section__illu">
-        <IlluResume/>
+        <IlluResume data-scroll data-scroll-speed="2.2" />
       </div>
-      <div class="o-section__content">
+      <div class="o-section__content" data-scroll data-scroll-speed="2">
         <h2 class="o-section__title">L'équipe</h2>
-        <RichText :content="resume"/>
+        <RichText :content="resume" />
         <n-link :to="teamPage">
           <RippleButton name="Voir l'équipe"/>
         </n-link>
       </div>
     </div>
-    <Wave class="wave-bg"/>
+<!--    <Wave class="wave-bg"/>-->
+    <Wave class="wave--up"/>
   </section>
 </template>
 
 <script>
   import IlluResume from '~/assets/icons/home/illu-resume.svg';
-  import Wave from '~/assets/icons/home/wave-home.svg';
+  import Wave from '~/assets/icons/home/wave-home--up.svg';
+  // import Wave from '~/assets/icons/home/wave-home.svg';
   import RippleButton from '~/components/UI/RippleButton';
   import RichText from '~/components/common/RichText';
 
@@ -71,6 +73,14 @@
     right: 0;
     height: 100%;
     margin: auto;
+  }
+
+  .wave--up {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateY(-99%);
   }
 
   .o-section__content {

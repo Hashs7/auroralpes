@@ -1,7 +1,7 @@
 <template>
   <section class="o-section home-resume">
     <div class="o-container">
-      <div class="o-section__content">
+      <div class="o-section__content" data-scroll data-scroll-speed="2">
         <h2 class="o-section__title">Présentation</h2>
         <RichText :content="resume"/>
       </div>

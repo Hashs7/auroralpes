@@ -1,7 +1,9 @@
 <template>
   <div class="header--home">
-    <Logo class="header__logo" />
-    <canvas ref="canvas" width="300" height="650" />
+    <div data-scroll data-scroll-speed="2">
+      <Logo class="header__logo" />
+    </div>
+    <canvas class="header__canvas" ref="canvas" width="300" height="300" />
   </div>
 </template>
 
@@ -16,7 +18,11 @@
     },
     mounted() {
       if (process.server) return;
-      new SceneHome(this.$refs.canvas);
+      import('three/examples/jsm/loaders/GLTFLoader').then(({ GLTFLoader }) => {
+          new GLTFLoader().load('../models/asteroids-home.glb', (glb) => {
+            new SceneHome(this.$refs.canvas, glb);
+          });
+        })
     }
   }
 </script>
@@ -31,5 +37,13 @@
     width: 335px;
     padding-top: 310px;
     margin: auto;
+  }
+  .header__canvas {
+    z-index: 1000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(30%);
   }
 </style>

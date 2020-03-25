@@ -2,6 +2,7 @@
   <div class="asset">
     <span :style="{ backgroundColor, transform: `translateX(${x})` }" class="asset__underlay" />
     <img
+      draggable="false"
       ref="asset"
       v-if="isImage"
       v-lazy="{src: url}"

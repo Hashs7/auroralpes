@@ -10,7 +10,7 @@ html {
   font-weight: $weight-regular;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  background: linear-gradient(220deg, #404553, #0D0026);
+  background: linear-gradient(220deg, #404553, #0D0026 50%);
   //background-color: $secondary-background;
   -moz-osx-font-smoothing: grayscale;
   font-size: 18px;
@@ -78,4 +78,9 @@ button:focus {
 }
 :focus:not(:focus-visible) {
   outline: none;
+}
+
+img {
+  user-drag: none;
+  user-select: none;
 }
