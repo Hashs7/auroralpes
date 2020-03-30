@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import GLTFLoader from 'three-gltf-loader';
+
 let asteroid,
     renderer,
     camera,

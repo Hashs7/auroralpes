@@ -62,7 +62,7 @@
             }
         },
         mounted() {
-            Asteroid();
+            // Asteroid();
         }
     }
 </script>
