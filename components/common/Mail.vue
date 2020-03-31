@@ -42,14 +42,29 @@
   }
   .mail__icon {
     display: inline-flex;
-    width: 70px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(255, 0, 104, .25);
 
     svg {
-      width: 40px;
+      width: 30px;
       margin: auto;
+    }
+  }
+  @media #{$mobile-l-media} {
+    .mail {
+      width: auto;
+      font-size: 1rem;
+    }
+    .mail__icon {
+      width: 50px;
+      height: 50px;
+
+      svg {
+        width: 26px;
+        margin: auto;
+      }
     }
   }
 </style>
