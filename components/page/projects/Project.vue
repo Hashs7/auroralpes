@@ -11,7 +11,7 @@
         <RichText :content="datas.fields.description" />
       </div>
     </section>
-    <section class="o-section--white">
+    <section v-if="datas.fields.images" class="o-section--white">
       <div class="o-container">
         <div class="project-gallery">
           <Asset v-for="(img, i) in datas.fields.images" :key="i" :datas="img" class="project-gallery__item"/>

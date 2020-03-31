@@ -39,8 +39,9 @@
   }
 
   .o-section__content {
+    max-width: 600px;
+    width: 100%;
     padding: 160px 0;
-    width: calc(50% - 20px);
   }
 
   .o-section__title {

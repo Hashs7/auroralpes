@@ -1,7 +1,7 @@
 <template>
   <nav class="navigation">
     <LinkTranslate
-        title="Auroralpes"
+        title="Accueil"
         link="/"
         class="navigation__link u-link"
     />
@@ -56,6 +56,12 @@ export default {
 
   &:not(:last-child) {
     margin-right: 40px;
+  }
+}
+
+@media #{$desktop-s-media} {
+  .navigation {
+    display: none;
   }
 }
 

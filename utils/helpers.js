@@ -37,6 +37,8 @@ export const randomBetween = (start, end) => (
   Math.floor(Math.random() * (end - start + 1)) + start
 );
 
+export const getRandomFloat = (min, max) => Math.random() * (max - min) + min;
+
 export const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
 
 /**

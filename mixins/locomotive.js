@@ -1,3 +1,5 @@
+import { debounce, throttle } from "../utils";
+
 const OFFSET = 350;
 
 // https://codesandbox.io/embed/locomotive-scroll-nuxt-jtoyb
@@ -22,13 +24,18 @@ export default {
         smooth: true /* if false disable overflow: hidden on html, body */
       });
 
+      const debouncedResize = debounce(this.onLmsResize, 200);
+      const throttledScroll = throttle(this.onLmsScroll, 200);
+
+      this.$nextTick(() => {
+        this.lmS.update();
+        window.dispatchEvent(new Event('resize'));
+      });
+
+
       // this.lmS.on("scroll", _.throttle(this.onLmsScroll, 150));
-      // this.lmS.on("scroll", this.onLmsScroll);
-      window.addEventListener(
-        "resize",
-        // _.debounce(this.onLmsResize.bind(this), 100)
-        this.onLmsResize
-      );
+      // this.lmS.on("scroll", throttledScroll);
+      window.addEventListener("resize", debouncedResize);
     });
   },
   beforeDestroy() {

@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { randomBetween } from "../../utils/helpers";
+import { getRandomFloat } from "../../utils/helpers";
 
 export default class {
   scene = new THREE.Scene();
@@ -15,8 +15,9 @@ export default class {
     this.canvas = canvas;
     this.scene.add(model.scene);
     this.children = model.scene.children[0].children.map(child => {
-      const rotationX = randomBetween(0.004, 0.008);
-      const rotationY = randomBetween(0.004, 0.008);
+      const rotationX = getRandomFloat(0.004, 0.008);
+      const rotationY = getRandomFloat(0.004, 0.008);
+      console.log(rotationX, rotationY);
       return { item: child, rotationX, rotationY }
     });
     this.camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 0.1, 1000 );
