@@ -101,4 +101,24 @@
       text-align: center;
     }
   }
+   @media #{$tablet-m-media} {
+     .header__content {
+      text-align: left;
+       margin: 0 auto 0 0;
+     }
+     .header__title {
+       margin-bottom: 22px;
+       font-size: 3rem;
+     }
+   }
+  @media #{$mobile-l-media} {
+    .header__content {
+      text-align: left;
+      margin: 0 auto 0 0;
+    }
+    .header__title {
+      margin-bottom: 16px;
+      font-size: 2.5rem;
+    }
+  }
 </style>

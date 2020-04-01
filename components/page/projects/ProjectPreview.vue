@@ -72,13 +72,14 @@
   .project__img {
     display: inline-block;
     max-width: 590px;
-    width: 100%;
+    width: 50%;
     height: 270px;
     margin-right: 45px;
   }
 
   .project__content {
     display: inline-block;
+    width: calc(50% - 45px);
   }
 
   .project__title {
@@ -103,12 +104,43 @@
     display: flex;
 
     .project__content {
-      width: calc(100% - 590px);
+      /*width: calc(50% - 45px);*/
     }
   }
   .project:nth-child(2n) {
     .project__name {
       color: $secondary;
+    }
+  }
+
+  @media #{$tablet-m-media} {
+    .project {
+      flex-wrap: wrap;
+    }
+    .project__img {
+      max-width: none;
+      width: 100%;
+      margin-right: 0;
+    }
+    .project__content {
+      width: 100%;
+      margin-top: 16px;
+      max-width: 600px;
+    }
+    .project__resume {
+      margin-top: 12px;
+    }
+    .project__date {
+      margin-top: 0;
+    }
+  }
+
+  @media #{$mobile-l-media} {
+    .project {
+      margin-bottom: 40px;
+    }
+    .project__img {
+      height: 160px;
     }
   }
 </style>

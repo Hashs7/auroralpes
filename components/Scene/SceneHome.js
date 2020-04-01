@@ -5,6 +5,8 @@ export default class {
   scene = new THREE.Scene();
   rayCast = new THREE.Raycaster();
   mouse = new THREE.Vector2();
+  resizeBoundFunction;
+  mouseBoundFunction;
   camera;
   canvas;
   children;
@@ -36,11 +38,20 @@ export default class {
     this.camera.lookAt(this.scene.position);
     this.resize();
     this.mainLoop();
-    window.addEventListener('resize', () => this.resize());
-    this.canvas.addEventListener('mousemove', (e) => this.mouseMove(e));
+    this.resizeBoundFunction = this.resize.bind(this);
+    this.mouseBoundFunction = (e) => this.mouseMove(e);
+    window.addEventListener('resize', this.resizeBoundFunction);
+    this.canvas.addEventListener('mousemove', this.mouseBoundFunction);
+  }
+
+  destroy() {
+    console.log('destroyed');
+    window.removeEventListener('resize', this.resizeBoundFunction);
+    this.canvas.removeEventListener('mousemove', this.mouseBoundFunction);
   }
 
   mouseMove(e) {
+    console.log('mousemove');
     const { top } = this.canvas.getBoundingClientRect();
     this.mouse = new THREE.Vector2(
       (e.clientX / window.innerWidth) * 2 - 1,

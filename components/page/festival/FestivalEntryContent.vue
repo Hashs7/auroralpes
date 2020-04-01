@@ -57,6 +57,9 @@
       });
       window.addEventListener('resize', this.resize)
     },
+    beforeDestroy() {
+      window.removeEventListener('resize', this.resize)
+    },
     methods: {
       init() {
         import('three/examples/jsm/loaders/GLTFLoader')

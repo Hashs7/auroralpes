@@ -63,7 +63,7 @@
   .o-section__content {
     position: relative;
     z-index: 2;
-    padding: 170px 0 130px 0;
+    padding: 30px 0 50px 0;
     color: $black;
   }
   .wave-bg {
@@ -91,5 +91,6 @@
     position: relative;
     z-index: 1;
     width: 550px;
+    transform: translateY(-110px);
   }
 </style>

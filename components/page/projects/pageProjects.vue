@@ -41,8 +41,13 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .projects-container {
-    padding: 80px 0;
+    padding: 80px 0 10px 0;
+  }
+  @media #{$mobile-l-media} {
+    .projects-container {
+      padding: 40px 0 1px 0;
+    }
   }
 </style>

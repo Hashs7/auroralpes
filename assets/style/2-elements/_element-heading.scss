@@ -1,22 +1,29 @@
 h2 {
   color: $primary;
   font-weight: $weight-bold;
-  font-size: 40px;
+  font-size: 2.2rem;
+
   transition: opacity .3s ease, transform .5s ease-out;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
+h3 {
+  font-size: 1.875rem;
 }
 
 @media #{$tablet-l-media} {
   h2 {
     font-size: 32px;
   }
+  h3 {
+    font-size: 1.7rem;
+  }
 }
 
 @media #{$mobile-l-media} {
   h2 {
     font-size: 28px;
+  }
+  h3 {
+    font-size: 1.5rem;
   }
 }

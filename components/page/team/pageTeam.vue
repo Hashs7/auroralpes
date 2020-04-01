@@ -42,17 +42,36 @@
 </script>
 
 <style lang="scss" scoped>
-.team-container {
-  padding: 80px 0;
+  .team-container {
+    padding: 80px 0;
 
-  .o-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    .o-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .member {
+      width: calc(50% - 30px);
+    }
+  }
+  @media #{$desktop-m-media} {
+    .team-container {
+      .member {
+        width: 100%;
+      }
+    }
   }
 
-  .member {
-    width: calc(50% - 30px);
+  @media #{$tablet-m-media} {
+    .team-container {
+      padding: 40px 0;
+    }
   }
-}
+
+  @media #{$mobile-l-media} {
+    .team-container {
+      padding-bottom: 1px;
+    }
+  }
 </style>

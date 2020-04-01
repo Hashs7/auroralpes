@@ -137,4 +137,27 @@
       }
     }
   }
+
+  @media #{$tablet-m-media} {
+    .member {
+      margin-bottom: 50px;
+    }
+    .member--image {
+      flex-wrap: wrap;
+      .member__content {
+        width: 100%;
+        margin-top: 16px;
+      }
+    }
+  }
+
+  @media #{$mobile-l-media} {
+    .member {
+      margin-bottom: 30px;
+    }
+    .member__img {
+      max-width: none;
+      margin-right: 0;
+    }
+  }
 </style>

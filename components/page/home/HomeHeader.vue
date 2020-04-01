@@ -16,13 +16,21 @@
     components: {
       Logo,
     },
+    data() {
+      return {
+        scene: null
+      }
+    },
     mounted() {
       if (process.server) return;
       import('three/examples/jsm/loaders/GLTFLoader').then(({ GLTFLoader }) => {
           new GLTFLoader().load('../models/asteroids-home.glb', (glb) => {
-            new SceneHome(this.$refs.canvas, glb);
+            this.scene = new SceneHome(this.$refs.canvas, glb);
           });
         })
+    },
+    beforeDestroy() {
+      this.scene.destroy();
     }
   }
 </script>
