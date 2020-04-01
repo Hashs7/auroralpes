@@ -119,7 +119,10 @@
   .footer__copyright {
     font-size: 15px;
   }
-
+  .footer__phone {
+    font-size: 1.6rem;
+    color: $black;
+  }
   @media #{$desktop-s-media} {
     .footer__up {
       padding: 50px 0;
