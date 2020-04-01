@@ -1,14 +1,12 @@
 <template>
-  <n-link :to="'/'+prefix+'/'+slug">
-    <div class="project" :class="{'project--image': thumbnail}">
-      <div v-if="thumbnail" class="project__img">
-        <Asset :datas="thumbnail" />
-      </div>
-      <div class="project__content">
-        <h3 class="project__title">{{ title }}</h3>
-        <p v-if="date" class="project__date">{{ formatDate }}</p>
-        <p v-if="resume.length" class="project__resume">{{ resume }}</p>
-      </div>
+  <n-link :to="'/'+prefix+'/'+slug"  class="project" :class="{'project--image': thumbnail}">
+    <div v-if="thumbnail" class="project__img">
+      <Asset :datas="thumbnail" />
+    </div>
+    <div class="project__content">
+      <h3 class="project__title">{{ title }}</h3>
+      <p v-if="date" class="project__date">{{ formatDate }}</p>
+      <p v-if="resume.length" class="project__resume">{{ resume }}</p>
     </div>
   </n-link>
 </template>
@@ -67,6 +65,18 @@
   .project {
     display: flex;
     margin-bottom: 70px;
+    color: $black;
+    margin-left: calc(50% + 45px);
+
+    .project__title {
+      color: $primary;
+      margin-bottom: 0;
+    }
+    &:nth-child(2n) {
+      .project__title {
+        color: $secondary;
+      }
+    }
   }
 
   .project__img {
@@ -79,13 +89,10 @@
 
   .project__content {
     display: inline-block;
-    width: calc(50% - 45px);
+    width: 100%;
   }
 
-  .project__title {
-    color: $primary;
-    margin-bottom: 0;
-  }
+
 
   .project__date {
     margin-top: 5px;
@@ -102,9 +109,10 @@
     /*--- Alt ---*/
   .project--image {
     display: flex;
+    margin-left: 0;
 
     .project__content {
-      /*width: calc(50% - 45px);*/
+      width: calc(50% - 45px);
     }
   }
   .project:nth-child(2n) {
