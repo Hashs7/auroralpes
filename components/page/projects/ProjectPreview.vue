@@ -92,8 +92,6 @@
     width: 100%;
   }
 
-
-
   .project__date {
     margin-top: 5px;
     color: $black;
@@ -124,6 +122,7 @@
   @media #{$tablet-m-media} {
     .project {
       flex-wrap: wrap;
+      margin-left: 0;
     }
     .project__img {
       max-width: none;
@@ -131,7 +130,7 @@
       margin-right: 0;
     }
     .project__content {
-      width: 100%;
+      width: 100% !important;
       margin-top: 16px;
       max-width: 600px;
     }

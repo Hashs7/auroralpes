@@ -2,13 +2,21 @@
   <section class="o-section--white">
     <div class="o-container">
       <div class="o-section__content">
-        <h2 class="o-section__title">{{ projectPage.title }}</h2>
+        <h2
+            data-scroll
+            data-scroll-speed="3"
+            class="o-section__title">
+          {{ projectPage.title }}
+        </h2>
         <div class="project-container">
           <n-link
             v-for="(proj, i) in projects"
             :to="url(proj)"
             :key="i"
             class="project-home"
+            data-scroll
+            data-scroll-speed="4"
+            :data-scroll-delay="0.1 * (i + 1)"
           >
             <div class="project-home__img">
               <Asset v-if="proj.fields.thumbnail" :datas="proj.fields.thumbnail" />
@@ -17,7 +25,11 @@
           </n-link>
         </div>
         <n-link :to="projectPage.slug">
-          <RippleButton name="Voir tous nos projets"/>
+          <RippleButton
+              name="Voir tous nos projets"
+              data-scroll
+              data-scroll-delay="0.1"
+              data-scroll-speed="3" />
         </n-link>
       </div>
     </div>
@@ -62,7 +74,7 @@
     color: $white;
   }
   .o-section__content {
-    padding: 80px 0;
+    padding: 120px 0;
     text-align: center;
   }
   .o-section__title {
@@ -72,24 +84,63 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    padding: 40px 0 20px 0;
+    padding: 0;
   }
   .project-home {
     display: inline-block;
-    margin-bottom: 50px;
+    /*margin-bottom: 50px;*/
 
     &:not(:last-child) {
       margin-right: 55px;
     }
   }
   .project-home__img {
-    width: 260px;
-    height: 260px;
+    width: 300px;
+    height: 300px;
     background-color: $gray;
   }
   .project-home__title {
     margin-top: 20px;
     font-size: 1.2rem;
     font-weight: $weight-medium;
+  }
+   @media screen and (max-width: 1525px) {
+     .project-home__img {
+       width: 250px;
+       height: 250px;
+    }
+     .project-home:not(:last-child) {
+       margin-right: 30px;
+     }
+   }
+  
+  @media #{$desktop-m-media} {
+    .project-container {
+      justify-content: space-between;
+    }
+    .project-home {
+      width: calc(50% - 20px);
+    }
+    .project-home:not(:last-child) {
+      margin-right: 0;
+    }
+    .project-home__img {
+      width: 100%;
+      height: 300px;
+      margin: 0 auto;
+    }
+  }
+  @media #{$tablet-m-media} {
+    .project-home__img {
+      height: 200px;
+    }
+  }
+  @media #{$tablet-s-media} {
+    .project-home {
+      width: 100%;
+    }
+    .project-home__img {
+      height: 250px;
+    }
   }
 </style>
