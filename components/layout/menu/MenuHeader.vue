@@ -38,7 +38,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .header {
     position: absolute;
     top: 0;
@@ -51,12 +51,24 @@
       display: flex;
       justify-content: space-between;
     }
+    .socials {
+      margin-left: 120px;
+    }
   }
   .header__right {
     display: flex;
     align-items: center;
   }
-  .socials {
-    margin-left: 120px;
+
+  @media screen and (max-width: 520px) {
+    .header {
+      padding-top: 20px;
+      .socials {
+        margin-left: 0;
+        .socials-link {
+          display: block;
+        }
+      }
+    }
   }
 </style>

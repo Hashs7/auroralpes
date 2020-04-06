@@ -1,7 +1,7 @@
 <template>
   <n-link :to="'/'+prefix+'/'+slug"  class="project" :class="{'project--image': thumbnail}">
-    <div v-if="thumbnail" class="project__img">
-      <Asset :datas="thumbnail" />
+    <div class="project__img">
+      <Asset v-if="thumbnail" :datas="thumbnail" />
     </div>
     <div class="project__content">
       <h3 class="project__title">{{ title }}</h3>
@@ -66,16 +66,10 @@
     display: flex;
     margin-bottom: 70px;
     color: $black;
-    margin-left: calc(50% + 45px);
 
     .project__title {
       color: $primary;
       margin-bottom: 0;
-    }
-    &:nth-child(2n) {
-      .project__title {
-        color: $secondary;
-      }
     }
   }
 
@@ -89,7 +83,7 @@
 
   .project__content {
     display: inline-block;
-    width: 100%;
+    /*width: 100%;*/
   }
 
   .project__date {
@@ -107,22 +101,20 @@
     /*--- Alt ---*/
   .project--image {
     display: flex;
-    margin-left: 0;
 
     .project__content {
       width: calc(50% - 45px);
     }
   }
-  .project:nth-child(2n) {
-    .project__name {
-      color: $secondary;
-    }
-  }
+
 
   @media #{$tablet-m-media} {
     .project {
       flex-wrap: wrap;
       margin-left: 0;
+      &:not(.project--image) .project__img {
+        height: 0;
+      }
     }
     .project__img {
       max-width: none;

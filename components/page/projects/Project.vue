@@ -47,7 +47,7 @@
 
 <style lang="scss">
 .project-container {
-  padding: 40px 0 80px 0;
+  padding: 40px 0;
 
   h2, h3, h4, h5, h6 {
     color: #535353;

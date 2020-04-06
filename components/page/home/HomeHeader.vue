@@ -42,7 +42,8 @@
   }
   .header__logo {
     display: block;
-    width: 335px;
+    max-width: 335px;
+    width: 65%;
     padding-top: 310px;
     margin: auto;
   }

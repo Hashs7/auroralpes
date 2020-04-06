@@ -79,7 +79,7 @@
     padding: 8px;
 
     &:hover path {
-      fill: $teal;
+      fill: #FFB217;
     }
 
     &:hover .logo:before {
@@ -93,6 +93,7 @@
     display: block;
     width: 40px;
     height: 40px;
+
     @media #{$md-down} {
       width: 30px;
       height: 30px;

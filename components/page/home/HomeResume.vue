@@ -47,4 +47,9 @@
   .o-section__title {
     color: $white;
   }
+  @media screen and (max-width: 1130px) {
+    .o-section__content {
+      padding: 160px 0;
+    }
+  }
 </style>

@@ -173,6 +173,9 @@
     .footer__title {
       margin-bottom: 12px;
     }
+    .footer__socials-title {
+      margin-bottom: 8px;
+    }
     .footer__map {
       margin-right: 0;
     }

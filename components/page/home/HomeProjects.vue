@@ -134,6 +134,9 @@
     .project-home__img {
       height: 200px;
     }
+    .o-section__content {
+      padding: 80px 0;
+    }
   }
   @media #{$tablet-s-media} {
     .project-home {
@@ -141,6 +144,11 @@
     }
     .project-home__img {
       height: 250px;
+    }
+  }
+  @media #{$mobile-l-media} {
+    .o-section__content {
+      padding: 20px 0 40px 0;
     }
   }
 </style>

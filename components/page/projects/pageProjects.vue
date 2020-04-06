@@ -7,16 +7,32 @@
     />
     <section class="projects-container o-section--white">
       <div class="o-container">
-        <ProjectPreview
-            v-for="(project, i) in datas.fields.projects"
-            :key="i"
-            :title="project.fields.title"
-            :date="project.fields.date"
-            :resume="project.fields.resume"
-            :slug="project.fields.slug"
-            :thumbnail="project.fields.thumbnail"
-            :prefix="datas.fields.slug"
-        />
+        <div class="own-projects">
+          <h2 class="projects-container__title">Nos projets</h2>
+          <ProjectPreview
+              v-for="(project, i) in ownProjects"
+              :key="i"
+              :title="project.fields.title"
+              :date="project.fields.date"
+              :resume="project.fields.resume"
+              :slug="project.fields.slug"
+              :thumbnail="project.fields.thumbnail"
+              :prefix="datas.fields.slug"
+          />
+        </div>
+        <div class="participate-projects">
+          <h2 class="projects-container__title">Nos participations</h2>
+          <ProjectPreview
+              v-for="(project, i) in participateProjects"
+              :key="i"
+              :title="project.fields.title"
+              :date="project.fields.date"
+              :resume="project.fields.resume"
+              :slug="project.fields.slug"
+              :thumbnail="project.fields.thumbnail"
+              :prefix="datas.fields.slug"
+          />
+        </div>
       </div>
     </section>
   </main>
@@ -38,12 +54,33 @@
         type: Object,
       },
     },
+    computed: {
+      ownProjects() {
+        return this.datas.fields.projects.filter(pro => pro.fields.isOwn);
+      },
+      participateProjects() {
+        return this.datas.fields.projects.filter(pro => !pro.fields.isOwn);
+      },
+    },
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .projects-container {
     padding: 80px 0 10px 0;
+  }
+  .projects-container__title {
+    margin-bottom: 18px;
+  }
+  .own-projects {
+  }
+  .participate-projects {
+    .projects-container__title {
+      color: $secondary;
+    }
+    .project__title {
+      color: $secondary;
+    }
   }
   @media #{$mobile-l-media} {
     .projects-container {

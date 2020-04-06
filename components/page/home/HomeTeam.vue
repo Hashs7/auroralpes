@@ -90,7 +90,26 @@
   .o-section__illu {
     position: relative;
     z-index: 1;
-    width: 550px;
+    max-width: 550px;
+    width: 43%;
     transform: translateY(-110px);
+  }
+  @media screen and (max-width: 1130px) {
+    .o-section__illu {
+      top: 0px;
+      right: 35px;
+      position: absolute;
+      width: 35%;
+      min-width: 250px;
+    }
+    .home-team .o-container {
+      text-align: left;
+    }
+  }
+
+  @media #{$mobile-l-media} {
+    .o-section__content {
+      padding-top: 60px;
+    }
   }
 </style>
