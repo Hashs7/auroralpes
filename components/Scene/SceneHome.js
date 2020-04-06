@@ -14,16 +14,8 @@ export default class {
 
   constructor(canvas, model) {
     this.canvas = canvas;
-    if (window.innerWidth > 1200) {
-      model.scene.scale.set(1.15, 1.15, 1.15)
-    }
-    if (window.innerWidth < 800) {
-      model.scene.scale.set(0.8, 0.8, 0.8)
-    }
-    if (window.innerWidth < 425) {
-      model.scene.scale.set(0.6, 0.6, 0.6)
-    }
-    this.scene.add(model.scene);
+    model.scene.scale.set(1.15, 1.15, 1.15);
+    this.scene = model.scene;
     this.children = model.scene.children[0].children.map(child => {
       const rotationX = getRandomFloat(0.004, 0.008);
       const rotationY = getRandomFloat(0.004, 0.008);
@@ -68,10 +60,10 @@ export default class {
   }
 
   resize() {
-    console.log(this.camera);
-    this.camera.aspect = window.innerWidth / window.innerHeight;
+    let height = window.innerWidth / 1.777
+    this.camera.aspect = window.innerWidth / height;
     this.camera.updateProjectionMatrix();
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setSize(window.innerWidth, height);
   }
 
   mainLoop() {

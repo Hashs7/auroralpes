@@ -59,5 +59,8 @@
     .header--home {
       height: 85vh;
     }
+    .header__canvas {
+      pointer-events: none;
+    }
   }
 </style>
