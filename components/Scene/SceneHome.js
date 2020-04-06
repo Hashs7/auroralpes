@@ -13,8 +13,16 @@ export default class {
   renderer;
 
   constructor(canvas, model) {
-    console.log('construc');
     this.canvas = canvas;
+    if (window.innerWidth > 1200) {
+      model.scene.scale.set(1.15, 1.15, 1.15)
+    }
+    if (window.innerWidth < 800) {
+      model.scene.scale.set(0.8, 0.8, 0.8)
+    }
+    if (window.innerWidth < 425) {
+      model.scene.scale.set(0.6, 0.6, 0.6)
+    }
     this.scene.add(model.scene);
     this.children = model.scene.children[0].children.map(child => {
       const rotationX = getRandomFloat(0.004, 0.008);

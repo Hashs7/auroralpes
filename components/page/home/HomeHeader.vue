@@ -55,4 +55,9 @@
     right: 0;
     transform: translateY(30%);
   }
+  @media #{$mobile-l-media} {
+    .header--home {
+      height: 85vh;
+    }
+  }
 </style>

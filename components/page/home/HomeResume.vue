@@ -52,4 +52,10 @@
       padding: 160px 0;
     }
   }
+  @media #{$mobile-l-media} {
+    .o-section__content {
+      padding: 20px 0 160px 0;
+    }
+  }
+
 </style>
