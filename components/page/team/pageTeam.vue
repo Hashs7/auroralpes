@@ -15,6 +15,7 @@
           :description="member.fields.description"
           :image="member.fields.image"
           :role="member.fields.role"
+          :roleImage="member.fields.roleImage"
           :sn="member.fields.sn"
         />
       </div>

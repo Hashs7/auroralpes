@@ -8,6 +8,7 @@
       <p v-if="citation.length" class="member__citation">{{ citation }}</p>
       <RichText v-if="description" :content="description" class="member__description" />
       <div v-if="role.length" class="member__role">
+        <Asset v-if="roleImage" :datas="roleImage" class="member-role-img" />
         <span class="member-role-name">{{ role }}</span>
       </div>
       <div v-if="sn" class="member__socials">
@@ -54,6 +55,10 @@
         type: String,
         default: '',
       },
+      roleImage: {
+        type: Object,
+        default: () => {},
+      },
       sn: {
         type: Object,
         default: () => {},
@@ -88,7 +93,7 @@
   .member__citation {
     margin-top: 5px;
     color: $black;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: $weight-light;
 
     &:before {
@@ -106,7 +111,22 @@
 
   .member__role {
     margin-top: 20px;
-    font-size: 11px;
+    font-size: 14px;
+    color: $secondary;
+  }
+
+  .member-role-name {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .member-role-img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+    overflow: hidden;
   }
 
   .member__socials {
@@ -114,6 +134,11 @@
 
     .logo path {
       fill: $primary;
+      transition: opacity .2s ease-in-out;
+    }
+    .socials-link:hover path {
+      fill: $primary;
+      opacity: 0.5;
     }
   }
 
