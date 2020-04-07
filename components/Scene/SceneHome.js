@@ -19,7 +19,6 @@ export default class {
     this.children = model.scene.children[0].children.map(child => {
       const rotationX = getRandomFloat(0.004, 0.008);
       const rotationY = getRandomFloat(0.004, 0.008);
-      console.log(rotationX, rotationY);
       return { item: child, rotationX, rotationY }
     });
     this.camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -45,17 +44,15 @@ export default class {
   }
 
   destroy() {
-    console.log('destroyed');
     window.removeEventListener('resize', this.resizeBoundFunction);
     this.canvas.removeEventListener('mousemove', this.mouseBoundFunction);
   }
 
   mouseMove(e) {
-    console.log('mousemove');
     const { top } = this.canvas.getBoundingClientRect();
     this.mouse = new THREE.Vector2(
-      (e.clientX / window.innerWidth) * 2 - 1,
-      - ((e.clientY - top) / window.innerHeight) * 2 + 1
+      (e.clientX / this.canvas.width) * 2 - 1,
+      - ((e.clientY - top) / this.canvas.height) * 2 + 1
     );
   }
 
@@ -77,7 +74,6 @@ export default class {
     intersects.forEach(obj => {
       obj.object.rotation.x -= 0.02;
       obj.object.rotation.y -= 0.02;
-      console.log(obj);
     });
     this.renderer.render(this.scene, this.camera);
     requestAnimationFrame(() => this.mainLoop());

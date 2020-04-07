@@ -1,8 +1,8 @@
 <template>
-  <header class="header">
+  <header class="l-header">
     <div class="o-container">
       <n-link to="/">
-        <Logo />
+        <Logo class="logo"/>
       </n-link>
 
       <div class="header__right">
@@ -39,7 +39,7 @@
 </script>
 
 <style lang="scss">
-  .header {
+  .l-header {
     position: absolute;
     top: 0;
     left: 0;
@@ -49,10 +49,14 @@
 
     .o-container {
       display: flex;
+      align-items: center;
       justify-content: space-between;
     }
     .socials {
       margin-left: 120px;
+    }
+    .logo {
+      vertical-align: bottom;
     }
   }
   .header__right {
@@ -61,7 +65,7 @@
   }
 
   @media screen and (max-width: 520px) {
-    .header {
+    .l-header {
       padding-top: 20px;
       .socials {
         margin-left: 0;

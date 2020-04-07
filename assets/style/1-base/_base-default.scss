@@ -30,7 +30,7 @@ body {
   @media (pointer: fine) {
     overflow-x: hidden;
   }
-  @media (hover: none) {
+  @media (pointer: coarse) {
     overflow-x: auto;
   }
 }

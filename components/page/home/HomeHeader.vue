@@ -56,11 +56,18 @@
     transform: translateY(30%);
   }
   @media #{$mobile-l-media} {
+    .header__logo {
+      padding-top: 190px;
+    }
     .header--home {
       height: 85vh;
     }
     .header__canvas {
       pointer-events: none;
+    }
+    .header__canvas {
+      bottom: 50px;
+      transform: none;
     }
   }
 </style>

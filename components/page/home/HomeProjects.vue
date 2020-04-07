@@ -130,6 +130,14 @@
       margin: 0 auto;
     }
   }
+  @media (pointer: coarse) {
+    .o-section__title {
+      margin-bottom: 24px;
+    }
+    .project-home {
+      margin-bottom: 32px;
+    }
+  }
   @media #{$tablet-m-media} {
     .project-home__img {
       height: 200px;
