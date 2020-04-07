@@ -68,7 +68,7 @@
 </script>
 
 <style lang="scss">
-  .member {
+  .member:not(:last-child) {
     margin-bottom: 100px;
   }
 
@@ -110,7 +110,7 @@
   }
 
   .member__role {
-    margin-top: 20px;
+    margin: 20px 0 0 10px;
     font-size: 14px;
     color: $secondary;
   }
@@ -164,8 +164,14 @@
   }
 
   @media #{$tablet-m-media} {
-    .member {
+    .member:not(:last-child) {
       margin-bottom: 50px;
+    }
+    .member__socials {
+      margin-top: 5px;
+    }
+    .member__role {
+      margin-top: 12px;
     }
     .member--image {
       flex-wrap: wrap;
@@ -177,8 +183,14 @@
   }
 
   @media #{$mobile-l-media} {
-    .member {
-      margin-bottom: 30px;
+    .member__citation {
+      margin-bottom: 0;
+    }
+    .member__description {
+      margin-top: 0;
+      p {
+        margin: 8px 0;
+      }
     }
     .member__img {
       max-width: none;

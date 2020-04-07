@@ -94,7 +94,7 @@
   }
 
   .project__resume {
-    margin-top: 24px;
+    margin: 24px 0 0 0;
     font-size: 1rem;
   }
 
@@ -130,13 +130,16 @@
       margin-top: 12px;
     }
     .project__date {
-      margin-top: 0;
+      margin: 0;
     }
   }
 
   @media #{$mobile-l-media} {
     .project {
       margin-bottom: 40px;
+    }
+    .project__resume {
+      margin-top: 5px;
     }
     .project__img {
       height: 160px;

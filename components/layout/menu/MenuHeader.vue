@@ -67,6 +67,11 @@
   @media screen and (max-width: 520px) {
     .l-header {
       padding-top: 20px;
+
+      .o-container {
+        align-items: flex-start;
+      }
+
       .socials {
         margin-left: 0;
         .socials-link {

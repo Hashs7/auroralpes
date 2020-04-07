@@ -72,7 +72,7 @@
 
   @media #{$mobile-l-media} {
     .team-container {
-      padding-bottom: 1px;
+      padding: 16px 0 1px 0;
     }
   }
 </style>
