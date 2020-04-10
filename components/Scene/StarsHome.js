@@ -15,8 +15,8 @@ class Star {
   animate(delta) {
     this.x += this.speed * delta;
     this.y -= this.speed * delta;
-    if (this.y < 0) {
-      this.y = this.wrapper;
+    if (this.y < -10) {
+      this.y = this.wrapper.clientHeight;
     }
     if (this.x > window.innerWidth) {
       this.x = 0;
