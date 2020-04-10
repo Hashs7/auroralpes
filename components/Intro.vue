@@ -6,25 +6,23 @@
 
 <script>
     import bodymovin from 'lottie-web'
-    import { TimelineMax } from 'gsap';
-    const tl = new TimelineMax();
+    import gsap from 'gsap';
 
     export default {
         name: "Intro",
         props: ['counter'],
         methods: {
             removeLayer(delay = false) {
-                tl.to(this.$refs.logoContainer, .8, {
+                gsap.to(this.$refs.logoContainer, {
                     height: 0,
+                    duration: 0.8,
+                    delay: delay ? 3.4 : 0,
                     // backgroundColor: 'transparent'
                 });
-                if(delay) {
-                    tl.delay(3.4);
-                }
             }
         },
         mounted() {
-            const anim = bodymovin.loadAnimation({
+            bodymovin.loadAnimation({
                 container: this.$refs.logoAnim,
                 renderer: 'svg',
                 loop: false,
@@ -42,7 +40,7 @@
         display: flex;
         position: fixed;
         top: 0;
-        z-index: 999;
+        z-index: 15000;
         width: 100%;
         height: 100vh;
         background-color: white;
