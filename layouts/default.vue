@@ -2,6 +2,7 @@
   <main  role="main">
     <MenuBurger />
     <MenuModal />
+    <Cookies />
     <div id="main">
       <MenuHeader/>
       <nuxt/>
@@ -15,6 +16,7 @@
   import MenuModal from '~/components/layout/menu/MenuModal';
   import MenuBurger from '~/components/layout/menu/MenuBurger';
   import Footer from "../components/layout/Footer";
+  import Cookies from '~/components/layout/Cookies';
 
   export default {
     components: {
@@ -22,6 +24,7 @@
       MenuModal,
       MenuBurger,
       Footer,
+      Cookies,
     },
   }
 </script>

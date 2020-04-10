@@ -27,13 +27,12 @@
 </template>
 
 <script>
-  import { TimelineMax, Linear, Power2 } from 'gsap';
+  import gsap from 'gsap';
 
   export default {
     props: ['name', 'bgDark'],
     methods: {
       rippleIn(event, timing = .5) {
-        const tl = new TimelineMax();
         const x = event.offsetX,
           y = event.offsetY,
           w = event.target.offsetWidth,
@@ -43,36 +42,33 @@
           deltaX = (w / 2) + offsetX,
           deltaY = (h / 2) + offsetY,
           scale_ratio = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
-        tl.fromTo(this.$refs.rippleObj, timing, {
+
+        gsap.fromTo(this.$refs.rippleObj, {
           x: x,
           y: y,
           transformOrigin: '50% 50%',
           scale: 0,
           opacity: 1,
-          ease: Linear.easeIn
+          ease: "none"
         }, {
           x: x,
           y: y,
           scale: scale_ratio,
-          opacity: 1
+          opacity: 1,
+          duration: timing
         });
 
-        return tl;
       },
       rippleOut(event, timing = .4) {
-        const tl = new TimelineMax();
-        const x = event.offsetX,
-          y = event.offsetY;
-
-        tl.to(this.$refs.rippleObj, timing, {
-          x: x,
-          y: y,
+        gsap.killTweensOf(this.$refs.rippleObj)
+        gsap.to(this.$refs.rippleObj, {
+          x: event.offsetX,
+          y: event.offsetY,
           scale: 0,
           opacity: 1,
-          ease: Power2.easeOut
+          ease: "power2.out",
+          duration: timing,
         });
-
-        return tl;
       }
     }
   }
@@ -156,7 +152,7 @@
     pointer-events: none;
   }
 
-  .btn--tamaya > .name {
+  .btn--tamaya .name {
     display: block;
     transform: scale3d(0.2, 0.2, 1);
     opacity: 0;
@@ -164,18 +160,36 @@
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   }
 
-  .btn--tamaya:hover::before {
-    transform: translate3d(0, -100%, 0);
+  .btn--tamaya {
+    @include hover {
+      &:before {
+        transform: translate3d(0, -100%, 0);
+      }
+      &:after {
+        transform: translate3d(0, 100%, 0);
+      }
+      .name {
+        color: white;
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
+    }
   }
 
-  .btn--tamaya:hover::after {
-    transform: translate3d(0, 100%, 0);
-  }
 
-  .btn--tamaya:hover > .name {
-    color: white;
-    opacity: 1;
-    transform: scale3d(1, 1, 1);
-    /*mix-blend-mode: exclusion;*/
+  @media #{$tablet-l-media} {
+    .btn--tamaya {
+      &:before, &:after {
+        display: none;
+      }
+      .name {
+        color: $primary !important;
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
+    }
+    .ripple-obj {
+      display: none;
+    }
   }
 </style>

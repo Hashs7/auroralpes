@@ -1,7 +1,10 @@
 <template>
   <main class="home-page">
-    <HomeHeader />
-    <HomeResume :resume="datas.fields.introResume" />
+    <div class="stars-wrapper" ref="wrapper">
+      <HomeHeader />
+      <HomeResume :resume="datas.fields.introResume" />
+      <canvas ref="stars" class="stars-canvas"/>
+    </div>
     <HomeTeam :resume="datas.fields.teamResume" />
     <HomeProjects />
 <!--    <HomeFestival :resume="datas.fields.festivalResume" />-->
@@ -13,6 +16,7 @@ import HomeResume from '~/components/page/home/HomeResume';
 import HomeTeam from '~/components/page/home/HomeTeam';
 import HomeProjects from '~/components/page/home/HomeProjects';
 import locomotive from "~/mixins/locomotive.js";
+import StarsHome from "../components/Scene/StarsHome";
 
 export default {
   components: {
@@ -83,7 +87,27 @@ export default {
       datas: store.state.global.settings.fields.homepage,
     };
   },
+  mounted() {
+    this.$nextTick(() => {
+      // TODO remove
+      setTimeout(() => {
+        new StarsHome(this.$refs.stars, this.$refs.wrapper);
+      }, 500)
+    })
+  }
 };
 </script>
+
 <style lang="scss">
+  .stars-wrapper {
+    position: relative;
+  }
+  .stars-canvas {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 </style>

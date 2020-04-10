@@ -46,5 +46,13 @@ export default {
     margin: auto;
     color: $white;
     text-align: center;
+
+    a {
+      color: $primary;
+      transition: color .2s ease-in-out;
+      @include hover {
+        //color: $secondary-dark;
+      }
+    }
   }
 </style>

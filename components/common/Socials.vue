@@ -79,7 +79,7 @@
     padding: 8px;
 
     &:hover path {
-      fill: #FFB217;
+      fill: $orange;
     }
 
     &:hover .logo:before {

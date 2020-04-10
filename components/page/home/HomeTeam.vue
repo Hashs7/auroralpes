@@ -7,7 +7,7 @@
       <div class="o-section__content" data-scroll data-scroll-speed="2">
         <h2 class="o-section__title">L'équipe</h2>
         <RichText :content="resume" />
-        <n-link :to="teamPage">
+        <n-link :to="teamPage" class="o-section__link">
           <RippleButton name="Voir l'équipe"/>
         </n-link>
       </div>
@@ -65,6 +65,10 @@
     z-index: 2;
     padding: 30px 0 50px 0;
     color: $black;
+  }
+  .o-section__link {
+    display: inline-block;
+    margin-top: 32px;
   }
   .wave-bg {
     position: absolute;

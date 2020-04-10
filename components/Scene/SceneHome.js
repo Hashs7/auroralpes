@@ -72,8 +72,8 @@ export default class {
     this.rayCast.setFromCamera(this.mouse, this.camera);
     let intersects = this.rayCast.intersectObjects(objs, true);
     intersects.forEach(obj => {
-      obj.object.rotation.x -= 0.02;
-      obj.object.rotation.y -= 0.02;
+      obj.object.rotation.x -= 0.012;
+      obj.object.rotation.y -= 0.012;
     });
     this.renderer.render(this.scene, this.camera);
     requestAnimationFrame(() => this.mainLoop());

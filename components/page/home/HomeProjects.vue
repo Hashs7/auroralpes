@@ -26,7 +26,7 @@
         </div>
         <n-link :to="projectPage.slug">
           <RippleButton
-              name="Voir tous nos projets"
+              name="Voir toutes nos activitées"
               data-scroll
               data-scroll-delay="0.1"
               data-scroll-speed="3" />

@@ -1,27 +1,33 @@
 <template>
   <div class="error-page">
-    <h1 v-if="error.statusCode === 404">Page not found</h1>
-    <h1 v-else>An error occurred</h1>
-    <nuxt-link to="/">Home page</nuxt-link>
+    <Page404 />
   </div>
 </template>
 
 <script>
-/* -------------------- Import -------------------- */
+  import Page404 from '~/pages/404';
 
-/* -------------------- Module -------------------- */
-export default {
-  props: {
-    error: {
-      required: true,
-      type: Object,
+  export default {
+    head() {
+      return {
+        title: 'Auroralpes',
+        meta: [
+          { hid: 'robots', name: 'robots', content: 'noindex' },
+        ],
+      };
     },
-  },
-  layout: 'empty',
-};
+    components: { Page404 },
+    props: {
+      error: {
+        required: true,
+        type: Object,
+      },
+    },
+    layout: 'empty',
+  };
 </script>
 
-<style>
+<style lang="scss">
   .error-page {
     color: #FFF;
   }

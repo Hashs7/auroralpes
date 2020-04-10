@@ -38,7 +38,8 @@
 <style lang="scss" scoped>
   .header--home {
     position: relative;
-    height: 100vh;
+    z-index: 10;
+    margin-bottom: -200px;
   }
   .header__logo {
     display: block;
@@ -48,12 +49,9 @@
     margin: auto;
   }
   .header__canvas {
-    z-index: 1000;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transform: translateY(30%);
+    position: relative;
+    z-index: 5;
+    margin-top: -100px;
   }
   @media #{$mobile-l-media} {
     .header__logo {
