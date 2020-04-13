@@ -1,11 +1,17 @@
 <template>
-  <n-link :to="'/'+prefix+'/'+slug"  class="project" :class="{'project--image': thumbnail}">
+  <n-link
+      :to="'/'+prefix+'/'+slug"
+      class="project"
+      :class="{'project--image': thumbnail}"
+      data-scroll data-scroll-speed="3"
+  >
     <div class="project__img">
       <Asset v-if="thumbnail" :datas="thumbnail" />
     </div>
     <div class="project__content">
       <h3 class="project__title">{{ title }}</h3>
-      <p v-if="date" class="project__date">{{ formatDate }}</p>
+      <p v-if="dateLabel" class="project__date">{{ dateLabel }}</p>
+      <p v-else-if="date" class="project__date">{{ formatDate }}</p>
       <p v-if="resume.length" class="project__resume">{{ resume }}</p>
     </div>
   </n-link>
@@ -30,6 +36,10 @@
         required: true,
       },
       date: {
+        type: String,
+        default: '',
+      },
+      dateLabel: {
         type: String,
         default: '',
       },

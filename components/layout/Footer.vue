@@ -1,9 +1,9 @@
 <template>
   <footer class="footer">
-    <div class="footer__up o-section--white">
+    <div class="footer__up o-section--white" >
       <div class="o-container">
 
-        <div class="footer__contact">
+        <div class="footer__contact" data-scroll data-scroll-speed="4" data-scroll-delay="0.3">
           <h2 class="footer__title">Nous contacter</h2>
           <ul>
             <li v-if="footer.fields.contactVolunteer" class="footer__mail">
@@ -18,13 +18,13 @@
           </ul>
         </div>
 
-        <div class="footer__map">
+        <div class="footer__map" data-scroll data-scroll-speed="4" data-scroll-delay="0.2">
           <h2 class="footer__title">Nous trouver</h2>
           <RichText :content="footer.fields.adress" />
           <iframe :src="mapSrc" width="890" height="200" frameborder="0" style="border:0"></iframe>
         </div>
 
-        <div class="footer__phone">
+        <div class="footer__phone" data-scroll data-scroll-speed="4" data-scroll-delay="0.1">
           <h2 class="footer__title">Nous parler</h2>
           <a :href="'tel:'+footer.fields.phone" class="footer__phone">{{ footer.fields.phone }}</a>
         </div>
@@ -74,7 +74,7 @@
     margin-bottom: 28px;
   }
   .footer__up {
-    padding: 100px 0;
+    padding: 30px 0 150px 0;
 
     .o-container {
       display: flex;

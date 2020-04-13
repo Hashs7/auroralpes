@@ -10,6 +10,8 @@ export default {
     host: '0.0.0.0', // default: localhost,
     timing: false
   },
+
+  loading: '~/components/Intro.vue',
   /*
    ** Headers of the page
    */
@@ -36,7 +38,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#FF9357' },
+  // loading: { color: '#FF9357' },
 
   pageTransition: {
     /*mode: 'out-in',

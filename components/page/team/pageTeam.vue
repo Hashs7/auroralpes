@@ -56,10 +56,12 @@
       width: calc(50% - 30px);
     }
   }
-  @media #{$desktop-m-media} {
+  @media screen and (max-width: 1500px) {
     .team-container {
       .member {
-        width: 100%;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
   }
@@ -67,6 +69,9 @@
   @media #{$tablet-m-media} {
     .team-container {
       padding: 40px 0;
+      .member {
+        width: 100%;
+      }
     }
   }
 

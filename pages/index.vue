@@ -89,10 +89,10 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      // TODO remove
       setTimeout(() => {
         new StarsHome(this.$refs.stars, this.$refs.wrapper);
-      }, 500)
+      }, 300)
+
     })
   }
 };

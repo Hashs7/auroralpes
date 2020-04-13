@@ -3,6 +3,7 @@
     <Header
       :title="datas.fields.title"
       :date="datas.fields.date"
+      :dateLabel="datas.fields.dateLabel"
       :image="datas.fields.thumbnail"
       project
     />

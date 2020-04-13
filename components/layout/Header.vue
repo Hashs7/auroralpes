@@ -3,7 +3,8 @@
     <div class="o-container">
       <div class="header__content">
         <h1 class="header__title">{{ title }}</h1>
-        <p v-if="date.length">{{ formatDate }}</p>
+        <p v-if="dateLabel.length">{{ dateLabel }}</p>
+        <p v-else-if="date.length">{{ formatDate }}</p>
         <RichText v-if="description" :content="description" />
       </div>
     </div>
@@ -38,6 +39,10 @@
         default: () => {},
       },
       date: {
+        type: String,
+        default: '',
+      },
+      dateLabel: {
         type: String,
         default: '',
       },

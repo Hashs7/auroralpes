@@ -34,11 +34,13 @@ export default class {
     this.stars = [];
     this.initializeBackground();
     this.initializeStars();
+
   }
 
   initializeBackground() {
     this.canvas.width = window.innerWidth;
     this.canvas.height = this.wrapper.clientHeight;
+    this.fadeIn(this.canvas, 500);
     window.addEventListener("resize", () => this.resize());
     window.requestAnimationFrame(() => this.paintLoop());
   }

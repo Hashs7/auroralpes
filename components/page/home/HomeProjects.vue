@@ -1,7 +1,7 @@
 <template>
   <section class="o-section--white">
     <div class="o-container">
-      <div class="o-section__content">
+      <div class="o-section__content" >
         <h2
             data-scroll
             data-scroll-speed="3"
@@ -15,8 +15,8 @@
             :key="i"
             class="project-home"
             data-scroll
-            data-scroll-speed="4"
-            :data-scroll-delay="0.1 * (i + 1)"
+            data-scroll-speed="3"
+            :data-scroll-delay="0.05 * (projects.length - i)"
           >
             <div class="project-home__img">
               <Asset v-if="proj.fields.thumbnail" :datas="proj.fields.thumbnail" />
@@ -26,7 +26,7 @@
         </div>
         <n-link :to="projectPage.slug">
           <RippleButton
-              name="Voir toutes nos activitées"
+              name="Voir toutes nos activités"
               data-scroll
               data-scroll-delay="0.1"
               data-scroll-speed="3" />
@@ -74,10 +74,12 @@
     color: $white;
   }
   .o-section__content {
-    padding: 120px 0;
+    padding: 120px 0 0 0;
     text-align: center;
   }
   .o-section__title {
+    position: relative;
+    z-index: 10;
     text-align: left;
   }
   .project-container {

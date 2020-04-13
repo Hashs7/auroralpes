@@ -18,25 +18,33 @@ export default {
     }
   },
   mounted() {
-    this.$nextTick(() => {
-      this.lmS = new this.locomotiveScroll({
-        el: document.querySelector("#main"),
-        smooth: true /* if false disable overflow: hidden on html, body */
-      });
-
-      const debouncedResize = debounce(this.onLmsResize, 200);
-      const throttledScroll = throttle(this.onLmsScroll, 200);
-
+    setTimeout(() => {
       this.$nextTick(() => {
-        this.lmS.update();
-        window.dispatchEvent(new Event('resize'));
-      });
+        this.lmS = new this.locomotiveScroll({
+          el: document.querySelector("#main"),
+          smooth: true /* if false disable overflow: hidden on html, body */
+        });
+
+        const debouncedResize = debounce(this.onLmsResize, 200);
+        const throttledScroll = throttle(this.onLmsScroll, 200);
+
+        this.lmS.on('call', func => {
+          // Using modularJS
+          console.log('enterd', func.inView);
+          // this.call(...func);
+        });
+
+        this.$nextTick(() => {
+          this.lmS.update();
+          window.dispatchEvent(new Event('resize'));
+        });
 
 
-      // this.lmS.on("scroll", _.throttle(this.onLmsScroll, 150));
-      // this.lmS.on("scroll", throttledScroll);
-      window.addEventListener("resize", debouncedResize);
-    });
+        // this.lmS.on("scroll", _.throttle(this.onLmsScroll, 150));
+        // this.lmS.on("scroll", throttledScroll);
+        window.addEventListener("resize", debouncedResize);
+      }, 1000);
+    })
   },
   beforeDestroy() {
     if (!this.lmS) return;

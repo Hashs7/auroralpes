@@ -1,6 +1,6 @@
 <template>
   <div class="header--home">
-    <div data-scroll data-scroll-speed="2">
+    <div data-scroll data-scroll-speed="4">
       <Logo class="header__logo" />
     </div>
     <canvas class="header__canvas" ref="canvas" width="300" height="300" />

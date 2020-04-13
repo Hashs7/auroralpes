@@ -1,16 +1,12 @@
 <template>
-  <div class="member" :class="{'member--image': image}">
-    <div v-if="image" class="member__img">
-      <Asset :datas="image" />
-    </div>
-    <div class="member__content">
-      <h3 class="member__name">{{ name }}</h3>
-      <p v-if="citation.length" class="member__citation">{{ citation }}</p>
-      <RichText v-if="description" :content="description" class="member__description" />
-      <div v-if="role.length" class="member__role">
-        <Asset v-if="roleImage" :datas="roleImage" class="member-role-img" />
-        <span class="member-role-name">{{ role }}</span>
-      </div>
+  <div
+      class="member"
+      :class="{'member--image': image}"
+      data-scroll
+      data-scroll-repeat
+      :data-scroll-call="inView">
+    <div class="member__img">
+      <Asset v-if="image" :datas="image" />
       <div v-if="sn" class="member__socials">
         <Socials
             :fb="sn.fields.facebook"
@@ -18,6 +14,16 @@
             :twitter="sn.fields.twitter"
         />
       </div>
+    </div>
+    <div class="member__content">
+      <h3 class="member__name">{{ name }}</h3>
+      <div v-if="role.length" class="member__role">
+        <Asset v-if="roleImage" :datas="roleImage" class="member-role-img" />
+        <span class="member-role-name">{{ role }}</span>
+      </div>
+      <p v-if="citation.length" class="member__citation">{{ citation }}</p>
+      <RichText v-if="description" :content="description" class="member__description" />
+
     </div>
   </div>
 </template>
@@ -63,6 +69,11 @@
         type: Object,
         default: () => {},
       },
+    },
+    methods: {
+      inView() {
+        console.log('isInview');
+      }
     },
   }
 </script>
@@ -110,7 +121,7 @@
   }
 
   .member__role {
-    margin: 20px 0 0 10px;
+    margin: 0;
     font-size: 14px;
     color: $secondary;
   }
@@ -130,7 +141,7 @@
   }
 
   .member__socials {
-    margin-top: 20px;
+    margin-top: 8px;
 
     .logo path {
       fill: $primary;

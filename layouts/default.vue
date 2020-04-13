@@ -1,9 +1,8 @@
 <template>
   <main  role="main">
-    <Intro />
     <MenuBurger />
     <MenuModal />
-    <Cookies />
+<!--    <Cookies />-->
     <div id="main">
       <MenuHeader/>
       <nuxt/>
@@ -13,7 +12,6 @@
 </template>
 
 <script>
-  import Intro from '~/components/Intro'
   import MenuHeader from "../components/layout/menu/MenuHeader";
   import MenuModal from '~/components/layout/menu/MenuModal';
   import MenuBurger from '~/components/layout/menu/MenuBurger';
@@ -22,7 +20,6 @@
 
   export default {
     components: {
-      Intro,
       MenuHeader,
       MenuModal,
       MenuBurger,
