@@ -5,8 +5,8 @@
       data-scroll
       data-scroll-repeat
       :data-scroll-call="inView">
-    <div class="member__img">
-      <Asset v-if="image" :datas="image" />
+    <div >
+      <Asset v-if="image" :datas="image" class="member__img" />
       <div v-if="sn" class="member__socials">
         <Socials
             :fb="sn.fields.facebook"

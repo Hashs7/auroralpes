@@ -39,6 +39,9 @@
         type: Object,
       },
     },
+    mounted() {
+      console.log(this.datas.fields.members);
+    }
   }
 </script>
 

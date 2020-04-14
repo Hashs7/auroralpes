@@ -19,10 +19,13 @@ class Star {
       this.y = this.wrapper.clientHeight;
     }
     if (this.x > window.innerWidth) {
-      this.x = 0;
+      this.x = -10;
     }
     this.ctx.fillStyle = "#ffffff";
-    this.ctx.fillRect(this.x, this.y, this.size, this.size);
+    // this.ctx.fillRect(this.x, this.y, this.size, this.size);
+    this.ctx.beginPath();
+    this.ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+    this.ctx.fill();
   };
 }
 
@@ -45,6 +48,7 @@ export default class {
   }
 
   resize() {
+    this.stars = [];
     this.canvas.width = window.innerWidth;
     this.canvas.height = this.wrapper.clientHeight;
     this.fadeIn(this.canvas, 500);
@@ -59,16 +63,17 @@ export default class {
     const smallStarsCount = winArea * smallStarsDensity;
     const mediumStarsCount = winArea * mediumStarsDensity;
     const largeStarsCount = winArea * largeStarsDensity;
+    console.log(smallStarsCount);
     for (let i = 0; i < smallStarsCount; i++) {
       this.stars.push(new Star(this.canvas, this.wrapper, 1, 30));
     }
 
     for (let i = 0; i < mediumStarsCount; i++) {
-      this.stars.push(new Star(this.canvas, this.wrapper, 2, 20));
+      this.stars.push(new Star(this.canvas, this.wrapper, 1.7, 20));
     }
 
     for (let i = 0; i < largeStarsCount; i++) {
-      this.stars.push(new Star(this.canvas, this.wrapper, 3, 10));
+      this.stars.push(new Star(this.canvas, this.wrapper, 2.5, 10));
     }
   }
 
