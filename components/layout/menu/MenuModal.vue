@@ -96,7 +96,7 @@ export default {
     align-items: center;
     text-align: center;
     position: fixed;
-    z-index: 19998;
+    z-index: 500;
     top: 0;
     bottom: 0;
     left: 0;
@@ -122,7 +122,7 @@ export default {
     overflow: hidden;
 
     &:not(:last-child) {
-      margin-bottom: 14px;
+      margin-bottom: 32px;
      }
   }
 
@@ -151,6 +151,14 @@ export default {
   @media #{$desktop-s-media} {
     .modal-container {
       display: flex;
+    }
+  }
+  @media #{$mobile-s-media} {
+    .modal__link:not(:last-child) {
+      margin-bottom: 16px;
+    }
+    .modal__item {
+      font-size: 1.6rem;
     }
   }
 </style>

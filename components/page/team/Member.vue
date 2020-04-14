@@ -5,9 +5,9 @@
       data-scroll
       data-scroll-repeat
       :data-scroll-call="inView">
-    <div >
+    <div class="member__img-container">
       <Asset v-if="image" :datas="image" class="member__img" />
-      <div v-if="sn" class="member__socials">
+      <div v-if="sn && !isMobile" class="member__socials">
         <Socials
             :fb="sn.fields.facebook"
             :insta="sn.fields.instagram"
@@ -23,7 +23,13 @@
       </div>
       <p v-if="citation.length" class="member__citation">{{ citation }}</p>
       <RichText v-if="description" :content="description" class="member__description" />
-
+      <div v-if="sn && isMobile" class="member__socials">
+        <Socials
+            :fb="sn.fields.facebook"
+            :insta="sn.fields.instagram"
+            :twitter="sn.fields.twitter"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -69,6 +75,12 @@
         type: Object,
         default: () => {},
       },
+    },
+    computed: {
+      isMobile() {
+        if (process.server) return true;
+        return window.innerWidth < 769;
+      }
     },
     methods: {
       inView() {
@@ -174,9 +186,32 @@
     }
   }
 
+  @media screen and (max-width: 1500px) {
+    .member {
+      .member__name {
+        color: $primary !important;
+      }
+      .member__socials .logo path {
+        fill: $primary !important;
+      }
+      &:nth-child(2n) {
+        .member__name {
+          color: $secondary !important;
+        }
+        .member__socials .logo path {
+          fill: $secondary !important;
+        }
+      }
+    }
+  }
+
   @media #{$tablet-m-media} {
     .member:not(:last-child) {
       margin-bottom: 50px;
+    }
+
+    .member__img-container {
+      display: inherit;
     }
     .member__socials {
       margin-top: 5px;
