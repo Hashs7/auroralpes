@@ -12,9 +12,11 @@ export default class {
   children;
   renderer;
 
-  constructor(canvas, model) {
+  constructor(canvas, model, isDesktop) {
     this.canvas = canvas;
-    model.scene.scale.set(1.15, 1.15, 1.15);
+    const scale = isDesktop ? 1.15 : 1.15;
+    model.scene.scale.set(scale, scale, scale);
+    this.isDesktop = isDesktop;
     this.scene = model.scene;
     this.children = model.scene.children[0].children.map(child => {
       const rotationX = getRandomFloat(0.004, 0.008);
@@ -28,7 +30,11 @@ export default class {
 
   init() {
     this.canvas.width = window.innerWidth;
-    this.camera.position.set(575, -140, 80);
+    if(this.isDesktop) {
+      this.camera.position.set(575, -140, 80);
+    } else {
+      this.camera.position.set(575, -140, 100);
+    }
     const hemilLight = new THREE.HemisphereLight( 0xF4F4FD, 0x42426E, 1.8 );
     this.scene.add(hemilLight);
     /*import('three/examples/jsm/controls/OrbitControls').then(({ OrbitControls }) => {
@@ -58,7 +64,8 @@ export default class {
   }
 
   resize() {
-    let height = window.innerWidth / 1.777
+    const factor = this.isDesktop ? 1.777 : 1;
+    let height = window.innerWidth / factor;
     this.camera.aspect = window.innerWidth / height;
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(window.innerWidth, height);

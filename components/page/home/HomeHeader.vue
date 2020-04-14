@@ -26,7 +26,7 @@
       import('three/examples/jsm/loaders/GLTFLoader').then(({ GLTFLoader }) => {
           const path = window.innerWidth > 425 ? '../models/asteroids-home.glb' : '../models/asteroids-mobile.glb';
           new GLTFLoader().load(path, (glb) => {
-            this.scene = new SceneHome(this.$refs.canvas, glb);
+            this.scene = new SceneHome(this.$refs.canvas, glb, window.innerWidth > 425);
           });
         })
     },
@@ -54,19 +54,20 @@
     z-index: 5;
     margin-top: -100px;
   }
+  @media #{$tablet-l-media} {
+    .header--home {
+      margin-bottom: 20px;
+    }
+    .header__canvas {
+      margin-top: 20px;
+    }
+  }
   @media #{$mobile-l-media} {
     .header__logo {
       padding-top: 190px;
     }
-    .header--home {
-      height: 85vh;
-    }
     .header__canvas {
       pointer-events: none;
-    }
-    .header__canvas {
-      bottom: 50px;
-      transform: none;
     }
   }
 </style>
