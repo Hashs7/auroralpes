@@ -51,7 +51,7 @@
     left: auto;
     bottom: 25px;
     right: 35px;
-    z-index: 19999;
+    z-index: 1000;
     transition: transform .4s ease-out;
 
     @media #{$mobile-l-media} {

@@ -24,7 +24,8 @@
     mounted() {
       if (process.server) return;
       import('three/examples/jsm/loaders/GLTFLoader').then(({ GLTFLoader }) => {
-          new GLTFLoader().load('../models/asteroids-home.glb', (glb) => {
+          const path = window.innerWidth > 425 ? '../models/asteroids-home.glb' : '../models/asteroids-mobile.glb';
+          new GLTFLoader().load(path, (glb) => {
             this.scene = new SceneHome(this.$refs.canvas, glb);
           });
         })

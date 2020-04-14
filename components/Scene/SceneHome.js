@@ -36,7 +36,7 @@ export default class {
     });*/
     this.camera.lookAt(this.scene.position);
     this.resize();
-    this.mainLoop();
+    this.update();
     this.resizeBoundFunction = this.resize.bind(this);
     this.mouseBoundFunction = (e) => this.mouseMove(e);
     window.addEventListener('resize', this.resizeBoundFunction);
@@ -46,6 +46,7 @@ export default class {
   destroy() {
     window.removeEventListener('resize', this.resizeBoundFunction);
     this.canvas.removeEventListener('mousemove', this.mouseBoundFunction);
+    cancelAnimationFrame(this.request)
   }
 
   mouseMove(e) {
@@ -63,7 +64,7 @@ export default class {
     this.renderer.setSize(window.innerWidth, height);
   }
 
-  mainLoop() {
+  update() {
     this.children.forEach(child => {
       child.item.rotation.x -= child.rotationX;
       child.item.rotation.y -= child.rotationY;
@@ -76,6 +77,6 @@ export default class {
       obj.object.rotation.y -= 0.012;
     });
     this.renderer.render(this.scene, this.camera);
-    requestAnimationFrame(() => this.mainLoop());
+    this.request = requestAnimationFrame(() => this.update());
   }
 }

@@ -34,15 +34,14 @@ export default class {
     this.stars = [];
     this.initializeBackground();
     this.initializeStars();
-
   }
 
   initializeBackground() {
     this.canvas.width = window.innerWidth;
     this.canvas.height = this.wrapper.clientHeight;
     this.fadeIn(this.canvas, 500);
+    this.update();
     window.addEventListener("resize", () => this.resize());
-    window.requestAnimationFrame(() => this.paintLoop());
   }
 
   resize() {
@@ -79,12 +78,15 @@ export default class {
     }
   }
 
-  paintLoop() {
-    // console.log(this.canvas.getContext("2d"));
+  destroy() {
+    cancelAnimationFrame(this.request)
+  }
+
+  update() {
     this.canvas.getContext("2d").clearRect(0, 0, this.canvas.width, this.canvas.height);
     let delta = this.ms / 1000;
     this.drawStars(delta);
-    window.requestAnimationFrame(() => this.paintLoop());
+    this.request = window.requestAnimationFrame(() => this.update());
   }
 
   fadeIn(element, duration, callback) {

@@ -1,31 +1,28 @@
 <template>
-  <main class="home-page">
-    <div class="stars-wrapper" ref="wrapper">
-      <HomeHeader />
-      <HomeResume :resume="datas.fields.introResume" />
-      <canvas ref="stars" class="stars-canvas"/>
+  <main class="live-page">
+    <div class="live-container">
+      <iframe
+          class="twitch-iframe"
+          src="https://player.twitch.tv/?channel=auroralpes"
+          frameborder="0"
+          allowfullscreen="true"
+          scrolling="no"
+          :height="height"
+          width="620">
+      </iframe>
+      <a :href="url" target="_blank" rel="nofollow" class="btn-dl">
+        <RippleButton :name="datas.fields.btnTitle" />
+      </a>
     </div>
-    <HomeTeam :resume="datas.fields.teamResume" />
-    <HomeProjects />
-<!--    <HomeFestival :resume="datas.fields.festivalResume" />-->
   </main>
 </template>
 <script>
-import HomeHeader from '~/components/page/home/HomeHeader';
-import HomeResume from '~/components/page/home/HomeResume';
-import HomeTeam from '~/components/page/home/HomeTeam';
-import HomeProjects from '~/components/page/home/HomeProjects';
-import locomotive from "~/mixins/locomotive.js";
-import StarsHome from "../components/Scene/StarsHome";
+import RippleButton from '@/components/UI/RippleButton';
 
 export default {
   components: {
-    HomeHeader,
-    HomeResume,
-    HomeTeam,
-    HomeProjects,
+    RippleButton,
   },
-  mixins: [locomotive],
   /**
    * SEO data with Contentful
    */
@@ -84,38 +81,52 @@ export default {
     }
 
     return {
-      datas: store.state.global.settings.fields.homepage,
+      datas: store.state.global.settings.fields.live,
     };
   },
   data() {
     return {
-      stars: null
+      height: 500,
     }
   },
   mounted() {
-    this.$nextTick(() => {
-      setTimeout(() => {
-        this.stars = new StarsHome(this.$refs.stars, this.$refs.wrapper);
-      }, 300)
-
-    })
+    console.log(this.datas);
+    this.resize();
+    window.addEventListener('resize', this.resize);
   },
-  beforeDestroy() {
-    this.stars.destroy();
-  }
+  computed: {
+    url() {
+      return this.datas.fields.file.fields.file.url;
+    },
+  },
+  methods: {
+    resize() {
+      const width = window.innerWidth > 1400 ? 1400 : window.innerWidth
+      this.height = width / 1.77
+    }
+  },
 };
 </script>
 
 <style lang="scss">
-  .stars-wrapper {
-    position: relative;
+  .live-page {
+    min-height: 100vh;
+    padding: 200px 0 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
-  .stars-canvas {
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  .live-container {
+    max-width: 1400px;
+    width: 100%;
+    height: 100%;
+  }
+  .twitch-iframe {
+    width: 100%;
+  }
+  .btn-dl {
+    display: inline-block;
+    margin: 40px auto 0 auto;
   }
 </style>
