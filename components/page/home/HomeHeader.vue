@@ -3,7 +3,7 @@
     <div data-scroll data-scroll-speed="4">
       <Logo class="header__logo" />
     </div>
-    <canvas class="header__canvas" ref="canvas" width="300" height="300" />
+    <canvas class="header__canvas" ref="canvas" width="300" :height="height" />
   </div>
 </template>
 
@@ -18,10 +18,14 @@
     },
     data() {
       return {
-        scene: null
+        scene: null,
+        height: 600,
       }
     },
     mounted() {
+      const factor = window.innerWidth > 425 ? 1.777 : 1;
+      this.height = window.innerWidth / factor;
+
       if (process.server) return;
       import('three/examples/jsm/loaders/GLTFLoader').then(({ GLTFLoader }) => {
           const path = window.innerWidth > 425 ? '../models/asteroids-home.glb' : '../models/asteroids-mobile.glb';
@@ -53,6 +57,7 @@
     position: relative;
     z-index: 5;
     margin-top: -100px;
+    min-height: calc(100vw / 1.7);
   }
   @media #{$tablet-l-media} {
     .header--home {

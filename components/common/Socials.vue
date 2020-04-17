@@ -1,17 +1,17 @@
 <template>
     <div class="socials">
       <div class="socials-links">
-        <a v-if="fb.length" :href="fb" target="_blank" aria-label="Suivez nous sur facebook" class="socials-link">
+        <a v-if="fb.length" :href="fb" target="_blank" rel="noopener" aria-label="Suivez nous sur facebook" class="socials-link">
           <span class="logo">
             <Facebook/>
           </span>
         </a>
-        <a v-if="insta.length" :href="insta" target="_blank" aria-label="Suivez nous sur instagram" class="socials-link">
+        <a v-if="insta.length" :href="insta" target="_blank" rel="noopener" aria-label="Suivez nous sur instagram" class="socials-link">
           <span class="logo">
             <Instagram/>
           </span>
         </a>
-        <a v-if="twitter.length" :href="twitter" target="_blank" aria-label="Suivez nous sur twitter" class="socials-link">
+        <a v-if="twitter.length" :href="twitter" target="_blank" rel="noopener" aria-label="Suivez nous sur twitter" class="socials-link">
           <span class="logo">
             <Twitter/>
           </span>

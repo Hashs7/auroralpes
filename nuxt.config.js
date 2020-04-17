@@ -35,6 +35,19 @@ export default {
     PERSONAL_ACCESS_TOKEN: process.env.PERSONAL_ACCESS_TOKEN
   },
 
+  buildModules: [
+    '@nuxtjs/google-analytics'
+  ],
+
+  googleAnalytics: {
+    id: 'UA-159949019-1',
+    disabled: true,
+    debug: {
+      enabled: true,
+      sendHitTask: true
+    }
+  },
+
   /*
    ** Customize the progress-bar color
    */

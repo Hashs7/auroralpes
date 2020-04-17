@@ -23,6 +23,8 @@
       </div>
       <p v-if="citation.length" class="member__citation">{{ citation }}</p>
       <RichText v-if="description" :content="description" class="member__description" />
+      <a v-if="mail.length" :href="'mailto:'+mail" class="member__mail">{{ mail }}</a>
+      <a v-if="phone.length" :href="'tel:'+phone" class="member__phone">{{ phone }}</a>
       <div v-if="sn && isMobile" class="member__socials">
         <Socials
             :fb="sn.fields.facebook"
@@ -71,6 +73,14 @@
         type: Object,
         default: () => {},
       },
+      mail: {
+        type: String,
+        default: '',
+      },
+      phone: {
+        type: String,
+        default: '',
+      },
       sn: {
         type: Object,
         default: () => {},
@@ -97,10 +107,8 @@
 
   .member__img {
     display: inline-block;
-    max-width: 270px;
-    max-height: 270px;
-    width: 100%;
-    height: 100%;
+    width: 270px;
+    height: 270px;
     margin-right: 45px;
   }
 
@@ -108,6 +116,19 @@
     display: inline-block;
   }
 
+
+  .member__phone {
+    display: block;
+    color: $secondary;
+    transition: opacity .2s ease-in-out;
+    @include hover {
+      opacity: 0.7;
+    }
+  }
+
+  .member__mail {
+    @extend .member__phone;
+  }
   .member__name {
     color: $primary;
     margin-bottom: 0;
@@ -239,7 +260,7 @@
       }
     }
     .member__img {
-      max-width: none;
+      width: 100%;
       margin-right: 0;
     }
   }

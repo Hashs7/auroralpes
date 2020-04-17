@@ -5,6 +5,7 @@
         <p>Nous utilisons des cookies et avec votre consentement nous les exploitons pour améliorer votre expérience.</p>
         <div>
           <button @click="onCustomizeClick" class="cookieNotice__button cookieNotice__button--secondary">Personnaliser</button>
+          <button @click="rejectAll" class="cookieNotice__button">Refuser</button>
           <button @click="acceptAll" class="cookieNotice__button">Accepter</button>
         </div>
       </div>
@@ -201,8 +202,6 @@ export default {
       date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
       document.cookie = `${name}=${encodeURIComponent(JSON.stringify(value))}; expires=${date.toUTCString()}; path=/`;
     },
-
-
     validate() {
       this.services.forEach((service) => {
         if (service.enabled) {
@@ -246,29 +245,9 @@ export default {
         return acc;
       }, {});
     },
-    async isClientInEu() {
-      const cookie = this.getCookie(this.COOKIE_NAME_IS_EU);
-      if (cookie) {
-        try {
-          return JSON.parse(cookie);
-        } catch (e) {
-          // Silence
-        }
-      }
-
-
-      // Get country from IPDATA API, inside a try catch so it work if we're out of request for the day (1500/day)
-      try {
-        const response = await fetch(`https://api.ipdata.co/is_eu?api-key=${process.env.VUE_APP_IPDATA_API_KEY}`);
-        const json = await response.json();
-        this.setCookie(this.COOKIE_NAME_IS_EU, json);
-        return json;
-      } catch (e) {
-        return true;
-      }
+    rejectAll() {
+      this.setCookie(this.COOKIE_NAME_SETTINGS, this.getSettingsString(), this.MAX_DAYS_COOKIE);
     },
-
-
     /**
        * Accept methods
        */
@@ -491,7 +470,7 @@ export default {
       background: #00E676;
     }
   }
-  
+
   .cookieNotice__toggle__button {
     outline: 0;
     display: block;
@@ -527,6 +506,7 @@ export default {
       align-items: flex-start;
       div {
         margin-top: 8px;
+        flex-wrap: wrap;
       }
     }
     .cookieNotice__table {
@@ -564,7 +544,6 @@ export default {
       }
     }
   }
-
   @media screen and (max-width: 768px) {
     .cookieNotice__header {
       padding: 0 15px 0 15px;
@@ -581,6 +560,12 @@ export default {
         margin-left: 0;
         margin-bottom: 8px;
       }
+    }
+  }
+  @media screen and (max-width: 425px) {
+    .cookieNotice__button--secondary {
+      width: 100%;
+      text-align: left;
     }
   }
 </style>

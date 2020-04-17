@@ -10,7 +10,6 @@ export default class {
   camera;
   canvas;
   children;
-  renderer;
 
   constructor(canvas, model, isDesktop) {
     this.canvas = canvas;
@@ -23,8 +22,8 @@ export default class {
       const rotationY = getRandomFloat(0.004, 0.008);
       return { item: child, rotationX, rotationY }
     });
-    this.camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 0.1, 1000 );
-    this.renderer = new THREE.WebGLRenderer({ alpha: true, canvas, antialias: true  });
+    this.camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 1, 800 );
+    this.renderer = new THREE.WebGLRenderer({ alpha: true, canvas, antialias: true, powerPreference: 'low-power'  });
     this.init();
   }
 

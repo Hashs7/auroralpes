@@ -16,6 +16,8 @@
           :image="member.fields.image"
           :role="member.fields.role"
           :roleImage="member.fields.roleImage"
+          :mail="member.fields.mail"
+          :phone="member.fields.phone"
           :sn="member.fields.sn"
         />
       </div>
