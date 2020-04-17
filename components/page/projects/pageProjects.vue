@@ -8,7 +8,7 @@
     <section class="projects-container o-section--white">
       <div class="o-container">
         <div class="own-projects">
-          <h2 class="projects-container__title" data-scroll data-scroll-speed="3">Nos projets</h2>
+          <h2 class="projects-container__title">Nos projets</h2>
           <ProjectPreview
               v-for="(project, i) in ownProjects"
               :key="i"
@@ -21,7 +21,7 @@
           />
         </div>
         <div class="participate-projects">
-          <h2 class="projects-container__title" data-scroll data-scroll-speed="3">Nos participations</h2>
+          <h2 class="projects-container__title">Nos participations</h2>
           <ProjectPreview
               v-for="(project, i) in participateProjects"
               :key="i"

@@ -14,7 +14,7 @@ export default class {
 
   constructor(canvas, model, isDesktop) {
     this.canvas = canvas;
-    const scale = isDesktop ? 1.15 : 1.15;
+    const scale = isDesktop ? 1.15 : 1.2;
     model.scene.scale.set(scale, scale, scale);
     this.isDesktop = isDesktop;
     this.scene = model.scene;

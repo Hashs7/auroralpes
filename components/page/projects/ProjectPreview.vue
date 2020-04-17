@@ -3,7 +3,6 @@
       :to="'/'+prefix+'/'+slug"
       class="project"
       :class="{'project--image': thumbnail}"
-      data-scroll data-scroll-speed="3"
   >
     <div class="project__img">
       <Asset v-if="thumbnail" :datas="thumbnail" />

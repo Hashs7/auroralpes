@@ -303,7 +303,7 @@ export default {
     max-width: 1280px;
     width: 100%;
     transform: translateX(-50%);
-    z-index: 10000;
+    z-index: 500;
     border-radius: 12px 12px 0 0;
     background-color: $white;
     box-shadow: 0 1px 8px rgba(75, 29, 48, 0.2);
@@ -340,7 +340,7 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 10000;
+    z-index: 500;
     overflow: auto;
     font-size: 0.9rem;
     line-height: 1.3rem;
@@ -491,8 +491,7 @@ export default {
       background: #00E676;
     }
   }
-
-
+  
   .cookieNotice__toggle__button {
     outline: 0;
     display: block;
@@ -522,7 +521,14 @@ export default {
   /**
    * Responsive
    */
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1000px) {
+    .cookieNotice__header {
+      flex-direction: column;
+      align-items: flex-start;
+      div {
+        margin-top: 8px;
+      }
+    }
     .cookieNotice__table {
       thead {
         display: none;
@@ -561,9 +567,7 @@ export default {
 
   @media screen and (max-width: 768px) {
     .cookieNotice__header {
-      flex-direction: column;
-      align-items: flex-end;
-      padding-top: 22px;
+      padding: 0 15px 0 15px;
       transform: none;
       left: 0;
       right: 0;
@@ -575,7 +579,7 @@ export default {
 
       div {
         margin-left: 0;
-        margin-top: 20px;
+        margin-bottom: 8px;
       }
     }
   }

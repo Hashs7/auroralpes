@@ -2,7 +2,7 @@
   <main  role="main">
     <MenuBurger />
     <MenuModal />
-<!--    <Cookies />-->
+    <Cookies />
     <div id="main">
       <MenuHeader/>
       <nuxt/>

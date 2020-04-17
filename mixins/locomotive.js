@@ -13,8 +13,9 @@ export default {
   },
   watch: {
     $route() {
-      console.log("route changed: ", this.$route);
-      this.lmS.update();
+      this.$nextTick(() => {
+        this.lmS.update();
+      });
     }
   },
   mounted() {
@@ -30,12 +31,13 @@ export default {
 
         this.lmS.on('call', func => {
           // Using modularJS
-          console.log('enterd', func.inView);
+          console.log('entered', func.inView);
           // this.call(...func);
         });
 
         this.$nextTick(() => {
           this.lmS.update();
+          console.log('update LmS');
           window.dispatchEvent(new Event('resize'));
         });
 
@@ -43,7 +45,7 @@ export default {
         // this.lmS.on("scroll", _.throttle(this.onLmsScroll, 150));
         // this.lmS.on("scroll", throttledScroll);
         window.addEventListener("resize", debouncedResize);
-      }, 1000);
+      }, 1500);
     })
   },
   beforeDestroy() {

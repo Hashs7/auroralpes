@@ -7,13 +7,22 @@
           <h2 class="footer__title">Nous contacter</h2>
           <ul>
             <li v-if="footer.fields.contactVolunteer" class="footer__mail">
-              <Mail :email="footer.fields.contactVolunteer" label="Devenir bénévole" />
+<!--              <Mail :email="footer.fields.contactVolunteer" label="Devenir bénévole" />-->
+              <a :href="'mailto:'+footer.fields.contactVolunteer">
+                <RippleButton name="Devenir bénévole" />
+              </a>
             </li>
             <li v-if="footer.fields.contactPartner" class="footer__mail">
-              <Mail :email="footer.fields.contactPartner" label="Devenir partenaire" />
+<!--              <Mail :email="footer.fields.contactPartner" label="Devenir partenaire" />-->
+              <a :href="'mailto:'+footer.fields.contactPartner">
+                <RippleButton name="Devenir partenaire" />
+              </a>
             </li>
             <li v-if="footer.fields.contactQuestion" class="footer__mail">
-              <Mail :email="footer.fields.contactQuestion" label="Une question ?" />
+<!--              <Mail :email="footer.fields.contactQuestion" label="Une question ?" />-->
+              <a :href="'mailto:'+footer.fields.contactQuestion">
+                <RippleButton name="Une question ?" />
+              </a>
             </li>
           </ul>
         </div>
@@ -43,14 +52,14 @@
 </template>
 
 <script>
-  import Mail from '~/components/common/Mail';
+  import RippleButton from '~/components/UI/RippleButton';
   import RichText from '~/components/common/RichText';
   import Socials from '~/components/common/Socials';
 
   export default {
     name: 'Footer',
     components: {
-      Mail,
+      RippleButton,
       RichText,
       Socials,
     },
