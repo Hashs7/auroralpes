@@ -74,7 +74,7 @@
         font-size: 20px;
         font-weight: $weight-medium;
         @media #{$lg-down} {
-            @include fluid-type(16px, 20px);
+            // @include fluid-type(16px, 20px);
         }
     }
     .asso-content {

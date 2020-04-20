@@ -1,20 +1,29 @@
 h2 {
   color: $primary;
   font-weight: $weight-bold;
-  font-size: 40px;
-  opacity: 0;
-  transform: translateX(-200px);
-  transition: opacity .3s ease, transform .5s ease-out;
+  font-size: 2.2rem;
 
-  @media #{$lg-down} {
-    @include fluid-type(30px, 40px);
+  transition: opacity .3s ease, transform .5s ease-out;
+}
+
+h3 {
+  font-size: 1.875rem;
+}
+
+@media #{$tablet-l-media} {
+  h2 {
+    font-size: 2.2rem;
   }
-  &.showTitle {
-    opacity: 1;
-    transform: translateX(0);
+  h3 {
+    font-size: 1.7rem;
   }
 }
-.showTitle h2 {
-    opacity: 1;
-    transform: translateX(0);
+
+@media #{$mobile-l-media} {
+  h2 {
+    font-size: 1.6rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
 }

@@ -2,7 +2,7 @@
 
 pages/countdown/
 
-
+.DS_Store
 ### Node template
 # Logs
 logs

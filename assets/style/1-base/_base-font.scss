@@ -1,71 +1,109 @@
 @font-face {
-  font-family: 'Gilroy';
-  font-display: auto;
-  src: url('~assets/fonts/subset-Gilroy-Thin.woff2') format('woff2'),
-  url('~assets/fonts/subset-Gilroy-Thin.woff') format('woff');
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  font-display: auto;
-  src: url('~assets/fonts/subset-Gilroy-Heavy.woff2') format('woff2'),
-  url('~assets/fonts/subset-Gilroy-Heavy.woff') format('woff');
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  font-display: auto;
-  src: url('~assets/fonts/subset-Gilroy-SemiBold.woff2') format('woff2'),
-  url('~assets/fonts/subset-Gilroy-SemiBold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  font-display: auto;
-  src: url('~assets/fonts/subset-Gilroy-UltraLight.woff2') format('woff2'),
-  url('~assets/fonts/subset-Gilroy-UltraLight.woff') format('woff');
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  font-display: auto;
-  src: url('~assets/fonts/subset-Gilroy-Black.woff2') format('woff2'),
-  url('~assets/fonts/subset-Gilroy-Black.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  font-display: auto;
-  src: url('~assets/fonts/subset-Gilroy-Regular.woff2') format('woff2'),
-  url('~assets/fonts/subset-Gilroy-Regular.woff') format('woff');
+  font-display: swap;
+  font-family: 'Lato';
+  src:  url('~assets/fonts/subset-Lato-Regular.woff2') format('woff2'),
+  url('~assets/fonts/subset-Lato-Regular.woff') format('woff'),
+  local('Arial'),;
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
+  font-display: swap;
+  font-family: 'MAZIUSREVIEW';
+  src:  url('~assets/fonts/MAZIUSREVIEW20.09-Regular.woff2') format('woff2'),
+  url('~assets/fonts/MAZIUSREVIEW20.09-Regular.woff') format('woff'),
+  local('Arial'),;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'MAZIUSREVIEW';
+  src:  url('~assets/fonts/MAZIUSREVIEW20.09-Extraitalic.woff2') format('woff2'),
+  url('~assets/fonts/MAZIUSREVIEW20.09-Extraitalic.woff') format('woff'),
+  local('Arial'),;
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-display: swap;
   font-family: 'Gilroy';
-  font-display: auto;
-  src: url('~assets/fonts/subset-Gilroy-Bold.woff2') format('woff2'),
-  url('~assets/fonts/subset-Gilroy-Bold.woff') format('woff');
+  src:  url('~assets/fonts/subset-Gilroy-Thin.woff2') format('woff2'),
+  url('~assets/fonts/subset-Gilroy-Thin.woff') format('woff'),
+  local('Arial'),;
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Gilroy';
+  src:  url('~assets/fonts/subset-Gilroy-Heavy.woff2') format('woff2'),
+  url('~assets/fonts/subset-Gilroy-Heavy.woff') format('woff'),
+  local('Arial'),;
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Gilroy';
+  src:  url('~assets/fonts/subset-Gilroy-SemiBold.woff2') format('woff2'),
+  url('~assets/fonts/subset-Gilroy-SemiBold.woff') format('woff'),
+  local('Arial'),;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Gilroy';
+  src:  url('~assets/fonts/subset-Gilroy-UltraLight.woff2') format('woff2'),
+  url('~assets/fonts/subset-Gilroy-UltraLight.woff') format('woff'),
+  local('Arial'),;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Gilroy';
+  src:  url('~assets/fonts/subset-Gilroy-Black.woff2') format('woff2'),
+  url('~assets/fonts/subset-Gilroy-Black.woff') format('woff'),
+  local('Arial'),;
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Gilroy';
+  src:  url('~assets/fonts/subset-Gilroy-Regular.woff2') format('woff2'),
+  url('~assets/fonts/subset-Gilroy-Regular.woff') format('woff'),
+  local('Arial'),;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Gilroy';
+  src:  url('~assets/fonts/subset-Gilroy-Bold.woff2') format('woff2'),
+  url('~assets/fonts/subset-Gilroy-Bold.woff') format('woff'),
+  local('Arial'),;
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'Gilroy';
-  font-display: auto;
-  src: url('~assets/fonts/subset-Gilroy-Medium.woff2') format('woff2'),
-  url('~assets/fonts/subset-Gilroy-Medium.woff') format('woff');
+  src:  url('~assets/fonts/subset-Gilroy-Medium.woff2') format('woff2'),
+  url('~assets/fonts/subset-Gilroy-Medium.woff') format('woff'),
+  local('Arial'),;
   font-weight: 500;
   font-style: normal;
 }

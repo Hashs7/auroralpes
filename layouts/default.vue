@@ -1,45 +1,30 @@
 <template>
-    <main id="main" role="main">
-        <header>
-            <Navigation />
-        </header>
-        <nuxt/>
-    </main>
+  <main  role="main">
+    <MenuBurger />
+    <MenuModal />
+    <Cookies />
+    <div id="main">
+      <MenuHeader/>
+      <nuxt/>
+      <Footer/>
+    </div>
+  </main>
 </template>
 
 <script>
-    import Navigation from '@/components/Navigation';
+  import MenuHeader from "../components/layout/menu/MenuHeader";
+  import MenuModal from '~/components/layout/menu/MenuModal';
+  import MenuBurger from '~/components/layout/menu/MenuBurger';
+  import Footer from "../components/layout/Footer";
+  import Cookies from '~/components/layout/Cookies';
 
-    export default {
-        components: { Navigation },
-    }
+  export default {
+    components: {
+      MenuHeader,
+      MenuModal,
+      MenuBurger,
+      Footer,
+      Cookies,
+    },
+  }
 </script>
-<style>
-    .page-loader {
-        background-color: #f0f;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-    }
-    .page-loader-enter-active {
-        animation: bounce-in .5s;
-    }
-    .page-loader-leave-active {
-        background-color: #f00;
-        animation: bounce-in .5s;
-    }
-
-    @keyframes bounce-in {
-        0% {
-            width: 0;
-        }
-        50% {
-            width: 100vw;
-        }
-        100% {
-            width: 0;
-        }
-    }
-</style>

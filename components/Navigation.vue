@@ -1,9 +1,9 @@
 <template>
     <nav class="header-menu">
-        <nuxt-link to="/home" class="nuxt-link">Accueil</nuxt-link>
-        <nuxt-link to="/association" class="nuxt-link">L'association</nuxt-link>
-        <nuxt-link to="/festival" class="nuxt-link">Le festival</nuxt-link>
-        <nuxt-link to="/nous-aider" class="nuxt-link">Nous aider</nuxt-link>
+        <nuxt-link to="/" class="nuxt-link">Auroralpes</nuxt-link>
+        <nuxt-link to="/association" class="nuxt-link">L'équipe</nuxt-link>
+        <nuxt-link to="/festival" class="nuxt-link">Nos projets</nuxt-link>
+        <nuxt-link to="/nous-aider" class="nuxt-link">Le festival</nuxt-link>
         <nuxt-link to="/contact" class="nuxt-link">Contact</nuxt-link>
     </nav>
 </template>
@@ -25,11 +25,14 @@
     }
 
     .nuxt-link {
-        color: $primary;
+        color: $white;
         text-decoration: none;
+      &.exact-active-link {
+        opacity: .3;
+      }
     }
+
     .exact-active-link {
-        text-decoration: underline;
     }
 
 </style>

@@ -30,6 +30,7 @@ const animate = () => {
     });
     render()
 };
+
 function getScrollbarWidth() {
     const outer = document.createElement("div");
     outer.style.visibility = "hidden";
@@ -109,7 +110,7 @@ export default () => {
     // const mouseMaterial = new THREE.MeshLambertMaterial({});
     // mouseMesh = new THREE.Mesh(mouseGeometry, mouseMaterial);
 
-    // mouseMesh.position.set(0, 0, 0);
+    // mouseMesh.position.set(0, 0, 0);q
     // scene.add(mouseMesh);
 
     // When the mouse moves, call the given function

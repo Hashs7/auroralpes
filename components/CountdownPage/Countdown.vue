@@ -32,12 +32,13 @@
             watchingBefore: false
         }),
         created() {
-            this.start = new Date().getTime();
-            this.end   = new Date(this.endtime).getTime();
+          if (process.server) return;
+          this.start = new Date().getTime();
+          this.end   = new Date(this.endtime).getTime();
+          this.timerCount(this.start, this.end);
+          this.interval = setInterval(() => {
             this.timerCount(this.start, this.end);
-            this.interval = setInterval(() => {
-                this.timerCount(this.start, this.end);
-            }, 1000);
+          }, 1000);
         },
         methods: {
             timerCount(start, end) {
@@ -93,7 +94,7 @@
             margin-right: 25px;
         }
         @media #{$xl-down} {
-            @include fluid-type(38px, 90px);
+            // @include fluid-type(38px, 90px);
         }
         @media #{$md-down} {
             &:not(.sec) {
@@ -125,6 +126,6 @@
         font-size: 40px;
         font-weight: $weight-thin;
         margin-top: 5px;
-        @include fluid-type(18px, 40px);
+        // @include fluid-type(18px, 40px);
     }
 </style>

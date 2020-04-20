@@ -138,7 +138,7 @@
         background-position: center;
 
         @media #{$md-down} {
-            @include fluid-type(16px, 20px);
+            // @include fluid-type(16px, 20px);
             padding: 120px 0 0 0;
         }
     }

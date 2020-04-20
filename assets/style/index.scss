@@ -1,11 +1,12 @@
 @import '0-settings/settings-colors';
+@import '0-settings/settings-mixins';
 @import '0-settings/settings-media';
 @import '0-settings/settings-typography';
 
 @import
+  '1-base/base-normalize',
   '1-base/base-default',
-  '1-base/base-font',
-  '1-base/base-normalize';
+  '1-base/base-font';
 
 @import
   '2-elements/element-heading';
@@ -18,3 +19,4 @@
 @import '5-objects/objects-full';
 
 @import '7-views/view-countdown';
+

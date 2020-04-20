@@ -40,9 +40,7 @@
     import SocialContainer from '~/components/CountdownPage/SocialContainer'
     import LogoContainer from '~/components/CountdownPage/LogoContainer'
     import Intro from '~/components/Intro'
-    import {createClient} from '~/plugins/contentful.js'
-
-    const client = createClient();
+    import client from '~/plugins/contentful.js'
 
     export default {
         components: {
