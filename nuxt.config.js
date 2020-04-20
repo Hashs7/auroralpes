@@ -19,7 +19,7 @@ export default {
     title: process.env.npm_package_name || 'Auroralpes',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width' },
+      { name: 'viewport', content: 'initial-scale=1.0,maximum-scale=1,width=device-width' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
       { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
       { hid: 'og:image', property: 'og:image', content: 'https://www.auroralpes.fr/img/banner-image.jpg' }
