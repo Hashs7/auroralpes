@@ -247,6 +247,8 @@ export default {
     },
     rejectAll() {
       this.setCookie(this.COOKIE_NAME_SETTINGS, this.getSettingsString(), this.MAX_DAYS_COOKIE);
+      this.showDetail = false;
+      this.show = false;
     },
     /**
        * Accept methods
