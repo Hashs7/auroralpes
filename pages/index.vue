@@ -96,8 +96,7 @@ export default {
     this.$nextTick(() => {
       setTimeout(() => {
         this.stars = new StarsHome(this.$refs.stars, this.$refs.wrapper);
-      }, 300)
-
+      }, 600)
     })
   },
   beforeDestroy() {
