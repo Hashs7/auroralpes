@@ -38,6 +38,7 @@
       removeLayer(delay = false) {
         gsap.to(this.$refs.logoContainer, {
           height: 0,
+          zIndex: 0,
           duration: 0.8,
           delay: delay ? 3.4 : 0,
           // backgroundColor: 'transparent'
