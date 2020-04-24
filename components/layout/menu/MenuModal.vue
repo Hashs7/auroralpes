@@ -120,18 +120,18 @@ export default {
   .modal__link {
     display: block;
     overflow: hidden;
-    position: relative;
-    z-index: 1000000;
 
     &:not(:last-child) {
-      margin-bottom: 32px;
+      margin-bottom: 16px;
      }
   }
 
   .modal__item {
+    position: relative;
+    z-index: 1000000;
     display: inline-block;
     color: $white;
-    padding: 8px 0;
+    padding: 16px;
     font-size: 2rem;
     line-height: 1;
     cursor: pointer;
