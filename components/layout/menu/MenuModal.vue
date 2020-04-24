@@ -120,6 +120,8 @@ export default {
   .modal__link {
     display: block;
     overflow: hidden;
+    position: relative;
+    z-index: 1000000;
 
     &:not(:last-child) {
       margin-bottom: 32px;

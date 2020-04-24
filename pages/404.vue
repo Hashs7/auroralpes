@@ -19,16 +19,13 @@ export default {
   },
   layout: 'empty',
   components: { RichText },
-  async asyncData({ store, payload }) {
-    // Generated route, use defined payload
-    if (payload) {
-      return { datas: payload };
-    }
-    return {
-      datas: store.state.global.settings.fields.error,
-    };
+  computed: {
+    datas() {
+      return this.$store.state.global.settings.fields.error;
+    },
   },
   mounted() {
+    console.log('datas', this.datas);
     setTimeout(() => {
       if (!this) return;
       this.$router.push({ path: '/' });

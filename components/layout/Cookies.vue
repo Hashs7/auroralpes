@@ -309,9 +309,6 @@ export default {
       display: flex;
       margin-left: 12px;
     }
-    .btn-container {
-      margin-bottom: 35px;
-    }
   }
 
 
@@ -571,6 +568,9 @@ export default {
     .cookieNotice__button--secondary {
       width: 100%;
       text-align: left;
+    }
+    .cookieNotice__header .btn-container {
+      margin-bottom: 35px;
     }
   }
 </style>

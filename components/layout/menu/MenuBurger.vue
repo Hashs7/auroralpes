@@ -56,7 +56,7 @@
 
     @media #{$mobile-l-media} {
       right: 20px;
-      bottom: 15px;
+      bottom: 60px;
     }
   }
 
