@@ -3,7 +3,7 @@
     <transition name="slide">
       <div ref="header" v-if="show" class="cookieNotice__header">
         <p>Nous utilisons des cookies et avec votre consentement nous les exploitons pour améliorer votre expérience.</p>
-        <div>
+        <div class="btn-container">
           <button @click="onCustomizeClick" class="cookieNotice__button cookieNotice__button--secondary">Personnaliser</button>
           <button @click="rejectAll" class="cookieNotice__button">Refuser</button>
           <button @click="acceptAll" class="cookieNotice__button">Accepter</button>
@@ -308,6 +308,9 @@ export default {
       flex-shrink: 0;
       display: flex;
       margin-left: 12px;
+    }
+    .btn-container {
+      margin-bottom: 35px;
     }
   }
 
