@@ -36,18 +36,15 @@ export default {
 
       this.$nextTick(() => {
         this.lmS.update();
-        console.log('update LmS');
         window.dispatchEvent(new Event('resize'));
       });
-
-
       // this.lmS.on("scroll", _.throttle(this.onLmsScroll, 150));
       // this.lmS.on("scroll", throttledScroll);
       window.addEventListener("resize", debouncedResize);
     });
     setTimeout(() => {
       this.lmS.update();
-    }, 1500)
+    }, 3000);
   },
   beforeDestroy() {
     if (!this.lmS) return;
