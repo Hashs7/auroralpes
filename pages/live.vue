@@ -3,16 +3,13 @@
     <div class="live-container">
       <iframe
           class="twitch-iframe"
-          src="https://player.twitch.tv/?channel=auroralpes"
+          src="https://player.twitch.tv/?channel=auroralpes&parent=www.auroralpes.fr"
           frameborder="0"
           allowfullscreen="true"
           scrolling="no"
           :height="height"
           width="620">
       </iframe>
-      <a :href="url" target="_blank" rel="nofollow" class="btn-dl">
-        <RippleButton :name="datas.fields.btnTitle" />
-      </a>
     </div>
   </main>
 </template>
@@ -90,14 +87,8 @@ export default {
     }
   },
   mounted() {
-    console.log(this.datas);
     this.resize();
     window.addEventListener('resize', this.resize);
-  },
-  computed: {
-    url() {
-      return this.datas.fields.file.fields.file.url;
-    },
   },
   methods: {
     resize() {
