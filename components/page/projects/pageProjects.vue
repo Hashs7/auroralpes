@@ -56,11 +56,14 @@
       },
     },
     computed: {
+      filterProjects() {
+        return this.datas.fields.projects.filter(pro => !pro.fields.invisible);
+      },
       ownProjects() {
-        return this.datas.fields.projects.filter(pro => pro.fields.isOwn);
+        return this.filterProjects.filter(pro => pro.fields.isOwn);
       },
       participateProjects() {
-        return this.datas.fields.projects.filter(pro => !pro.fields.isOwn);
+        return this.filterProjects.filter(pro => !pro.fields.isOwn);
       },
     },
   }
