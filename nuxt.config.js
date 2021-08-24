@@ -3,8 +3,7 @@ const contentful = require('contentful');
 const { getNestedReferences } = require('./utils/contentful');
 
 export default {
-  mode: 'universal',
-  // mode: 'spa',
+  target: 'static',
   server: {
     port: 8000, // default: 3000
     host: '0.0.0.0', // default: localhost,
@@ -205,6 +204,11 @@ export default {
         content_type: 'settings',
       });
 
+	    const projects = await client.getEntries({
+		    content_type: 'project',
+	    });
+	    // console.log('projects', projects.items);
+
       const pages = (await getNestedReferences(settings)).fields.pages;
 
       // Get pages (you might need to duplicate this for every content type you have
@@ -214,10 +218,20 @@ export default {
       pages.push(...simplePages); */
 
       // Generate page
-      return pages.filter((page) => page.sys.contentType.sys.id !== 'homepage').map((page) => ({
-        route: page.fields.slug,
-        payload: page,
-      }));
+	    const projectsSlug = pages.find(p => p.sys.contentType.sys.id === 'pageProjects').fields.slug;
+	    console.log(projectsSlug);
+      return [
+	      ...pages.filter((page) => page.sys.contentType.sys.id !== 'homepage'),
+	      ...projects.items,
+      ]
+	      .map((page) => {
+		      const route = page.sys.contentType.sys.id !== 'project' ? page.fields.slug : `/${projectsSlug}/${page.fields.slug}`
+		      console.log('route', route);
+	      	return ({
+			      route,
+			      payload: page,
+		      })
+	      });
     },
   },
 

@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Project :key="datas.sys.id" :datas="datas" />
+    <Project :datas="datas" />
   </main>
 </template>
 <script>
@@ -17,6 +17,9 @@ export default {
     Project,
   },
   mixins: [locomotive],
+  mounted() {
+    console.log(this.datas.sys.id);
+  },
   /**
      * SEO data with Contentful
      */
