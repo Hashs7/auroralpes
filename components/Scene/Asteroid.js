@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import GLTFLoader from 'three-gltf-loader';
 
 let asteroid,
     renderer,
@@ -65,8 +64,6 @@ const resizeRenderer = (e) => {
 };
 
 function onMouseMove(event) {
-    // console.log(event, 'mousemove');
-
     // Update the mouse variable
     event.preventDefault();
     mouse.x = ((event.clientX / window.innerWidth) * 2 - 1) * 100;
@@ -115,70 +112,73 @@ export default () => {
 
     // When the mouse moves, call the given function
     document.addEventListener('mousemove', onMouseMove, false);
+		import('three/examples/jsm/loaders/GLTFLoader').then(({ GLTFLoader }) => {
+			const loader = new GLTFLoader();
 
-    const loader = new GLTFLoader();
+			window.addEventListener("resize", resizeRenderer);
+			if(wWidth < 992) {
+				camera.position.x = 0;
 
-    window.addEventListener("resize", resizeRenderer);
-    if(wWidth < 992) {
-        camera.position.x = 0;
+				loader.load('../models/asteroids-desktop.glb', ( gltf ) => {
+					// console.log(gltf);
+					asteroid = gltf.scene;
+					const scale = 3;
+					asteroid.scale.x = scale;
+					asteroid.scale.y = scale;
+					asteroid.scale.z = scale;
 
-        loader.load('../models/asteroids-desktop.glb', ( gltf ) => {
-            // console.log(gltf);
-            asteroid = gltf.scene;
-            const scale = 3;
-            asteroid.scale.x = scale;
-            asteroid.scale.y = scale;
-            asteroid.scale.z = scale;
+					asteroid.children[0].children.forEach((el, i) => {
+						switch(i) {
+							case 0:
+								el.position.x += 1;
+								el.position.y += 3;
+								break;
 
-            asteroid.children[0].children.forEach((el, i) => {
-                switch(i) {
-                    case 0:
-                        el.position.x += 1;
-                        el.position.y += 3;
-                        break;
+							case 1:
+								el.position.x -= 2;
+								el.position.y += 2;
+								break;
 
-                    case 1:
-                        el.position.x -= 2;
-                        el.position.y += 2;
-                        break;
+							case 2:
+								el.position.y -= 10;
+								el.position.x -= 7;
+								break;
 
-                    case 2:
-                        el.position.y -= 10;
-                        el.position.x -= 7;
-                        break;
+							case 3:
+								const scale = 0.007;
+								el.scale.x = scale;
+								el.scale.y = scale;
+								el.scale.z = scale;
+								el.position.x += 1;
+								el.position.y -= 1;
+								break;
+						}
+					});
 
-                    case 3:
-                        const scale = 0.007;
-                        el.scale.x = scale;
-                        el.scale.y = scale;
-                        el.scale.z = scale;
-                        el.position.x += 1;
-                        el.position.y -= 1;
-                        break;
-                }
-            });
+					scene.add( asteroid );
+					animate();
+					renderer.render( scene, camera );
+				});
+			} else {
+				camera.position.x = 10;
 
-            scene.add( asteroid );
-            animate();
-            renderer.render( scene, camera );
-        });
-    } else {
-        camera.position.x = 10;
-
-        loader.load('../models/asteroids-desktop.glb', ( gltf ) => {
-            // console.log(gltf);
-            asteroid = gltf.scene;
-            const scale = 3;
-            asteroid.scale.x = scale;
-            asteroid.scale.y = scale;
-            asteroid.scale.z = scale;
-            scene.add( asteroid );
-            animate();
-            renderer.render( scene, camera );
-        });
-    }
+				loader.load('../models/asteroids-desktop.glb', ( gltf ) => {
+					// console.log(gltf);
+					asteroid = gltf.scene;
+					const scale = 3;
+					asteroid.scale.x = scale;
+					asteroid.scale.y = scale;
+					asteroid.scale.z = scale;
+					scene.add( asteroid );
+					animate();
+					renderer.render( scene, camera );
+				});
+			}
 
 
-    const main = document.querySelector('#asteroid');
-    main.replaceChild( renderer.domElement,  main.childNodes[0]);
+			const main = document.querySelector('#asteroid');
+			main.replaceChild( renderer.domElement,  main.childNodes[0]);
+		});
+
+
 };

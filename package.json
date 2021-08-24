@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Association dans le but de promouvoir, de rendre accessible et de faire rayonner les sciences de l'Univers",
   "author": "Sebastien Hernoux",
+  "type": "module",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -27,8 +28,7 @@
     "node-sass": "^4.14.1",
     "nuxt": "^2.15.8",
     "scrollmagic": "^2.0.7",
-    "three": "^0.131.3",
-    "three-gltf-loader": "^1.111.0",
+    "three": "^0.107.0",
     "vue-lazyload": "^1.3.3",
     "vue-parallax-js": "^0.2.3",
     "vue-scrollto": "^2.17.1",

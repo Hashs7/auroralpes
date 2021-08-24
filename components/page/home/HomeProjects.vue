@@ -4,7 +4,7 @@
       <div class="o-section__content" >
         <h2
             data-scroll
-            data-scroll-speed="3"
+            data-scroll-speed="2"
             class="o-section__title">
           {{ projectPage.title }}
         </h2>
@@ -51,7 +51,8 @@
         return this.$store.state.global.projects.pageSlug;
       },
       projects() {
-        let sortedProjects = [...this.$store.state.global.projects.items].sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
+        const filterProjects = [...this.$store.state.global.projects.items].filter(pro => !pro.fields.invisible);
+        let sortedProjects = filterProjects.sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
         return sortedProjects.slice(0, 4);
       },
       projectPage() {
