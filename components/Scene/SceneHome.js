@@ -37,9 +37,9 @@ export default class {
     }
     const hemilLight = new THREE.HemisphereLight( 0xF4F4FD, 0x42426E, 1.8 );
     this.scene.add(hemilLight);
-    import('three/examples/jsm/controls/OrbitControls').then(({ OrbitControls }) => {
+    /*import('three/examples/jsm/controls/OrbitControls').then(({ OrbitControls }) => {
       new OrbitControls( this.camera, this.canvas);
-    });
+    });*/
     this.camera.lookAt(this.scene.position);
     this.resize();
     this.update();

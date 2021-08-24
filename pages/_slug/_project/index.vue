@@ -17,9 +17,6 @@ export default {
     Project,
   },
   mixins: [locomotive],
-  mounted() {
-    console.log(this.datas.sys.id);
-  },
   /**
      * SEO data with Contentful
      */

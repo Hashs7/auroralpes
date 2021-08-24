@@ -1,6 +1,6 @@
 <template>
   <main>
-<!--    <Header v-if="header" :datas="header" />-->
+    {{ template }}
     <component v-bind:is="template" v-if="template" :key="datas.sys.id" :datas="datas" />
   </main>
 </template>
@@ -20,6 +20,9 @@ export default {
     PageFestival,
   },
   mixins: [locomotive],
+  mounted() {
+    console.log(this.template);
+  },
   /**
    * SEO data with Contentful
    */
@@ -70,6 +73,7 @@ export default {
   computed: {
     template() {
       // Return template to use
+      console.log(this.datas.sys.contentType.sys.id);
       if (this.datas.sys) {
         return this.datas.sys.contentType.sys.id;
       }
