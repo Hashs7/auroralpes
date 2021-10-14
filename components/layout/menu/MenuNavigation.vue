@@ -16,6 +16,7 @@
         title="Live"
         link="/live"
         class="navigation__link u-link"
+        :is-live="pageLive.fields.isLive"
     />
   </nav>
 </template>
@@ -33,6 +34,9 @@ export default {
     },
     pages() {
       return this.settings.fields.pages;
+    },
+    pageLive() {
+      return this.settings.fields.live;
     },
   },
 };
@@ -60,7 +64,7 @@ export default {
 
 
   &:not(:last-child) {
-    margin-right: 40px;
+    margin-right: 36px;
   }
 }
 

@@ -3,9 +3,13 @@
     :to="link"
     @mouseenter.native="enter"
     class="link-translate"
+    :class="{isLive}"
   >
-    <span ref="title" class="link-translate__title">{{ title }}</span>
-    <span ref="titleHidden" class="link-translate__title--hidden">{{ title }}</span>
+    <div class="link-translate__container">
+      <span ref="title" class="link-translate__title">{{ title }}</span>
+      <span ref="titleHidden" class="link-translate__title--hidden">{{ title }}</span>
+    </div>
+    <span class="dot clearfix"></span>
   </n-link>
 </template>
 
@@ -22,6 +26,10 @@ export default {
     title: {
       type: String,
       required: true,
+    },
+    isLive: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
@@ -101,12 +109,36 @@ export default {
 <style lang="scss" scoped>
 .link-translate {
   position: relative;
+  padding: 0 4px;
   display: inline-block;
-  overflow: hidden;
-  color: $primary;
 }
+
 .link-translate__title {
   display: block;
+}
+
+.link-translate__container {
+  position: relative;
+  overflow: hidden;
+}
+
+.link-translate .dot {
+  display: none;
+  width: 4px;
+  height: 4px;
+  background-color: $primary;
+  position: absolute;
+  top: 2px;
+  right: -4px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  transition: all .2s ease-in-out;
+}
+
+.link-translate.isLive {
+  .dot {
+    display: block;
+  }
 }
 
 .link-translate__title--hidden {
@@ -116,5 +148,17 @@ export default {
   right: 0;
   bottom: 0;
   margin: auto;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(240,10,120,0.8);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(240,10,120,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(240,10,120,0);
+  }
 }
 </style>
