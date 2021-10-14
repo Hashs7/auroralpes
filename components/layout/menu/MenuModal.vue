@@ -12,6 +12,11 @@
             {{ page.fields.title }}
           </n-link>
         </li>
+        <li class="modal__link">
+          <n-link to="/live" class="modal__item" @click.native="toggleMenu">
+            Live
+          </n-link>
+        </li>
       </ul>
     </div>
   </transition>
@@ -57,13 +62,11 @@ export default {
     },
   },
   mounted() {
-    console.log('mounted');
     this.createTl();
   },
   updated() {
     if (!this.shouldUpdateTl) return;
     this.shouldUpdateTl = false;
-    console.log('updateTl');
     this.createTl()
   },
   methods: {

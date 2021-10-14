@@ -19,7 +19,6 @@
     methods: {
       start() {
         this.loading = true;
-        console.log('start');
         bodymovin.loadAnimation({
           container: this.$refs.logoAnim,
           renderer: 'svg',

@@ -6,7 +6,7 @@
       </n-link>
 
       <div class="header__right">
-        <MenuNavigation/>
+        <MenuNavigation />
         <Socials
             class="socials"
             :fb="sn.fields.facebook"

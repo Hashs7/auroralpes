@@ -40,9 +40,6 @@
         required: true,
       },
     },
-    mounted() {
-      console.log(this.datas);
-    }
   }
 </script>
 

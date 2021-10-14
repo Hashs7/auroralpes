@@ -25,7 +25,6 @@ export default {
     },
   },
   mounted() {
-    console.log('datas', this.datas);
     setTimeout(() => {
       if (!this) return;
       this.$router.push({ path: '/' });

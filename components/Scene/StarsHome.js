@@ -63,7 +63,6 @@ export default class {
     const smallStarsCount = winArea * smallStarsDensity;
     const mediumStarsCount = winArea * mediumStarsDensity;
     const largeStarsCount = winArea * largeStarsDensity;
-    console.log(smallStarsCount);
     for (let i = 0; i < smallStarsCount; i++) {
       this.stars.push(new Star(this.canvas, this.wrapper, 1, 30));
     }

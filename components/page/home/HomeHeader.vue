@@ -30,7 +30,6 @@
       import('three/examples/jsm/loaders/GLTFLoader').then(({ GLTFLoader }) => {
           const path = window.innerWidth > 425 ? '../models/asteroids-home.glb' : '../models/asteroids-mobile.glb';
           new GLTFLoader().load(path, (glb) => {
-            console.log(glb, window.innerWidth);
             this.scene = new SceneHome(this.$refs.canvas, glb, window.innerWidth > 425);
           });
         })

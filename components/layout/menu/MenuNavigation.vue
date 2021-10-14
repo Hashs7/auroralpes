@@ -12,6 +12,11 @@
       :link="'/'+page.fields.slug"
       class="navigation__link u-link"
     />
+    <LinkTranslate
+        title="Live"
+        link="/live"
+        class="navigation__link u-link"
+    />
   </nav>
 </template>
 

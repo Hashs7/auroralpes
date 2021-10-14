@@ -4,11 +4,16 @@
       <iframe
           class="twitch-iframe"
           src="https://player.twitch.tv/?channel=auroralpes&parent=www.auroralpes.fr"
-          frameborder="0"
           allowfullscreen="true"
-          scrolling="no"
           :height="height"
           width="620">
+      </iframe>
+      <iframe
+          class="twitch-chat"
+          src="https://www.twitch.tv/embed/auroralpes/chat?darkpopout&parent=auroralpes.fr"
+          allowfullscreen="true"
+          :height="height"
+          width="340">
       </iframe>
     </div>
   </main>
@@ -92,7 +97,10 @@ export default {
   },
   methods: {
     resize() {
-      const width = window.innerWidth > 1400 ? 1400 : window.innerWidth
+      const width = window.innerWidth > 1400 ?
+          1400 - 320 : window.innerWidth > 874 ?
+          window.innerWidth - 320 :
+          window.innerWidth;
       this.height = width / 1.77
     }
   },
@@ -112,12 +120,18 @@ export default {
     max-width: 1400px;
     width: 100%;
     height: 100%;
+    display: flex;
   }
   .twitch-iframe {
-    width: 100%;
+    flex-grow: 1;
   }
   .btn-dl {
     display: inline-block;
     margin: 40px auto 0 auto;
+  }
+  @media #{$tablet-l-media} {
+    .twitch-chat {
+      display: none;
+    }
   }
 </style>

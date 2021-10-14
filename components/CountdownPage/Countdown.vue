@@ -56,7 +56,6 @@
                     this.$store.commit('setCounterDown');
 
                     setTimeout(() => {
-                        console.log('push', delay);
                         this.$router.push('/teaser');
                     }, delay);
                     clearInterval(this.interval);

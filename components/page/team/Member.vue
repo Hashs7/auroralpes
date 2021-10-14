@@ -94,7 +94,7 @@
     },
     methods: {
       inView() {
-        console.log('isInview');
+        // console.log('isInview');
       }
     },
   }

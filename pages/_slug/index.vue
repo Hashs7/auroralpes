@@ -20,9 +20,6 @@ export default {
     PageFestival,
   },
   mixins: [locomotive],
-  mounted() {
-    console.log(this.template);
-  },
   /**
    * SEO data with Contentful
    */
@@ -73,7 +70,6 @@ export default {
   computed: {
     template() {
       // Return template to use
-      console.log(this.datas.sys.contentType.sys.id);
       if (this.datas.sys) {
         return this.datas.sys.contentType.sys.id;
       }

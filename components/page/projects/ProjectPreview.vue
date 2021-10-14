@@ -64,9 +64,6 @@
         return formatedDate(this.date);
       },
     },
-    mounted() {
-      console.log('prefix', this.prefix);
-    }
   }
 </script>
 

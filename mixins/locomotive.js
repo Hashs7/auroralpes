@@ -28,12 +28,6 @@ export default {
       const debouncedResize = debounce(this.onLmsResize, 200);
       const throttledScroll = throttle(this.onLmsScroll, 200);
 
-      this.lmS.on('call', func => {
-        // Using modularJS
-        console.log('entered', func.inView);
-        // this.call(...func);
-      });
-
       this.$nextTick(() => {
         this.lmS.update();
         window.dispatchEvent(new Event('resize'));
@@ -54,7 +48,6 @@ export default {
   methods: {
     onLmsScroll(obj) {
       this.scrollPosition = obj["scroll"]["y"];
-      console.log("scrollPosition + na", this.scrollPosition);
       /*if (this.scrollPosition < OFFSET) {
        if (this.isNavSmall) {
        console.log("grow");
