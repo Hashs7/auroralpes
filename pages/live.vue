@@ -10,8 +10,7 @@
       </iframe>
       <iframe
           class="twitch-chat"
-          src="https://www.twitch.tv/embed/auroralpes/chat?darkpopout&parent=www.auroralpes.fr/live"
-          allowfullscreen="true"
+          src="https://www.twitch.tv/embed/auroralpes/chat?parent=www.auroralpes.fr"
           :height="height"
           width="340">
       </iframe>
