@@ -1,6 +1,5 @@
 <template>
   <main>
-    {{ template }}
     <component v-bind:is="template" v-if="template" :key="datas.sys.id" :datas="datas" />
   </main>
 </template>
@@ -78,6 +77,10 @@ export default {
     header() {
       return this.datas.fields.header;
     },
+  },
+  mounted() {
+    console.log('this.datas', this.datas);
+    console.log('this.datas.sys', this.datas.sys);
   },
   /**
    * Get the page data

@@ -219,12 +219,17 @@ export default {
 
       // Generate page
 	    const projectsSlug = pages.find(p => p.sys.contentType.sys.id === 'pageProjects').fields.slug;
+	    console.log([
+		    ...pages.filter((page) => page.sys.contentType.sys.id !== 'homepage'),
+		    ...projects.items,
+	    ].length);
       return [
 	      ...pages.filter((page) => page.sys.contentType.sys.id !== 'homepage'),
 	      ...projects.items,
       ]
 	      .map((page) => {
-		      const route = page.sys.contentType.sys.id !== 'project' ? page.fields.slug : `/${projectsSlug}/${page.fields.slug}`
+		      console.log(page.sys.contentType.sys.id);
+		      const route = page.sys.contentType.sys.id !== 'project' ? `/${page.fields.slug}` : `/${projectsSlug}/${page.fields.slug}`
 	      	return ({
 			      route,
 			      payload: page,
