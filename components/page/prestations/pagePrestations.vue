@@ -20,12 +20,19 @@
               :prefix="datas.fields.slug"
           />
         </div>
+        <section v-if="datas.fields.sponsorsLogos.length" class="sponsors-section">
+          <h2 v-if="datas.fields.sponsorsText" class="projects-container__title">{{ datas.fields.sponsorsText }}</h2>
+          <div class="sponsors-logos">
+            <Asset v-for="(img, i) in datas.fields.sponsorsLogos" :key="i" :datas="img" />
+          </div>
+        </section>
       </div>
     </section>
   </main>
 </template>
 
 <script>
+  import Asset from '../../common/Asset.vue';
   import Header from '~/components/layout/Header';
   import ProjectPreview from '~/components/page/prestations/ProjectPreview';
 
@@ -33,6 +40,7 @@
     name: 'pagePrestations',
     components: {
       Header,
+      Asset,
       ProjectPreview,
     },
     props: {
@@ -56,7 +64,20 @@
   .projects-container__title {
     margin-bottom: 18px;
   }
-  .own-projects {
+  .sponsors-section {
+    margin-top: 32px;
+  }
+  .sponsors-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 100px;
+
+    .asset__asset {
+      object-fit: contain;
+    }
+    .asset__underlay {
+      display: none;
+    }
   }
   .participate-projects {
     .projects-container__title {
@@ -69,6 +90,22 @@
   @media #{$mobile-l-media} {
     .projects-container {
       padding: 40px 0 1px 0;
+    }
+  }
+  @media #{$desktop-s-media} {
+    .sponsors-logos {
+      grid-column-gap: 40px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media #{$tablet-s-media} {
+    .sponsors-logos {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media #{$mobile-l-media} {
+    .sponsors-logos {
+      grid-column-gap: 20px;
     }
   }
 </style>

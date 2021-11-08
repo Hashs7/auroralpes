@@ -74,7 +74,7 @@
     color: $black;
 
     .project__title {
-      color: $primary;
+      color: $secondary;
       margin-bottom: 0;
     }
   }
