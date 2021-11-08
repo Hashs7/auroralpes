@@ -71,6 +71,8 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 100px;
+    max-width: 1080px;
+    margin: auto;
 
     .asset__asset {
       object-fit: contain;
