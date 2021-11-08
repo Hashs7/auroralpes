@@ -4,24 +4,20 @@
       <div class="o-container">
 
         <div class="footer__contact" data-scroll data-scroll-speed="4" data-scroll-delay="0.3">
-          <h2 class="footer__title">Nous contacter</h2>
           <ul>
-            <li v-if="footer.fields.contactVolunteer" class="footer__mail">
-<!--              <Mail :email="footer.fields.contactVolunteer" label="Devenir bénévole" />-->
-              <a :href="'mailto:'+footer.fields.contactVolunteer">
-                <RippleButton name="Devenir bénévole" />
+            <li class="footer__mail">
+              <a href="https://discord.gg/ZetjQmX4HR)">
+                <RippleButton name="Devenir membre" />
               </a>
             </li>
             <li v-if="footer.fields.contactPartner" class="footer__mail">
-<!--              <Mail :email="footer.fields.contactPartner" label="Devenir partenaire" />-->
-              <a :href="'mailto:'+footer.fields.contactPartner">
-                <RippleButton name="Devenir partenaire" />
+              <a :href="'mailto:'+footer.fields.contactQuestion">
+                <RippleButton name="Nous contacter" />
               </a>
             </li>
             <li v-if="footer.fields.contactQuestion" class="footer__mail">
-<!--              <Mail :email="footer.fields.contactQuestion" label="Une question ?" />-->
-              <a :href="'mailto:'+footer.fields.contactQuestion">
-                <RippleButton name="Une question ?" />
+              <a :href="'mailto:'+footer.fields.contactPartner">
+                <RippleButton name="Une prestation ?" />
               </a>
             </li>
           </ul>
@@ -42,7 +38,7 @@
     </div>
 
     <div class="footer__down">
-      <span class="footer__copyright">© Copyright AurorAlpes 2020</span>
+      <span class="footer__copyright">© Copyright AurorAlpes 2021</span>
       <div class="footer__socials">
         <h5 class="footer__socials-title">Suivez nos aventures</h5>
         <Socials :fb="socials.facebook" :insta="socials.instagram" :twitter="socials.twitter" class="footer__socials-container"/>
@@ -78,7 +74,10 @@
 </script>
 
 <style lang="scss" scoped>
-  .footer {}
+  .footer {
+    position: relative;
+    transform: translateY(-1px);
+  }
   .footer__title {
     margin-bottom: 28px;
   }

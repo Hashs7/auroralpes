@@ -1,29 +1,25 @@
 <template>
   <main>
-    <component v-bind:is="template" v-if="template" :key="datas.sys.id" :datas="datas" />
+    <Prestation :datas="datas" />
   </main>
 </template>
 <script>
-/* eslint-disable */
+/* -------- Services -------- */
 import client from '~/plugins/contentful';
-import PageProjects from '~/components/page/projects/pageProjects';
-import PageTeam from '~/components/page/team/pageTeam';
-import PageFestival from '~/components/page/festival/pageFestival';
-import PagePrestations from '~/components/page/prestations/pagePrestations';
+import Prestation from '~/components/page/prestations/Prestation';
+import Header from '~/components/layout/Header';
 import locomotive from "~/mixins/locomotive.js";
 
+/* -------------------- Module -------------------- */
 export default {
   components: {
-    // Header,
-    PageProjects,
-    PageTeam,
-    PagePrestations,
-    PageFestival,
+    Header,
+    Prestation,
   },
   mixins: [locomotive],
   /**
-   * SEO data with Contentful
-   */
+     * SEO data with Contentful
+     */
   head() {
     if (!this.datas.fields) return {};
     return {
@@ -68,40 +64,31 @@ export default {
       ],
     };
   },
+
   computed: {
-    template() {
-      // Return template to use
-      if (this.datas.sys) {
-        return this.datas.sys.contentType.sys.id;
-      }
-      return false;
-    },
     header() {
-      return this.datas.fields.header;
+      return {
+        fields: {
+          title: this.datas.fields.title,
+          image: this.datas.fields.image,
+        },
+      };
     },
   },
   /**
    * Get the page data
    */
+  // eslint-disable-next-line no-unused-vars
   async asyncData({ store, error, payload, params }) {
     // Generated route, use defined payload
     if (payload) {
       return { datas: payload };
     }
 
-    const { pages } = store.state.global.settings.fields;
-    const loadPage = pages.find((page) => page.fields.slug === params.slug);
-
-    if (loadPage) {
-      return {
-        datas: loadPage,
-      };
-    }
-
     // Find page in Contentful with the slug
     const { items: [simplePage] } = await client.getEntries({
-      content_type: 'page',
-      'fields.slug': params.slug,
+      content_type: 'prestation',
+      'fields.slug': params.prestation,
     });
 
     if (simplePage) {

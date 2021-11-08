@@ -62,7 +62,7 @@
     }
   }
 
-  .social-links {
+  .socials-links {
     display: flex;
     justify-content: space-between;
     @media #{$md-down} {

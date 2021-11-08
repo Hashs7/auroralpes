@@ -53,7 +53,7 @@
       justify-content: space-between;
     }
     .socials {
-      margin-left: 120px;
+      margin-left: 80px;
     }
     .logo {
       vertical-align: bottom;
@@ -62,6 +62,12 @@
   .header__right {
     display: flex;
     align-items: center;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .l-header .socials {
+      margin-left: 20px;
+    }
   }
 
   @media screen and (max-width: 520px) {

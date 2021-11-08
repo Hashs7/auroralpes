@@ -207,6 +207,9 @@ export default {
 	    const projects = await client.getEntries({
 		    content_type: 'project',
 	    });
+	    const prestations = await client.getEntries({
+		    content_type: 'prestation',
+	    });
 	    // console.log('projects', projects.items);
 
       const pages = (await getNestedReferences(settings)).fields.pages;
@@ -219,17 +222,21 @@ export default {
 
       // Generate page
 	    const projectsSlug = pages.find(p => p.sys.contentType.sys.id === 'pageProjects').fields.slug;
-	    console.log([
-		    ...pages.filter((page) => page.sys.contentType.sys.id !== 'homepage'),
-		    ...projects.items,
-	    ].length);
+	    const prestationsSlug = pages.find(p => p.sys.contentType.sys.id === 'pagePrestations').fields.slug;
+
       return [
 	      ...pages.filter((page) => page.sys.contentType.sys.id !== 'homepage'),
 	      ...projects.items,
+	      ...prestations.items,
       ]
 	      .map((page) => {
-		      console.log(page.sys.contentType.sys.id);
-		      const route = page.sys.contentType.sys.id !== 'project' ? `/${page.fields.slug}` : `/${projectsSlug}/${page.fields.slug}`
+		      const route =
+            page.sys.contentType.sys.id === 'project'
+              ? `/${projectsSlug}/${page.fields.slug}`
+                : page.sys.contentType.sys.id === 'prestation'
+                ? `/${prestationsSlug}/${page.fields.slug}`
+                : `/${page.fields.slug}`
+
 	      	return ({
 			      route,
 			      payload: page,

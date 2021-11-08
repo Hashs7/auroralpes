@@ -64,7 +64,7 @@ export default {
 
 
   &:not(:last-child) {
-    margin-right: 36px;
+    margin-right: 28px;
   }
 }
 
