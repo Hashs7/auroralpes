@@ -6,7 +6,7 @@
         <div class="footer__contact" data-scroll data-scroll-speed="4" data-scroll-delay="0.3">
           <ul>
             <li class="footer__mail">
-              <a href="https://discord.gg/ZetjQmX4HR)">
+              <a href="https://discord.gg/ZetjQmX4HR">
                 <RippleButton name="Devenir membre" />
               </a>
             </li>
