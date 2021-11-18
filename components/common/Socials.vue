@@ -63,8 +63,6 @@
   }
 
   .socials-links {
-    display: flex;
-    justify-content: space-between;
     @media #{$md-down} {
       width: 220px;
       margin: 0 auto;
