@@ -20,7 +20,7 @@
               :prefix="datas.fields.slug"
           />
         </div>
-        <section v-if="datas.fields.sponsorsLogos.length" class="sponsors-section">
+        <section v-if="datas.fields.sponsorsLogos" class="sponsors-section">
           <h2 v-if="datas.fields.sponsorsText" class="projects-container__title">{{ datas.fields.sponsorsText }}</h2>
           <div class="sponsors-logos">
             <Asset v-for="(img, i) in datas.fields.sponsorsLogos" :key="i" :datas="img" />
